@@ -137,10 +137,15 @@ const Products = ({
         const productCategory =
           product?.category?.toLowerCase() || "";
 
+        const productSizes = Array.isArray(product?.sizes)
+          ? product.sizes.join(" ").toLowerCase()
+          : "";
+
         return (
           name.includes(searchValue) ||
           description.includes(searchValue) ||
-          productCategory.includes(searchValue)
+          productCategory.includes(searchValue) ||
+          productSizes.includes(searchValue)
         );
       });
     }
@@ -439,6 +444,12 @@ const Products = ({
               </span>
             </div>
           </div>
+
+          {Array.isArray(product?.sizes) && product.sizes.length > 0 && (
+            <p className="mt-2 truncate text-[8px] font-semibold uppercase tracking-wide text-[#877d72] sm:text-[10px]">
+              Sizes: {product.sizes.join(", ")}
+            </p>
+          )}
         </div>
       </article>
     );

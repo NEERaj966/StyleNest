@@ -1861,6 +1861,12 @@ const AdminOrders = () => {
                                                                         }
                                                                     </p>
 
+                                                                    {item.size && (
+                                                                        <p className="mt-1 text-xs font-semibold text-[#5d554c]">
+                                                                            Size: {item.size}
+                                                                        </p>
+                                                                    )}
+
                                                                 </div>
 
 

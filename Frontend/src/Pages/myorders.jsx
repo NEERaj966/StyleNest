@@ -260,6 +260,9 @@ const MyOrders = () => {
 
                                                             <p className="mt-1 text-xs text-[#877d72]">
                                                                 Qty: {item.quantity}
+                                                                {item.size
+                                                                    ? ` / Size: ${item.size}`
+                                                                    : ""}
                                                             </p>
                                                         </div>
                                                     </div>

@@ -413,6 +413,26 @@ const AdminProductDetail = () => {
                             </p>
                         </div>
 
+                        {Array.isArray(product.sizes) &&
+                            product.sizes.length > 0 && (
+                                <div className="mt-7">
+                                    <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#877d72]">
+                                        Sizes
+                                    </p>
+
+                                    <div className="mt-3 flex flex-wrap gap-2">
+                                        {product.sizes.map((size) => (
+                                            <span
+                                                key={size}
+                                                className="rounded-xl border border-[#d5cec2] bg-[#f7f7f5] px-3 py-2 text-xs font-bold text-[#3e3730]"
+                                            >
+                                                {size}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
                         <div className="mt-7 rounded-xl bg-[#f7f7f5] p-5">
                             <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#877d72]">
                                 Selling Price

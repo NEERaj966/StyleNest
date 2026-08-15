@@ -55,6 +55,22 @@ const foodCardSchema = new mongoose.Schema(
             enum: ['Women', 'Men', 'Kids', 'Other'],
             default: 'Other',
         },
+        sizes: {
+            type: [String],
+            default: [],
+            set: (sizes) =>
+                Array.isArray(sizes)
+                    ? [
+                          ...new Set(
+                              sizes
+                                  .map((size) =>
+                                      String(size || '').trim()
+                                  )
+                                  .filter(Boolean)
+                          ),
+                      ]
+                    : [],
+        },
         description: {
             type: String,
             trim: true,

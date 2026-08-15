@@ -17,7 +17,7 @@ const router = Router();
 
 router.route("/")
     .get(getFoodCards)
-    .post(verifyJWTForAdmin, upload.array("images", 2), createFoodCard);
+    .post(verifyJWTForAdmin, upload.array("images", 4), createFoodCard);
 
 router.route("/my")
     .get(verifyJWTForAdmin, getMyFoodCards);

@@ -28,6 +28,7 @@ const ProductDetailPage = () => {
     // =========================================================
 
     const [quantity, setQuantity] = useState(1);
+    const [selectedSize, setSelectedSize] = useState("");
 
     // =========================================================
     // WISHLIST
@@ -86,6 +87,14 @@ const ProductDetailPage = () => {
         return [...new Set(images)];
     }, [product]);
 
+    const availableSizes = useMemo(() => {
+        if (!Array.isArray(product?.sizes)) return [];
+
+        return product.sizes
+            .map((size) => String(size || "").trim())
+            .filter(Boolean);
+    }, [product]);
+
     // =========================================================
     // FETCH PRODUCT
     // =========================================================
@@ -111,6 +120,13 @@ const ProductDetailPage = () => {
 
             setProduct(productData);
             setSelectedImage(0);
+            const firstSize = Array.isArray(productData.sizes)
+                ? productData.sizes
+                    .map((size) => String(size || "").trim())
+                    .find(Boolean)
+                : "";
+
+            setSelectedSize(firstSize || "");
 
         } catch (error) {
             console.error(
@@ -322,9 +338,9 @@ const ProductDetailPage = () => {
     };
 
     const throttledFavorite = useThrottle(
-    handleFavorite,
-    700
-);
+        handleFavorite,
+        700
+    );
     // =========================================================
     // ADD TO CART
     // =========================================================
@@ -332,16 +348,22 @@ const ProductDetailPage = () => {
     const handleAddToCart = async () => {
         if (!product || isOutOfStock) return;
 
+        if (availableSizes.length > 0 && !selectedSize) {
+            alert("Please select a size.");
+            return;
+        }
+
         try {
             setAddingToCart(true);
 
             console.log("Add to cart:", {
                 productId: product._id,
                 quantity,
+                size: selectedSize,
             });
 
             alert(
-                `${product.name} added to cart`
+                `${product.name}${selectedSize ? ` (${selectedSize})` : ""} added to cart`
             );
 
         } catch (error) {
@@ -361,6 +383,11 @@ const ProductDetailPage = () => {
     const handleBuyNow = async () => {
         if (!product || isOutOfStock) return;
 
+        if (availableSizes.length > 0 && !selectedSize) {
+            alert("Please select a size.");
+            return;
+        }
+
         try {
             setBuyingNow(true);
 
@@ -368,6 +395,7 @@ const ProductDetailPage = () => {
                 state: {
                     product,
                     quantity,
+                    selectedSize,
                     buyNow: true,
                 },
             });
@@ -383,9 +411,9 @@ const ProductDetailPage = () => {
     };
 
     const throttledBuyNow = useThrottle(
-    handleBuyNow,
-    1500
-);
+        handleBuyNow,
+        1500
+    );
 
     // =========================================================
     // SUBMIT REVIEW
@@ -403,21 +431,27 @@ const ProductDetailPage = () => {
         try {
             setSubmittingReview(true);
 
+            const token = localStorage.getItem('token')
+            if (!token) {
+                navigate('/login')
+                setSubmittingReview((prev) => ({ ...prev, [id]: false }));
+                return
+            }
+
+
             const res = await axios.post(
                 `${import.meta.env.VITE_BASE_URL}/api/v1/foodcards/${product._id}/reviews`,
                 {
                     rating: reviewRating,
                     comment: reviewComment.trim(),
                 },
-                {
-                    withCredentials: true,
-                }
+                {headers: {
+                Authorization: `Bearer ${token}`,
+            },}
             );
 
-            console.log(
-                "Review response:",
-                res.data
-            );
+
+
 
             setReviewComment("");
             setReviewRating(5);
@@ -854,6 +888,32 @@ const ProductDetailPage = () => {
 
                         {/* QUANTITY */}
 
+                        {availableSizes.length > 0 && (
+                            <div className="mt-6">
+                                <p className="text-xs font-bold text-[#3e3730]">
+                                    Size
+                                </p>
+
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    {availableSizes.map((size) => (
+                                        <button
+                                            key={size}
+                                            type="button"
+                                            onClick={() =>
+                                                setSelectedSize(size)
+                                            }
+                                            className={`min-w-11 rounded-xl border px-4 py-2 text-xs font-bold transition ${selectedSize === size
+                                                ? "border-[#24211d] bg-[#24211d] text-[#f8f4ec]"
+                                                : "border-[#d5cec2] bg-[#f8f4ec] text-[#5d554c] hover:bg-[#eee8de]"
+                                                }`}
+                                        >
+                                            {size}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         {!isOutOfStock && (
                             <div className="mt-6">
 
@@ -931,6 +991,9 @@ const ProductDetailPage = () => {
 
                                     <p className="mt-1 text-xs font-semibold text-[#3e3730]">
                                         {quantity} × {product.name}
+                                        {selectedSize
+                                            ? ` / ${selectedSize}`
+                                            : ""}
                                     </p>
                                 </div>
 

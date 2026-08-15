@@ -6,6 +6,43 @@ import { ApiError } from "../utills/ApiError.js";
 import { ApiResponse } from "../utills/ApiResponse.js";
 import { uploadOnCloudinary } from "../utills/cloudinary.js";
 
+const normalizeSizes = (value) => {
+    if (value === undefined || value === null || value === "") {
+        return [];
+    }
+
+    let source = value;
+
+    if (typeof value === "string") {
+        try {
+            const parsed = JSON.parse(value);
+
+            source = Array.isArray(parsed)
+                ? parsed
+                : value.split(",");
+        } catch {
+            source = value.split(",");
+        }
+    }
+
+    if (!Array.isArray(source)) {
+        throw new ApiError(400, "Sizes must be a list");
+    }
+
+    const normalized = [
+        ...new Set(
+            source
+                .map((size) => String(size || "").trim())
+                .filter(Boolean)
+        ),
+    ];
+
+    if (normalized.some((size) => size.length > 20)) {
+        throw new ApiError(400, "Each size must be 20 characters or less");
+    }
+
+    return normalized;
+};
 
 // ============================================================
 // CREATE FOOD CARD
@@ -148,6 +185,7 @@ const createFoodCard = asyncHandler(async (req, res) => {
         price: Number(price),
         quantity: parsedQuantity,
         category,
+        sizes: normalizeSizes(sizes),
         description,
 
         // Existing primary image
@@ -362,6 +400,7 @@ const updateFoodCard = asyncHandler(async (req, res) => {
         imageUrl,
         isAvailable,
         rating,
+        sizes,
     } = req.body;
 
 
@@ -427,6 +466,11 @@ const updateFoodCard = asyncHandler(async (req, res) => {
 
     if (category !== undefined) {
         updates.category = category;
+    }
+
+
+    if (sizes !== undefined) {
+        updates.sizes = normalizeSizes(sizes);
     }
 
 

@@ -33,6 +33,7 @@ export const createOrder = async (req, res) => {
             addressId,
             paymentMethod = "online",
             onlineMode = "",
+            size = "",
         } = req.body;
 
         // ====================================================
@@ -156,6 +157,27 @@ export const createOrder = async (req, res) => {
             });
         }
 
+        const normalizedSize = String(size || "").trim();
+        const productSizes = Array.isArray(product.sizes)
+            ? product.sizes
+            : [];
+
+        if (productSizes.length > 0) {
+            if (!normalizedSize) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Please select a size",
+                });
+            }
+
+            if (!productSizes.includes(normalizedSize)) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Selected size is not available",
+                });
+            }
+        }
+
         // ====================================================
         // PRICE
         // ====================================================
@@ -226,6 +248,7 @@ export const createOrder = async (req, res) => {
                     foodCard: product._id,
                     name: product.name,
                     category: product.category || "Other",
+                    size: normalizedSize,
                     unitPrice,
                     quantity: qty,
                     lineTotal,

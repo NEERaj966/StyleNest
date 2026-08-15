@@ -80,6 +80,12 @@ const orderItemSchema = new mongoose.Schema(
             trim: true,
         },
 
+        size: {
+            type: String,
+            default: "",
+            trim: true,
+        },
+
         unitPrice: {
             type: Number,
             required: true,

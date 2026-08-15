@@ -15,6 +15,7 @@ const ProductEdit = () => {
     price: "",
     quantity: "",
     category: "Women",
+    sizes: "",
     description: "",
     imageUrl: "",
     isAvailable: true,
@@ -58,6 +59,9 @@ const ProductEdit = () => {
           price: product.price ?? "",
           quantity: product.quantity ?? "",
           category: product.category || "Women",
+          sizes: Array.isArray(product.sizes)
+            ? product.sizes.join(", ")
+            : "",
           description: product.description || "",
           imageUrl: product.imageUrl || product.image || "",
           isAvailable: product.isAvailable !== false,
@@ -127,6 +131,10 @@ const ProductEdit = () => {
         price: Number(form.price),
         quantity: Number(form.quantity),
         category: form.category,
+        sizes: form.sizes
+          .split(",")
+          .map((size) => size.trim())
+          .filter(Boolean),
         description: form.description.trim(),
         imageUrl: form.imageUrl.trim(),
         isAvailable: form.isAvailable,
@@ -392,6 +400,38 @@ const ProductEdit = () => {
                   "
                 />
               </div>
+            </div>
+
+            {/* DESCRIPTION */}
+            <div>
+              <label className="mb-2 block text-xs font-bold text-[#3e3730]">
+                Sizes
+              </label>
+
+              <input
+                type="text"
+                name="sizes"
+                value={form.sizes}
+                onChange={handleChange}
+                placeholder="XS, S, M, L, XL, XXL"
+                className="
+                  h-12
+                  w-full
+                  rounded-xl
+                  border
+                  border-[#d5cec2]
+                  bg-[#f8f4ec]
+                  px-4
+                  text-sm
+                  text-[#302b26]
+                  outline-none
+                  transition
+                  placeholder:text-[#877d72]
+                  focus:border-amber-400
+                  focus:ring-4
+                  focus:ring-amber-100
+                "
+              />
             </div>
 
             {/* DESCRIPTION */}

@@ -13,6 +13,7 @@ const Order = () => {
   // =========================================================
 
   const product = location.state?.product || null;
+  const selectedSize = location.state?.selectedSize || "";
 
   const initialQuantity = Number(
     location.state?.quantity || 1
@@ -268,6 +269,7 @@ const Order = () => {
       const orderData = {
         productId: product._id,
         quantity,
+        size: selectedSize,
         addressId: selectedAddress._id,
 
         paymentMethod: "online",
@@ -511,6 +513,12 @@ const Order = () => {
                     )}{" "}
                     per item
                   </p>
+
+                  {selectedSize && (
+                    <p className="mt-1 text-xs font-semibold text-[#5d554c]">
+                      Size: {selectedSize}
+                    </p>
+                  )}
 
                   {/* QUANTITY */}
 

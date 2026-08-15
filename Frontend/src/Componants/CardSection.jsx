@@ -20,6 +20,7 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
     quantity: '',
     rating: 4.5,
     category: 'Women',
+    sizes: '',
     description: '',
   })
   const [imageFiles, setImageFiles] = useState([]);
@@ -160,6 +161,7 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
       payload.append('quantity', Number(form.quantity))
       payload.append('rating', Number(form.rating))
       payload.append('category', form.category)
+      payload.append('sizes', form.sizes)
       payload.append('description', form.description.trim())
       imageFiles.forEach((file) => {
         payload.append("images", file);
@@ -182,6 +184,7 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
           quantity: '',
           rating: 4.5,
           category: form.category,
+          sizes: '',
           description: '',
         })
         setImageFile(null)
@@ -580,6 +583,19 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
 
                 <div className="space-y-2">
                   <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
+                    Sizes
+                  </label>
+                  <input
+                    name="sizes"
+                    value={form.sizes}
+                    onChange={handleChange}
+                    placeholder="XS, S, M, L, XL, XXL"
+                    className="h-11 w-full rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] px-4 text-[10px] text-[#24211d] outline-none placeholder:text-[#9b9186] transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Product Images
                   </label>
                   <label className="flex h-11 cursor-pointer items-center justify-between rounded-[9px] border border-dashed border-[#b9afa2] bg-[#f3eee5] px-4 transition hover:border-[#a94b2e]">
@@ -889,6 +905,12 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                           {inStock ? `${itemQuantity} left` : "Out of stock"}
                         </span>
                       </div>
+
+                      {Array.isArray(item.sizes) && item.sizes.length > 0 && (
+                        <p className="mt-2 truncate text-[7px] uppercase tracking-[0.12em] text-[#746b61]">
+                          Sizes: {item.sizes.join(", ")}
+                        </p>
+                      )}
 
                       {isAdmin ? (
                         <div className="mt-3 flex gap-2">
