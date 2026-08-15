@@ -31,13 +31,25 @@ const HeroSection = ({ showAdmin = false, adminPortal = false }) => {
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
+  const visibleProducts = useMemo(() => {
+    const safeProducts = Array.isArray(trand) ? trand : []
+
+    return safeProducts
+      .slice()
+      .sort(
+        (a, b) =>
+          Number(b?.rating ?? 0) - Number(a?.rating ?? 0),
+      )
+      .slice(0, 10)
+  }, [trand])
+
   const totalAvailable = useMemo(
     () =>
-      trand.reduce(
+      visibleProducts.reduce(
         (sum, item) => sum + Number(item.quantity ?? 0),
         0,
       ),
-    [trand],
+    [visibleProducts],
   )
 
   useEffect(() => {
@@ -327,7 +339,7 @@ const HeroSection = ({ showAdmin = false, adminPortal = false }) => {
               <div className="grid grid-cols-3 gap-2 text-center sm:w-[360px]">
                 <div className="rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 py-3">
                   <p className="text-lg font-bold text-[#24211d]">
-                    {trand.length}
+                    {visibleProducts.length}
                   </p>
                   <p className="mt-1 text-[9px] uppercase tracking-[0.16em] text-[#877d72]">
                     Products
@@ -345,7 +357,7 @@ const HeroSection = ({ showAdmin = false, adminPortal = false }) => {
 
                 <div className="rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 py-3">
                   <p className="text-lg font-bold text-[#24211d]">
-                    {trand.filter((item) => item.isAvailable !== false).length}
+                    {visibleProducts.filter((item) => item.isAvailable !== false).length}
                   </p>
                   <p className="mt-1 text-[9px] uppercase tracking-[0.16em] text-[#877d72]">
                     Active
@@ -369,7 +381,7 @@ const HeroSection = ({ showAdmin = false, adminPortal = false }) => {
                   />
                 ))}
               </div>
-            ) : trand.length === 0 ? (
+            ) : visibleProducts.length === 0 ? (
               <div className="px-5 py-16 text-center sm:px-8">
                 <p className="text-sm font-bold text-[#24211d]">
                   No products found
@@ -381,7 +393,7 @@ const HeroSection = ({ showAdmin = false, adminPortal = false }) => {
             ) : (
               <div className="-mx-2 overflow-hidden px-5 py-6 sm:px-8">
                 <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-3 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-5">
-                  {trand.map((item) => {
+                  {visibleProducts.map((item) => {
                     const itemId = item._id ?? item.id
                     const isEditing =
                       showAdmin && editingId === itemId

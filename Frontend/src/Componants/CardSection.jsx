@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import useThrottle from "../hooks/useThrottle";
 
 
-const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated = null }) => {
+const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated = 20 }) => {
   const { Admin } = useContext(AdminDataContext)
   const { addToCart } = useContext(OrderDataContext)
   const isAdmin = adminMode && Admin
