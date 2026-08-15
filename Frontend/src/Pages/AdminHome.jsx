@@ -132,7 +132,7 @@ const AdminHome = () => {
 
 
       <HeroSection showAdmin={isAdmin} adminPortal />
-      <CardSection title="Admin Food Cards" adminMode />
+      <CardSection title="Admin Product Cards" adminMode />
 
       <section className="bg-[#f8f4ec] py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
