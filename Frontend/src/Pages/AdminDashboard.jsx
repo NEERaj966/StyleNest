@@ -253,19 +253,19 @@ const AdminDashboard = () => {
                 return "bg-blue-50 text-blue-700 border-blue-100";
 
             case "Preparing":
-                return "bg-amber-50 text-amber-700 border-amber-100";
+                return "bg-[#f2e4dc] text-[#8f3d25] border-amber-100";
 
             case "Ready":
                 return "bg-emerald-50 text-emerald-700 border-emerald-100";
 
             case "Delivered":
-                return "bg-slate-100 text-slate-600 border-slate-200";
+                return "bg-[#e5ded3] text-[#5d554c] border-[#d5cec2]";
 
             case "Cancelled":
                 return "bg-red-50 text-red-700 border-red-100";
 
             default:
-                return "bg-slate-100 text-slate-600 border-slate-200";
+                return "bg-[#e5ded3] text-[#5d554c] border-[#d5cec2]";
         }
     };
 
@@ -293,21 +293,21 @@ const AdminDashboard = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-slate-50 px-4 py-8">
+            <div className="min-h-screen bg-[#eee8de] px-4 py-8">
                 <div className="mx-auto max-w-7xl">
 
                     <div className="animate-pulse">
 
-                        <div className="h-8 w-56 rounded bg-slate-200" />
+                        <div className="h-8 w-56 rounded bg-[#d9d0c4]" />
 
-                        <div className="mt-3 h-4 w-80 rounded bg-slate-200" />
+                        <div className="mt-3 h-4 w-80 rounded bg-[#d9d0c4]" />
 
                         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                             {[1, 2, 3, 4].map(
                                 (item) => (
                                     <div
                                         key={item}
-                                        className="h-32 rounded-3xl bg-white"
+                                        className="h-32 rounded-xl bg-[#f8f4ec]"
                                     />
                                 )
                             )}
@@ -324,7 +324,7 @@ const AdminDashboard = () => {
     // =========================================================
 
     return (
-        <div className="min-h-screen bg-slate-50 px-4 py-6 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-[#eee8de] px-4 py-6 sm:px-6 lg:px-8">
 
             <div className="mx-auto max-w-7xl">
 
@@ -346,17 +346,17 @@ const AdminDashboard = () => {
 
                         </div>
 
-                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-[#24211d] sm:text-4xl">
                             Store Overview
                         </h1>
 
-                        <p className="mt-2 text-sm text-slate-500">
+                        <p className="mt-2 text-sm text-[#746b61]">
                             Monitor your inventory and order
                             queue in real time.
                         </p>
 
                         {lastUpdated && (
-                            <p className="mt-2 text-xs text-slate-400">
+                            <p className="mt-2 text-xs text-[#877d72]">
                                 Last updated{" "}
                                 {formatDate(lastUpdated)}
                                 {" "}• Auto refresh every 15s
@@ -373,7 +373,7 @@ const AdminDashboard = () => {
                                 fetchDashboard(true)
                             }
                             disabled={refreshing}
-                            className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm transition hover:bg-slate-100 disabled:opacity-50"
+                            className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] px-4 py-2.5 text-xs font-bold text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:bg-[#e5ded3] disabled:opacity-50"
                         >
                             {refreshing
                                 ? "Refreshing..."
@@ -385,7 +385,7 @@ const AdminDashboard = () => {
                             onClick={() =>
                                 navigate("/admin/orders")
                             }
-                            className="rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800"
+                            className="rounded-xl bg-[#24211d] px-4 py-2.5 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
                         >
                             View Orders →
                         </button>
@@ -402,27 +402,27 @@ const AdminDashboard = () => {
 
                     {/* PRODUCTS */}
 
-                    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                         <div className="flex items-start justify-between">
 
                             <div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                     Products
                                 </p>
 
-                                <p className="mt-3 text-3xl font-bold text-slate-900">
+                                <p className="mt-3 text-3xl font-bold text-[#24211d]">
                                     {
                                         inventoryStats.totalProducts
                                     }
                                 </p>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Total products
                                 </p>
                             </div>
 
-                            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-xl">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e5ded3] text-xl">
                                 📦
                             </div>
 
@@ -432,27 +432,27 @@ const AdminDashboard = () => {
 
                     {/* STOCK */}
 
-                    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                         <div className="flex items-start justify-between">
 
                             <div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                     Inventory Units
                                 </p>
 
-                                <p className="mt-3 text-3xl font-bold text-slate-900">
+                                <p className="mt-3 text-3xl font-bold text-[#24211d]">
                                     {
                                         inventoryStats.totalUnits
                                     }
                                 </p>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Units currently available
                                 </p>
                             </div>
 
-                            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-50 text-xl">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-xl">
                                 📊
                             </div>
 
@@ -462,27 +462,27 @@ const AdminDashboard = () => {
 
                     {/* LOW STOCK */}
 
-                    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                         <div className="flex items-start justify-between">
 
                             <div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                     Stock Alerts
                                 </p>
 
-                                <p className="mt-3 text-3xl font-bold text-amber-600">
+                                <p className="mt-3 text-3xl font-bold text-[#984126]">
                                     {
                                         inventoryStats.lowStock.length
                                     }
                                 </p>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Low stock products
                                 </p>
                             </div>
 
-                            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-50 text-xl">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f2e4dc] text-xl">
                                 ⚠️
                             </div>
 
@@ -492,12 +492,12 @@ const AdminDashboard = () => {
 
                     {/* LIVE ORDERS */}
 
-                    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                         <div className="flex items-start justify-between">
 
                             <div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                     Live Orders
                                 </p>
 
@@ -508,12 +508,12 @@ const AdminDashboard = () => {
                                     }
                                 </p>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Orders requiring action
                                 </p>
                             </div>
 
-                            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-xl">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-xl">
                                 🛍️
                             </div>
 
@@ -527,7 +527,7 @@ const AdminDashboard = () => {
                 {/* ORDER QUEUE */}
                 {/* ================================================= */}
 
-                <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                <section className="mt-6 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 
@@ -539,13 +539,13 @@ const AdminDashboard = () => {
                                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
                                 </span>
 
-                                <h2 className="text-base font-bold text-slate-900">
+                                <h2 className="text-base font-bold text-[#24211d]">
                                     Live Order Queue
                                 </h2>
 
                             </div>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Orders currently being processed
                             </p>
                         </div>
@@ -555,7 +555,7 @@ const AdminDashboard = () => {
                             onClick={() =>
                                 navigate("/admin/orders")
                             }
-                            className="text-xs font-bold text-slate-600 hover:text-slate-900"
+                            className="text-xs font-bold text-[#5d554c] hover:text-[#24211d]"
                         >
                             Manage all orders →
                         </button>
@@ -566,7 +566,7 @@ const AdminDashboard = () => {
 
                         {/* PLACED */}
 
-                        <div className="rounded-2xl border border-blue-100 bg-blue-50 p-4">
+                        <div className="rounded-xl border border-blue-100 bg-blue-50 p-4">
 
                             <p className="text-xs font-bold uppercase tracking-wider text-blue-500">
                                 New
@@ -586,19 +586,19 @@ const AdminDashboard = () => {
 
                         {/* PREPARING */}
 
-                        <div className="rounded-2xl border border-amber-100 bg-amber-50 p-4">
+                        <div className="rounded-xl border border-amber-100 bg-[#f2e4dc] p-4">
 
-                            <p className="text-xs font-bold uppercase tracking-wider text-amber-500">
+                            <p className="text-xs font-bold uppercase tracking-wider text-[#a94b2e]">
                                 Processing
                             </p>
 
-                            <p className="mt-2 text-3xl font-bold text-amber-700">
+                            <p className="mt-2 text-3xl font-bold text-[#8f3d25]">
                                 {
                                     orderStats.preparing.length
                                 }
                             </p>
 
-                            <p className="mt-1 text-xs text-amber-600">
+                            <p className="mt-1 text-xs text-[#984126]">
                                 Preparing orders
                             </p>
 
@@ -606,7 +606,7 @@ const AdminDashboard = () => {
 
                         {/* READY */}
 
-                        <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+                        <div className="rounded-xl border border-emerald-100 bg-emerald-50 p-4">
 
                             <p className="text-xs font-bold uppercase tracking-wider text-emerald-500">
                                 Ready
@@ -636,16 +636,16 @@ const AdminDashboard = () => {
 
                     {/* INVENTORY HEALTH */}
 
-                    <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                    <section className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
                         <div className="flex items-center justify-between">
 
                             <div>
-                                <h2 className="text-base font-bold text-slate-900">
+                                <h2 className="text-base font-bold text-[#24211d]">
                                     Inventory Health
                                 </h2>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Current stock condition
                                 </p>
                             </div>
@@ -656,7 +656,7 @@ const AdminDashboard = () => {
                                         "/admin/inventory"
                                     )
                                 }
-                                className="text-xs font-bold text-slate-500 hover:text-slate-900"
+                                className="text-xs font-bold text-[#746b61] hover:text-[#24211d]"
                             >
                                 Inventory →
                             </button>
@@ -667,7 +667,7 @@ const AdminDashboard = () => {
 
                             <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border-[8px] border-emerald-100">
 
-                                <span className="text-xl font-bold text-slate-900">
+                                <span className="text-xl font-bold text-[#24211d]">
                                     {
                                         inventoryStats.health
                                     }%
@@ -679,7 +679,7 @@ const AdminDashboard = () => {
 
                                 <div className="flex items-center justify-between">
 
-                                    <span className="text-xs text-slate-500">
+                                    <span className="text-xs text-[#746b61]">
                                         Healthy stock
                                     </span>
 
@@ -693,7 +693,7 @@ const AdminDashboard = () => {
 
                                 </div>
 
-                                <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+                                <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e5ded3]">
 
                                     <div
                                         className="h-full rounded-full bg-emerald-500 transition-all"
@@ -706,9 +706,9 @@ const AdminDashboard = () => {
 
                                 <div className="mt-4 grid grid-cols-2 gap-3">
 
-                                    <div className="rounded-xl bg-amber-50 p-3">
+                                    <div className="rounded-xl bg-[#f2e4dc] p-3">
 
-                                        <p className="text-lg font-bold text-amber-700">
+                                        <p className="text-lg font-bold text-[#8f3d25]">
                                             {
                                                 inventoryStats
                                                     .lowStock
@@ -716,7 +716,7 @@ const AdminDashboard = () => {
                                             }
                                         </p>
 
-                                        <p className="text-[10px] font-bold uppercase text-amber-500">
+                                        <p className="text-[10px] font-bold uppercase text-[#a94b2e]">
                                             Low Stock
                                         </p>
 
@@ -748,14 +748,14 @@ const AdminDashboard = () => {
 
                     {/* SALES */}
 
-                    <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                    <section className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
                         <div>
-                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                 Order Summary
                             </p>
 
-                            <h2 className="mt-2 text-3xl font-bold text-slate-900">
+                            <h2 className="mt-2 text-3xl font-bold text-[#24211d]">
                                 ₹
                                 {Number(
                                     orderStats.totalRevenue
@@ -764,16 +764,16 @@ const AdminDashboard = () => {
                                 )}
                             </h2>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Revenue from non-cancelled orders
                             </p>
                         </div>
 
                         <div className="mt-6 grid grid-cols-2 gap-3">
 
-                            <div className="rounded-2xl bg-slate-50 p-4">
+                            <div className="rounded-xl bg-[#eee8de] p-4">
 
-                                <p className="text-2xl font-bold text-slate-900">
+                                <p className="text-2xl font-bold text-[#24211d]">
                                     {
                                         orderStats
                                             .delivered
@@ -781,13 +781,13 @@ const AdminDashboard = () => {
                                     }
                                 </p>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Delivered
                                 </p>
 
                             </div>
 
-                            <div className="rounded-2xl bg-red-50 p-4">
+                            <div className="rounded-xl bg-red-50 p-4">
 
                                 <p className="text-2xl font-bold text-red-600">
                                     {
@@ -817,21 +817,21 @@ const AdminDashboard = () => {
 
                     {/* STOCK ALERTS */}
 
-                    <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                    <section className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
                         <div className="flex items-center justify-between">
 
                             <div>
-                                <h2 className="text-base font-bold text-slate-900">
+                                <h2 className="text-base font-bold text-[#24211d]">
                                     Stock Alerts
                                 </h2>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Products needing attention
                                 </p>
                             </div>
 
-                            <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-600">
+                            <span className="rounded-full bg-[#f2e4dc] px-3 py-1 text-xs font-bold text-[#984126]">
                                 {
                                     inventoryStats
                                         .lowStock
@@ -870,18 +870,18 @@ const AdminDashboard = () => {
                                                 key={
                                                     product._id
                                                 }
-                                                className="flex items-center justify-between rounded-2xl bg-slate-50 p-3"
+                                                className="flex items-center justify-between rounded-xl bg-[#eee8de] p-3"
                                             >
 
                                                 <div className="min-w-0">
 
-                                                    <p className="truncate text-sm font-bold text-slate-800">
+                                                    <p className="truncate text-sm font-bold text-[#302b26]">
                                                         {
                                                             product.name
                                                         }
                                                     </p>
 
-                                                    <p className="mt-1 text-[10px] uppercase text-slate-400">
+                                                    <p className="mt-1 text-[10px] uppercase text-[#877d72]">
                                                         {
                                                             product.category ||
                                                             "Product"
@@ -896,7 +896,7 @@ const AdminDashboard = () => {
                                                         className={`rounded-full px-2.5 py-1 text-[10px] font-bold ${
                                                             isOut
                                                                 ? "bg-red-50 text-red-600"
-                                                                : "bg-amber-50 text-amber-600"
+                                                                : "bg-[#f2e4dc] text-[#984126]"
                                                         }`}
                                                     >
                                                         {isOut
@@ -915,7 +915,7 @@ const AdminDashboard = () => {
                                 0 &&
                                 inventoryStats.outOfStock.length ===
                                     0 && (
-                                    <div className="rounded-2xl bg-emerald-50 p-6 text-center">
+                                    <div className="rounded-xl bg-emerald-50 p-6 text-center">
 
                                         <div className="text-3xl">
                                             ✓
@@ -938,16 +938,16 @@ const AdminDashboard = () => {
 
                     {/* RECENT ORDERS */}
 
-                    <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                    <section className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
                         <div className="flex items-center justify-between">
 
                             <div>
-                                <h2 className="text-base font-bold text-slate-900">
+                                <h2 className="text-base font-bold text-[#24211d]">
                                     Recent Orders
                                 </h2>
 
-                                <p className="mt-1 text-xs text-slate-400">
+                                <p className="mt-1 text-xs text-[#877d72]">
                                     Latest customer orders
                                 </p>
                             </div>
@@ -958,7 +958,7 @@ const AdminDashboard = () => {
                                         "/admin/orders"
                                     )
                                 }
-                                className="text-xs font-bold text-slate-500 hover:text-slate-900"
+                                className="text-xs font-bold text-[#746b61] hover:text-[#24211d]"
                             >
                                 View all →
                             </button>
@@ -981,12 +981,12 @@ const AdminDashboard = () => {
                                                     `/admin/orders/${order._id}`
                                                 )
                                             }
-                                            className="flex w-full items-center justify-between gap-4 py-3 text-left transition hover:bg-slate-50"
+                                            className="flex w-full items-center justify-between gap-4 py-3 text-left transition hover:bg-[#eee8de]"
                                         >
 
                                             <div className="min-w-0">
 
-                                                <p className="text-sm font-bold text-slate-800">
+                                                <p className="text-sm font-bold text-[#302b26]">
                                                     #
                                                     {order._id
                                                         ?.slice(
@@ -995,7 +995,7 @@ const AdminDashboard = () => {
                                                         .toUpperCase()}
                                                 </p>
 
-                                                <p className="mt-1 truncate text-xs text-slate-400">
+                                                <p className="mt-1 truncate text-xs text-[#877d72]">
                                                     {
                                                         order.customerName ||
                                                         order.user
@@ -1020,7 +1020,7 @@ const AdminDashboard = () => {
                                                     }
                                                 </span>
 
-                                                <p className="mt-1 text-xs font-bold text-slate-800">
+                                                <p className="mt-1 text-xs font-bold text-[#302b26]">
                                                     ₹
                                                     {Number(
                                                         order.total ||
@@ -1044,7 +1044,7 @@ const AdminDashboard = () => {
                                         🛍️
                                     </div>
 
-                                    <p className="mt-3 text-sm font-bold text-slate-700">
+                                    <p className="mt-3 text-sm font-bold text-[#3e3730]">
                                         No orders yet
                                     </p>
 
@@ -1063,7 +1063,7 @@ const AdminDashboard = () => {
 
                 <section className="mt-6 pb-8">
 
-                    <h2 className="text-base font-bold text-slate-900">
+                    <h2 className="text-base font-bold text-[#24211d]">
                         Quick Actions
                     </h2>
 
@@ -1075,17 +1075,17 @@ const AdminDashboard = () => {
                                     "/admin/orders"
                                 )
                             }
-                            className="group rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                            className="group rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 text-left shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(36,33,29,0.05)]"
                         >
                             <div className="text-xl">
                                 🛒
                             </div>
 
-                            <p className="mt-3 text-sm font-bold text-slate-900">
+                            <p className="mt-3 text-sm font-bold text-[#24211d]">
                                 Manage Orders
                             </p>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Update order status
                             </p>
                         </button>
@@ -1096,17 +1096,17 @@ const AdminDashboard = () => {
                                     "/admin/inventory"
                                 )
                             }
-                            className="group rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                            className="group rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 text-left shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(36,33,29,0.05)]"
                         >
                             <div className="text-xl">
                                 📦
                             </div>
 
-                            <p className="mt-3 text-sm font-bold text-slate-900">
+                            <p className="mt-3 text-sm font-bold text-[#24211d]">
                                 Inventory
                             </p>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Manage stock levels
                             </p>
                         </button>
@@ -1117,17 +1117,17 @@ const AdminDashboard = () => {
                                     "/admin/menu"
                                 )
                             }
-                            className="group rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                            className="group rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 text-left shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(36,33,29,0.05)]"
                         >
                             <div className="text-xl">
                                 🏷️
                             </div>
 
-                            <p className="mt-3 text-sm font-bold text-slate-900">
+                            <p className="mt-3 text-sm font-bold text-[#24211d]">
                                 Products
                             </p>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Manage products
                             </p>
                         </button>
@@ -1136,17 +1136,17 @@ const AdminDashboard = () => {
                             onClick={() =>
                                 fetchDashboard(true)
                             }
-                            className="group rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                            className="group rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 text-left shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(36,33,29,0.05)]"
                         >
                             <div className="text-xl">
                                 🔄
                             </div>
 
-                            <p className="mt-3 text-sm font-bold text-slate-900">
+                            <p className="mt-3 text-sm font-bold text-[#24211d]">
                                 Refresh Data
                             </p>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Get latest information
                             </p>
                         </button>

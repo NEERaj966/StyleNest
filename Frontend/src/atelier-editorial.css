@@ -1,0 +1,78 @@
+
+
+:root {
+  --atelier-bg: #f3eee5;
+  --atelier-surface: #f8f4ec;
+  --atelier-surface-2: #eee8de;
+  --atelier-ink: #24211d;
+  --atelier-ink-soft: #3e3730;
+  --atelier-muted: #746b61;
+  --atelier-border: #d5cec2;
+  --atelier-border-strong: #c9c0b4;
+  --atelier-accent: #a94b2e;
+  --atelier-accent-dark: #8f3d25;
+  --atelier-shadow: 0 8px 28px rgba(36, 33, 29, .055);
+}
+
+html, body {
+  background: var(--atelier-bg);
+  color: var(--atelier-ink);
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Didot, "Bodoni MT", "Times New Roman", Georgia, serif;
+  color: var(--atelier-ink);
+  letter-spacing: -0.025em;
+}
+
+button, input, textarea, select {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+::selection {
+  background: #d8b8aa;
+  color: #24211d;
+}
+
+/* Keep the site slightly rounded without becoming a rounded-card dashboard. */
+.rounded-xl,
+.rounded-2xl {
+  border-radius: 14px;
+}
+
+button.rounded-xl,
+button.rounded-2xl,
+a.rounded-xl,
+a.rounded-2xl {
+  border-radius: 9px;
+}
+
+input.rounded-xl,
+textarea.rounded-xl,
+select.rounded-xl {
+  border-radius: 9px;
+}
+
+/* Editorial links / accents */
+.text-\[\#a94b2e\] {
+  color: var(--atelier-accent) !important;
+}
+
+.bg-\[\#a94b2e\] {
+  background-color: var(--atelier-accent) !important;
+}
+
+.hover\:bg-\[\#984126\]:hover {
+  background-color: var(--atelier-accent-dark) !important;
+}
+
+/* Avoid pure white surfaces where existing pages used them. */
+.bg-white {
+  background-color: var(--atelier-surface) !important;
+}

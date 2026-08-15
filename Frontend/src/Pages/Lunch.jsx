@@ -270,8 +270,8 @@ const Products = ({
         text: `${quantity} left`,
         desktopText: `${quantity} left`,
         className:
-          "border-amber-200 bg-amber-50 text-amber-700",
-        dot: "bg-amber-500",
+          "border-[#d9b6a8] bg-[#f2e4dc] text-[#8f3d25]",
+        dot: "bg-[#f2e4dc]0",
       };
     }
 
@@ -285,20 +285,20 @@ const Products = ({
   };
 
   const ProductSkeleton = () => (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-[22px]">
-      <div className="aspect-[0.88] animate-pulse bg-slate-100 sm:aspect-[4/3]" />
+    <div className="overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec] shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:rounded-[22px]">
+      <div className="aspect-[0.88] animate-pulse bg-[#e5ded3] sm:aspect-[4/3]" />
 
       <div className="space-y-3 p-3 sm:p-4">
-        <div className="h-3.5 w-2/3 animate-pulse rounded bg-slate-100" />
+        <div className="h-3.5 w-2/3 animate-pulse rounded bg-[#e5ded3]" />
 
-        <div className="h-3 w-full animate-pulse rounded bg-slate-100" />
+        <div className="h-3 w-full animate-pulse rounded bg-[#e5ded3]" />
 
         <div className="flex items-center justify-between pt-2">
-          <div className="h-4 w-16 animate-pulse rounded bg-slate-100" />
-          <div className="h-4 w-12 animate-pulse rounded bg-slate-100" />
+          <div className="h-4 w-16 animate-pulse rounded bg-[#e5ded3]" />
+          <div className="h-4 w-12 animate-pulse rounded bg-[#e5ded3]" />
         </div>
 
-        <div className="h-2.5 w-full animate-pulse rounded bg-slate-100" />
+        <div className="h-2.5 w-full animate-pulse rounded bg-[#e5ded3]" />
       </div>
     </div>
   );
@@ -322,9 +322,9 @@ const Products = ({
     return (
       <article
         onClick={handleProductClick}
-        className="group cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_3px_16px_rgba(15,23,42,0.05)] transition-all duration-300 active:scale-[0.985] sm:rounded-[22px] sm:hover:-translate-y-1 sm:hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)]"
+        className="group cursor-pointer overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec] shadow-[0_3px_16px_rgba(15,23,42,0.05)] transition-all duration-300 active:scale-[0.985] sm:rounded-[22px] sm:hover:-translate-y-1 sm:hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)]"
       >
-        <div className="relative aspect-[0.88] overflow-hidden bg-slate-100 sm:aspect-[4/3]">
+        <div className="relative aspect-[0.88] overflow-hidden bg-[#e5ded3] sm:aspect-[4/3]">
           {image ? (
             <img
               src={image}
@@ -339,12 +339,12 @@ const Products = ({
           )}
 
           <div className="absolute left-2 right-2 top-2 flex items-start justify-between gap-1.5 sm:left-3 sm:right-3 sm:top-3">
-            <span className="max-w-[48%] truncate rounded-full border border-white/70 bg-white/90 px-2 py-1 text-[7px] font-bold uppercase tracking-wide text-slate-700 shadow-sm backdrop-blur sm:px-2.5 sm:py-1.5 sm:text-[9px]">
+            <span className="max-w-[48%] truncate rounded-full border border-white/70 bg-[#f8f4ec]/90 px-2 py-1 text-[7px] font-bold uppercase tracking-wide text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur sm:px-2.5 sm:py-1.5 sm:text-[9px]">
               {product?.category || "Other"}
             </span>
 
             <span
-              className={`flex max-w-[48%] items-center gap-1 rounded-full border px-2 py-1 text-[7px] font-bold shadow-sm backdrop-blur sm:px-2.5 sm:py-1.5 sm:text-[9px] ${stock.className}`}
+              className={`flex max-w-[48%] items-center gap-1 rounded-full border px-2 py-1 text-[7px] font-bold shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur sm:px-2.5 sm:py-1.5 sm:text-[9px] ${stock.className}`}
             >
               <span
                 className={`h-1 w-1 shrink-0 rounded-full sm:h-1.5 sm:w-1.5 ${stock.dot}`}
@@ -370,7 +370,7 @@ const Products = ({
               <button
                 type="button"
                 onClick={() => onView?.(product)}
-                className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-[10px] shadow-lg backdrop-blur transition hover:bg-slate-50 sm:h-9 sm:w-9 sm:rounded-xl sm:text-sm"
+                className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f8f4ec]/95 text-[10px] shadow-[0_10px_28px_rgba(36,33,29,0.06)] backdrop-blur transition hover:bg-[#eee8de] sm:h-9 sm:w-9 sm:rounded-xl sm:text-sm"
                 title="View product"
               >
                 👁
@@ -379,7 +379,7 @@ const Products = ({
               <button
                 type="button"
                 onClick={() => onEdit?.(product)}
-                className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-[10px] shadow-lg backdrop-blur transition hover:bg-amber-50 sm:h-9 sm:w-9 sm:rounded-xl sm:text-sm"
+                className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f8f4ec]/95 text-[10px] shadow-[0_10px_28px_rgba(36,33,29,0.06)] backdrop-blur transition hover:bg-[#f2e4dc] sm:h-9 sm:w-9 sm:rounded-xl sm:text-sm"
                 title="Edit product"
               >
                 ✏️
@@ -388,7 +388,7 @@ const Products = ({
               <button
                 type="button"
                 onClick={() => onDelete?.(product)}
-                className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-[10px] shadow-lg backdrop-blur transition hover:bg-rose-50 sm:h-9 sm:w-9 sm:rounded-xl sm:text-sm"
+                className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f8f4ec]/95 text-[10px] shadow-[0_10px_28px_rgba(36,33,29,0.06)] backdrop-blur transition hover:bg-rose-50 sm:h-9 sm:w-9 sm:rounded-xl sm:text-sm"
                 title="Delete product"
               >
                 🗑
@@ -398,17 +398,17 @@ const Products = ({
         </div>
 
         <div className="p-2.5 sm:p-4">
-          <h3 className="truncate text-[11px] font-bold text-slate-900 sm:text-sm">
+          <h3 className="truncate text-[11px] font-bold text-[#24211d] sm:text-sm">
             {product?.name || "Unnamed Product"}
           </h3>
 
-          <p className="mt-1 hidden line-clamp-2 text-xs leading-5 text-slate-400 sm:block">
+          <p className="mt-1 hidden line-clamp-2 text-xs leading-5 text-[#877d72] sm:block">
             {product?.description ||
               "No description available."}
           </p>
 
           <div className="mt-2.5 flex items-center justify-between gap-1 sm:mt-4">
-            <span className="text-sm font-extrabold tracking-tight text-slate-950 sm:text-base">
+            <span className="text-sm font-extrabold tracking-tight text-[#24211d] sm:text-base">
               ₹
               {Number(
                 product?.price || 0
@@ -420,7 +420,7 @@ const Products = ({
                 ★
               </span>
 
-              <span className="text-[9px] font-bold text-slate-700 sm:text-xs">
+              <span className="text-[9px] font-bold text-[#3e3730] sm:text-xs">
                 {Number(
                   product?.rating || 0
                 ).toFixed(1)}
@@ -428,13 +428,13 @@ const Products = ({
             </div>
           </div>
 
-          <div className="mt-2 border-t border-slate-100 pt-2 sm:mt-3 sm:pt-3">
+          <div className="mt-2 border-t border-[#e0d8cd] pt-2 sm:mt-3 sm:pt-3">
             <div className="flex items-center justify-between gap-1">
-              <span className="truncate text-[8px] text-slate-400 sm:text-[10px]">
+              <span className="truncate text-[8px] text-[#877d72] sm:text-[10px]">
                 {product?.reviewCount || 0} reviews
               </span>
 
-              <span className="truncate text-[8px] font-medium text-slate-400 sm:text-[10px]">
+              <span className="truncate text-[8px] font-medium text-[#877d72] sm:text-[10px]">
                 {product?.quantity || 0} available
               </span>
             </div>
@@ -451,20 +451,20 @@ const Products = ({
         <header className="mb-5 sm:mb-7">
           <div className="flex items-center justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-lg shadow-md shadow-amber-100 sm:h-12 sm:w-12 sm:text-xl">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-lg shadow-[0_6px_18px_rgba(36,33,29,0.05)] shadow-amber-100 sm:h-12 sm:w-12 sm:text-xl">
                 🛍️
               </div>
 
               <div className="min-w-0">
-                <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-amber-600 sm:text-[10px]">
+                <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#984126] sm:text-[10px]">
                   StyleNest Collection
                 </p>
 
-                <h1 className="mt-0.5 truncate text-xl font-black tracking-tight text-slate-950 sm:text-3xl">
+                <h1 className="mt-0.5 truncate text-xl font-black tracking-tight text-[#24211d] sm:text-3xl">
                   Products
                 </h1>
 
-                <p className="mt-1 hidden text-sm text-slate-500 sm:block">
+                <p className="mt-1 hidden text-sm text-[#746b61] sm:block">
                   Discover and manage your store collection
                 </p>
               </div>
@@ -474,7 +474,7 @@ const Products = ({
               <button
                 type="button"
                 onClick={() => onAddProduct?.()}
-                className="flex h-10 shrink-0 items-center justify-center rounded-xl bg-slate-950 px-3 text-xs font-bold text-white shadow-md transition active:scale-95 sm:h-12 sm:rounded-2xl sm:px-5 sm:text-sm"
+                className="flex h-10 shrink-0 items-center justify-center rounded-xl bg-[#24211d] px-3 text-xs font-bold text-[#f8f4ec] shadow-[0_6px_18px_rgba(36,33,29,0.05)] transition active:scale-95 sm:h-12 sm:rounded-xl sm:px-5 sm:text-sm"
               >
                 <span className="mr-1 text-base sm:text-lg">
                   +
@@ -493,10 +493,10 @@ const Products = ({
         </header>
 
         {/* SEARCH + SORT */}
-        <section className="mb-4 rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm sm:rounded-[24px] sm:p-3">
+        <section className="mb-4 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-2.5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:rounded-[24px] sm:p-3">
           <div className="flex flex-col gap-2 sm:flex-row">
             <div className="relative min-w-0 flex-1">
-              <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-slate-400">
+              <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-[#877d72]">
                 🔍
               </span>
 
@@ -507,7 +507,7 @@ const Products = ({
                   setSearch(e.target.value)
                 }
                 placeholder="Search products..."
-                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-3 text-xs text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white focus:ring-2 focus:ring-amber-50 sm:h-12 sm:rounded-2xl sm:text-sm"
+                className="h-11 w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] pl-10 pr-3 text-xs text-[#302b26] outline-none transition placeholder:text-[#877d72] focus:border-amber-400 focus:bg-[#f8f4ec] focus:ring-2 focus:ring-amber-50 sm:h-12 sm:rounded-xl sm:text-sm"
               />
             </div>
 
@@ -516,7 +516,7 @@ const Products = ({
               onChange={(e) =>
                 setSortBy(e.target.value)
               }
-              className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-xs font-semibold text-slate-600 outline-none transition focus:border-amber-400 focus:bg-white sm:h-12 sm:w-auto sm:min-w-[170px] sm:rounded-2xl sm:px-4 sm:text-sm"
+              className="h-11 w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 text-xs font-semibold text-[#5d554c] outline-none transition focus:border-amber-400 focus:bg-[#f8f4ec] sm:h-12 sm:w-auto sm:min-w-[170px] sm:rounded-xl sm:px-4 sm:text-sm"
             >
               <option value="newest">Newest</option>
 
@@ -557,8 +557,8 @@ const Products = ({
                   }
                   className={`whitespace-nowrap rounded-full border px-3.5 py-2 text-[10px] font-bold transition ${
                     stockFilter === value
-                      ? "border-slate-950 bg-slate-950 text-white"
-                      : "border-slate-200 bg-white text-slate-600"
+                      ? "border-slate-950 bg-[#24211d] text-[#f8f4ec]"
+                      : "border-[#d5cec2] bg-[#f8f4ec] text-[#5d554c]"
                   }`}
                 >
                   {label}
@@ -578,8 +578,8 @@ const Products = ({
                   }
                   className={`whitespace-nowrap rounded-full border px-3.5 py-2 text-[10px] font-bold transition ${
                     ratingFilter === rating
-                      ? "border-amber-400 bg-amber-50 text-amber-700"
-                      : "border-slate-200 bg-white text-slate-600"
+                      ? "border-amber-400 bg-[#f2e4dc] text-[#8f3d25]"
+                      : "border-[#d5cec2] bg-[#f8f4ec] text-[#5d554c]"
                   }`}
                 >
                   ★ {rating}+
@@ -589,7 +589,7 @@ const Products = ({
               <button
                 type="button"
                 onClick={clearFilters}
-                className="whitespace-nowrap rounded-full border border-amber-200 bg-amber-50 px-3.5 py-2 text-[10px] font-bold text-amber-700"
+                className="whitespace-nowrap rounded-full border border-[#d9b6a8] bg-[#f2e4dc] px-3.5 py-2 text-[10px] font-bold text-[#8f3d25]"
               >
                 Clear
               </button>
@@ -599,13 +599,13 @@ const Products = ({
 
         {/* ERROR */}
         {error && (
-          <div className="mb-5 flex flex-col gap-3 rounded-2xl border border-rose-200 bg-rose-50 p-3.5 text-xs text-rose-700 sm:flex-row sm:items-center sm:justify-between sm:p-4 sm:text-sm">
+          <div className="mb-5 flex flex-col gap-3 rounded-xl border border-rose-200 bg-rose-50 p-3.5 text-xs text-rose-700 sm:flex-row sm:items-center sm:justify-between sm:p-4 sm:text-sm">
             <span>{error}</span>
 
             <button
               type="button"
               onClick={() => fetchProducts(1)}
-              className="w-full rounded-xl bg-white px-4 py-2.5 text-xs font-bold text-rose-600 shadow-sm transition hover:bg-rose-100 sm:w-auto"
+              className="w-full rounded-xl bg-[#f8f4ec] px-4 py-2.5 text-xs font-bold text-rose-600 shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:bg-rose-100 sm:w-auto"
             >
               Try Again
             </button>
@@ -615,14 +615,14 @@ const Products = ({
         {/* MAIN CONTENT */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[230px_minmax(0,1fr)]">
           {/* DESKTOP FILTER SIDEBAR */}
-          <aside className="hidden h-fit rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-6 lg:block">
+          <aside className="hidden h-fit rounded-[28px] border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] lg:sticky lg:top-6 lg:block">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-sm font-bold text-[#24211d]">
                   Filters
                 </p>
 
-                <p className="mt-1 text-[10px] text-slate-400">
+                <p className="mt-1 text-[10px] text-[#877d72]">
                   Refine your results
                 </p>
               </div>
@@ -630,15 +630,15 @@ const Products = ({
               <button
                 type="button"
                 onClick={clearFilters}
-                className="text-[10px] font-bold text-amber-600 transition hover:text-amber-700"
+                className="text-[10px] font-bold text-[#984126] transition hover:text-[#8f3d25]"
               >
                 Clear
               </button>
             </div>
 
             {/* AVAILABILITY */}
-            <div className="mt-6 border-t border-slate-100 pt-5">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+            <div className="mt-6 border-t border-[#e0d8cd] pt-5">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#746b61]">
                 Availability
               </p>
 
@@ -653,8 +653,8 @@ const Products = ({
                     key={item}
                     className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 text-xs transition ${
                       stockFilter === item
-                        ? "bg-amber-50 text-amber-700"
-                        : "text-slate-600 hover:bg-slate-50"
+                        ? "bg-[#f2e4dc] text-[#8f3d25]"
+                        : "text-[#5d554c] hover:bg-[#eee8de]"
                     }`}
                   >
                     <input
@@ -676,13 +676,13 @@ const Products = ({
             </div>
 
             {/* PRICE */}
-            <div className="mt-6 border-t border-slate-100 pt-5">
+            <div className="mt-6 border-t border-[#e0d8cd] pt-5">
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-[#746b61]">
                   Maximum Price
                 </p>
 
-                <span className="text-xs font-extrabold text-amber-600">
+                <span className="text-xs font-extrabold text-[#984126]">
                   ₹
                   {priceRange.toLocaleString(
                     "en-IN"
@@ -704,15 +704,15 @@ const Products = ({
                 className="mt-5 w-full accent-amber-500"
               />
 
-              <div className="mt-2 flex justify-between text-[10px] text-slate-400">
+              <div className="mt-2 flex justify-between text-[10px] text-[#877d72]">
                 <span>₹0</span>
                 <span>₹5,000+</span>
               </div>
             </div>
 
             {/* RATING */}
-            <div className="mt-6 border-t border-slate-100 pt-5">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+            <div className="mt-6 border-t border-[#e0d8cd] pt-5">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#746b61]">
                 Customer Rating
               </p>
 
@@ -730,8 +730,8 @@ const Products = ({
                     }
                     className={`flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left transition ${
                       ratingFilter === rating
-                        ? "bg-amber-50"
-                        : "hover:bg-slate-50"
+                        ? "bg-[#f2e4dc]"
+                        : "hover:bg-[#eee8de]"
                     }`}
                   >
                     <span className="text-xs">
@@ -744,7 +744,7 @@ const Products = ({
                       </span>
                     </span>
 
-                    <span className="text-[10px] text-slate-500">
+                    <span className="text-[10px] text-[#746b61]">
                       & up
                     </span>
                   </button>
@@ -759,22 +759,22 @@ const Products = ({
             <div className="mb-4 flex items-end justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2">
-                  <h2 className="text-base font-extrabold text-slate-950 sm:text-lg">
+                  <h2 className="text-base font-extrabold text-[#24211d] sm:text-lg">
                     All Products
                   </h2>
 
-                  <span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-bold text-slate-500">
+                  <span className="rounded-full bg-[#e5ded3] px-2 py-1 text-[9px] font-bold text-[#746b61]">
                     {filteredProducts.length}
                   </span>
                 </div>
 
-                <p className="mt-1 text-[10px] text-slate-400 sm:text-xs">
+                <p className="mt-1 text-[10px] text-[#877d72] sm:text-xs">
                   Showing matching products
                 </p>
               </div>
 
               {category !== "All" && (
-                <span className="rounded-full border border-amber-100 bg-amber-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-amber-700 sm:px-3 sm:py-1.5 sm:text-[10px]">
+                <span className="rounded-full border border-amber-100 bg-[#f2e4dc] px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-[#8f3d25] sm:px-3 sm:py-1.5 sm:text-[10px]">
                   {category}
                 </span>
               )}
@@ -791,23 +791,23 @@ const Products = ({
               </div>
             ) : filteredProducts.length === 0 ? (
               /* EMPTY STATE */
-              <div className="rounded-[24px] border border-slate-200 bg-white px-5 py-16 text-center shadow-sm sm:rounded-[28px] sm:py-20">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 text-2xl">
+              <div className="rounded-[24px] border border-[#d5cec2] bg-[#f8f4ec] px-5 py-16 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:rounded-[28px] sm:py-20">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#e5ded3] text-2xl">
                   📦
                 </div>
 
-                <h3 className="mt-4 text-sm font-extrabold text-slate-900 sm:text-base">
+                <h3 className="mt-4 text-sm font-extrabold text-[#24211d] sm:text-base">
                   No products found
                 </h3>
 
-                <p className="mx-auto mt-2 max-w-sm text-xs leading-5 text-slate-400 sm:text-sm">
+                <p className="mx-auto mt-2 max-w-sm text-xs leading-5 text-[#877d72] sm:text-sm">
                   Try changing your search or filters.
                 </p>
 
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="mt-5 rounded-xl bg-slate-950 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800"
+                  className="mt-5 rounded-xl bg-[#24211d] px-4 py-2.5 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
                 >
                   Clear Filters
                 </button>
@@ -836,11 +836,11 @@ const Products = ({
                       type="button"
                       onClick={handleLoadMore}
                       disabled={loadingMore}
-                      className="flex min-w-[160px] items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-xs font-bold text-slate-700 shadow-sm transition hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 sm:min-w-[180px] sm:rounded-2xl sm:text-sm"
+                      className="flex min-w-[160px] items-center justify-center gap-2 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] px-5 py-3 text-xs font-bold text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:border-[#c99a89] hover:bg-[#f2e4dc] hover:text-[#8f3d25] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 sm:min-w-[180px] sm:rounded-xl sm:text-sm"
                     >
                       {loadingMore ? (
                         <>
-                          <span className="h-4 w-4 animate-spin rounded-full border-2 border-slate-200 border-t-amber-500" />
+                          <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#d5cec2] border-t-amber-500" />
                           Loading...
                         </>
                       ) : (
@@ -856,13 +856,13 @@ const Products = ({
                 {/* END */}
                 {!hasMore && products.length > 0 && (
                   <div className="mt-9 flex items-center justify-center gap-2 sm:mt-12 sm:gap-3">
-                    <span className="h-px w-8 bg-slate-200 sm:w-16" />
+                    <span className="h-px w-8 bg-[#d9d0c4] sm:w-16" />
 
-                    <p className="text-[9px] font-medium text-slate-400 sm:text-[11px]">
+                    <p className="text-[9px] font-medium text-[#877d72] sm:text-[11px]">
                       You've reached the end
                     </p>
 
-                    <span className="h-px w-8 bg-slate-200 sm:w-16" />
+                    <span className="h-px w-8 bg-[#d9d0c4] sm:w-16" />
                   </div>
                 )}
               </>

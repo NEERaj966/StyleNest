@@ -218,7 +218,7 @@ const ProductDetailPage = () => {
             return {
                 text: "Checking stock...",
                 className:
-                    "bg-slate-100 text-slate-500 border-slate-200",
+                    "bg-[#e5ded3] text-[#746b61] border-[#d5cec2]",
             };
         }
 
@@ -240,7 +240,7 @@ const ProductDetailPage = () => {
             return {
                 text: `Only ${stockQuantity} left`,
                 className:
-                    "bg-amber-50 text-amber-600 border-amber-100",
+                    "bg-[#f2e4dc] text-[#984126] border-amber-100",
             };
         }
 
@@ -446,25 +446,25 @@ const ProductDetailPage = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-slate-50 p-4 sm:p-6 lg:p-8">
+            <div className="min-h-screen bg-[#eee8de] p-4 sm:p-6 lg:p-8">
                 <div className="mx-auto max-w-7xl animate-pulse">
 
-                    <div className="mb-6 h-5 w-40 rounded bg-slate-200" />
+                    <div className="mb-6 h-5 w-40 rounded bg-[#d9d0c4]" />
 
                     <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
 
-                        <div className="h-[550px] rounded-[2rem] bg-slate-200" />
+                        <div className="h-[550px] rounded-[2rem] bg-[#d9d0c4]" />
 
                         <div className="space-y-5">
-                            <div className="h-6 w-24 rounded bg-slate-200" />
+                            <div className="h-6 w-24 rounded bg-[#d9d0c4]" />
 
-                            <div className="h-10 w-3/4 rounded bg-slate-200" />
+                            <div className="h-10 w-3/4 rounded bg-[#d9d0c4]" />
 
-                            <div className="h-20 w-full rounded bg-slate-200" />
+                            <div className="h-20 w-full rounded bg-[#d9d0c4]" />
 
-                            <div className="h-10 w-32 rounded bg-slate-200" />
+                            <div className="h-10 w-32 rounded bg-[#d9d0c4]" />
 
-                            <div className="h-14 w-full rounded-2xl bg-slate-200" />
+                            <div className="h-14 w-full rounded-xl bg-[#d9d0c4]" />
                         </div>
 
                     </div>
@@ -479,19 +479,19 @@ const ProductDetailPage = () => {
 
     if (error || !product) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
+            <div className="flex min-h-screen items-center justify-center bg-[#eee8de] px-4">
 
-                <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+                <div className="w-full max-w-md rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-8 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-2xl">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-red-50 text-2xl">
                         ⚠️
                     </div>
 
-                    <h2 className="mt-5 text-lg font-bold text-slate-900">
+                    <h2 className="mt-5 text-lg font-bold text-[#24211d]">
                         Product not found
                     </h2>
 
-                    <p className="mt-2 text-sm leading-6 text-slate-400">
+                    <p className="mt-2 text-sm leading-6 text-[#877d72]">
                         {error ||
                             "The product you're looking for is no longer available."}
                     </p>
@@ -499,7 +499,7 @@ const ProductDetailPage = () => {
                     <button
                         type="button"
                         onClick={() => navigate(-1)}
-                        className="mt-6 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                        className="mt-6 rounded-xl bg-[#24211d] px-5 py-3 text-sm font-semibold text-[#f8f4ec] transition hover:bg-[#302b26]"
                     >
                         Go Back
                     </button>
@@ -514,7 +514,7 @@ const ProductDetailPage = () => {
     // =========================================================
 
     return (
-        <div className="min-h-screen bg-slate-50 px-4 py-6 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-[#eee8de] px-4 py-6 sm:px-6 lg:px-8">
 
             <div className="mx-auto max-w-7xl">
 
@@ -522,19 +522,19 @@ const ProductDetailPage = () => {
                     BREADCRUMB
                 ================================================= */}
 
-                <div className="mb-6 flex items-center gap-2 text-xs text-slate-400">
+                <div className="mb-6 flex items-center gap-2 text-xs text-[#877d72]">
 
                     <button
                         type="button"
                         onClick={() => navigate(-1)}
-                        className="font-medium transition hover:text-slate-700"
+                        className="font-medium transition hover:text-[#3e3730]"
                     >
                         Products
                     </button>
 
                     <span>›</span>
 
-                    <span className="text-slate-600">
+                    <span className="text-[#5d554c]">
                         {product.name}
                     </span>
 
@@ -550,9 +550,9 @@ const ProductDetailPage = () => {
                         IMAGE GALLERY
                     ================================================= */}
 
-                    <div className="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+                    <div className="rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-3 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-4">
 
-                        <div className="relative overflow-hidden rounded-[1.5rem] bg-slate-100">
+                        <div className="relative overflow-hidden rounded-[1.5rem] bg-[#e5ded3]">
 
                             <div className="relative flex min-h-[430px] items-center justify-center sm:min-h-[560px]">
 
@@ -574,7 +574,7 @@ const ProductDetailPage = () => {
                                         "
                                     />
                                 ) : (
-                                    <div className="flex flex-col items-center justify-center text-slate-300">
+                                    <div className="flex flex-col items-center justify-center text-[#9b9186]">
                                         <span className="text-7xl">
                                             📦
                                         </span>
@@ -587,14 +587,14 @@ const ProductDetailPage = () => {
 
                                 {/* CATEGORY */}
 
-                                <span className="absolute left-5 top-5 rounded-full bg-white/95 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-700 shadow-sm backdrop-blur">
+                                <span className="absolute left-5 top-5 rounded-full bg-[#f8f4ec]/95 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur">
                                     {product.category}
                                 </span>
 
                                 {/* IMAGE COUNT */}
 
                                 {productImages.length > 1 && (
-                                    <span className="absolute bottom-5 left-5 rounded-full bg-black/60 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur">
+                                    <span className="absolute bottom-5 left-5 rounded-full bg-[#24211d]/60 px-3 py-1.5 text-[10px] font-semibold text-[#f8f4ec] backdrop-blur">
                                         {selectedImage + 1} /{" "}
                                         {productImages.length}
                                     </span>
@@ -615,9 +615,9 @@ const ProductDetailPage = () => {
                                         items-center
                                         justify-center
                                         rounded-full
-                                        bg-white/95
+                                        bg-[#f8f4ec]/95
                                         text-lg
-                                        shadow-lg
+                                        shadow-[0_10px_28px_rgba(36,33,29,0.06)]
                                         backdrop-blur
                                         transition
                                         hover:scale-105
@@ -648,10 +648,10 @@ const ProductDetailPage = () => {
                                             items-center
                                             justify-center
                                             rounded-full
-                                            bg-white/90
+                                            bg-[#f8f4ec]/90
                                             text-xl
-                                            text-slate-700
-                                            shadow-lg
+                                            text-[#3e3730]
+                                            shadow-[0_10px_28px_rgba(36,33,29,0.06)]
                                             backdrop-blur
                                             transition
                                             hover:scale-105
@@ -681,10 +681,10 @@ const ProductDetailPage = () => {
                                             items-center
                                             justify-center
                                             rounded-full
-                                            bg-white/90
+                                            bg-[#f8f4ec]/90
                                             text-xl
-                                            text-slate-700
-                                            shadow-lg
+                                            text-[#3e3730]
+                                            shadow-[0_10px_28px_rgba(36,33,29,0.06)]
                                             backdrop-blur
                                             transition
                                             hover:scale-105
@@ -717,14 +717,14 @@ const ProductDetailPage = () => {
                                                 relative
                                                 aspect-square
                                                 overflow-hidden
-                                                rounded-2xl
+                                                rounded-xl
                                                 border-2
-                                                bg-slate-100
+                                                bg-[#e5ded3]
                                                 transition
                                                 ${selectedImage ===
                                                     index
                                                     ? "border-amber-500 ring-4 ring-amber-100"
-                                                    : "border-transparent hover:border-slate-300"
+                                                    : "border-transparent hover:border-[#c9c0b4]"
                                                 }
                                             `}
                                         >
@@ -738,7 +738,7 @@ const ProductDetailPage = () => {
 
                                             {selectedImage ===
                                                 index && (
-                                                    <div className="absolute inset-0 bg-black/10" />
+                                                    <div className="absolute inset-0 bg-[#24211d]/10" />
                                                 )}
                                         </button>
                                     )
@@ -753,13 +753,13 @@ const ProductDetailPage = () => {
                         PRODUCT INFORMATION
                     ================================================= */}
 
-                    <div className="flex flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                    <div className="flex flex-col rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-8">
 
                         {/* CATEGORY + STOCK */}
 
                         <div className="flex items-center justify-between gap-3">
 
-                            <span className="rounded-full bg-amber-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-amber-600">
+                            <span className="rounded-full bg-[#f2e4dc] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#984126]">
                                 {product.category}
                             </span>
 
@@ -781,7 +781,7 @@ const ProductDetailPage = () => {
 
                         {/* NAME */}
 
-                        <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+                        <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-[#24211d] sm:text-4xl">
                             {product.name}
                         </h1>
 
@@ -789,13 +789,13 @@ const ProductDetailPage = () => {
 
                         <div className="mt-4 flex flex-wrap items-center gap-3">
 
-                            <div className="flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1.5">
+                            <div className="flex items-center gap-1 rounded-full bg-[#f2e4dc] px-3 py-1.5">
 
                                 <span className="text-amber-400">
                                     ★
                                 </span>
 
-                                <span className="text-xs font-bold text-slate-700">
+                                <span className="text-xs font-bold text-[#3e3730]">
                                     {Number(
                                         product.rating || 0
                                     ).toFixed(1)}
@@ -803,7 +803,7 @@ const ProductDetailPage = () => {
 
                             </div>
 
-                            <span className="text-xs text-slate-400">
+                            <span className="text-xs text-[#877d72]">
                                 {product.reviewCount || 0}{" "}
                                 customer reviews
                             </span>
@@ -814,11 +814,11 @@ const ProductDetailPage = () => {
 
                         <div className="mt-7">
 
-                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                 Description
                             </p>
 
-                            <p className="mt-3 text-sm leading-7 text-slate-500">
+                            <p className="mt-3 text-sm leading-7 text-[#746b61]">
                                 {product.description ||
                                     "This product does not have a description yet."}
                             </p>
@@ -827,15 +827,15 @@ const ProductDetailPage = () => {
 
                         {/* PRICE */}
 
-                        <div className="mt-7 border-y border-slate-100 py-6">
+                        <div className="mt-7 border-y border-[#e0d8cd] py-6">
 
-                            <p className="text-xs font-medium text-slate-400">
+                            <p className="text-xs font-medium text-[#877d72]">
                                 Price
                             </p>
 
                             <div className="mt-1 flex items-end gap-2">
 
-                                <span className="text-3xl font-bold text-slate-900">
+                                <span className="text-3xl font-bold text-[#24211d]">
                                     ₹
                                     {Number(
                                         product.price || 0
@@ -844,7 +844,7 @@ const ProductDetailPage = () => {
                                     )}
                                 </span>
 
-                                <span className="pb-1 text-xs text-slate-400">
+                                <span className="pb-1 text-xs text-[#877d72]">
                                     Inclusive of all taxes
                                 </span>
 
@@ -857,11 +857,11 @@ const ProductDetailPage = () => {
                         {!isOutOfStock && (
                             <div className="mt-6">
 
-                                <p className="text-xs font-bold text-slate-700">
+                                <p className="text-xs font-bold text-[#3e3730]">
                                     Quantity
                                 </p>
 
-                                <div className="mt-3 flex w-fit items-center overflow-hidden rounded-xl border border-slate-200">
+                                <div className="mt-3 flex w-fit items-center overflow-hidden rounded-xl border border-[#d5cec2]">
 
                                     <button
                                         type="button"
@@ -872,12 +872,12 @@ const ProductDetailPage = () => {
                                             quantity <=
                                             1
                                         }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-slate-500 transition hover:bg-slate-50 disabled:opacity-30"
+                                        className="flex h-11 w-11 items-center justify-center text-lg text-[#746b61] transition hover:bg-[#eee8de] disabled:opacity-30"
                                     >
                                         −
                                     </button>
 
-                                    <span className="flex h-11 w-12 items-center justify-center border-x border-slate-200 text-sm font-bold text-slate-800">
+                                    <span className="flex h-11 w-12 items-center justify-center border-x border-[#d5cec2] text-sm font-bold text-[#302b26]">
                                         {quantity}
                                     </span>
 
@@ -893,7 +893,7 @@ const ProductDetailPage = () => {
                                                 0
                                             )
                                         }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-slate-500 transition hover:bg-slate-50 disabled:opacity-30"
+                                        className="flex h-11 w-11 items-center justify-center text-lg text-[#746b61] transition hover:bg-[#eee8de] disabled:opacity-30"
                                     >
                                         +
                                     </button>
@@ -916,30 +916,30 @@ const ProductDetailPage = () => {
             flex
             items-center
             justify-between
-            rounded-2xl
+            rounded-xl
             border
-            border-slate-100
-            bg-slate-50
+            border-[#e0d8cd]
+            bg-[#eee8de]
             px-4
             py-3
         "
                             >
                                 <div>
-                                    <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#877d72]">
                                         Your Order
                                     </p>
 
-                                    <p className="mt-1 text-xs font-semibold text-slate-700">
+                                    <p className="mt-1 text-xs font-semibold text-[#3e3730]">
                                         {quantity} × {product.name}
                                     </p>
                                 </div>
 
                                 <div className="text-right">
-                                    <p className="text-[10px] text-slate-400">
+                                    <p className="text-[10px] text-[#877d72]">
                                         Total
                                     </p>
 
-                                    <p className="text-base font-bold text-slate-900">
+                                    <p className="text-base font-bold text-[#24211d]">
                                         ₹
                                         {(
                                             Number(product.price || 0) * quantity
@@ -971,20 +971,20 @@ const ProductDetailPage = () => {
                 justify-center
                 gap-3
                 overflow-hidden
-                rounded-2xl
+                rounded-xl
                 border
-                border-amber-200
-                bg-amber-50
+                border-[#d9b6a8]
+                bg-[#f2e4dc]
                 px-5
                 text-sm
                 font-bold
-                text-amber-700
+                text-[#8f3d25]
                 transition-all
                 duration-200
                 hover:-translate-y-0.5
-                hover:border-amber-300
-                hover:bg-amber-100
-                hover:shadow-lg
+                hover:border-[#c99a89]
+                hover:bg-[#ead6cc]
+                hover:shadow-[0_10px_28px_rgba(36,33,29,0.06)]
                 hover:shadow-amber-100
                 active:translate-y-0
                 disabled:cursor-not-allowed
@@ -1000,9 +1000,9 @@ const ProductDetailPage = () => {
                     items-center
                     justify-center
                     rounded-xl
-                    bg-white
+                    bg-[#f8f4ec]
                     text-lg
-                    shadow-sm
+                    shadow-[0_3px_12px_rgba(36,33,29,0.04)]
                     transition-transform
                     duration-200
                     group-hover:scale-110
@@ -1016,7 +1016,7 @@ const ProductDetailPage = () => {
                             animate-spin
                             rounded-full
                             border-2
-                            border-amber-200
+                            border-[#d9b6a8]
                             border-t-amber-700
                         "
                                             />
@@ -1033,7 +1033,7 @@ const ProductDetailPage = () => {
                                         </span>
 
                                         {!addingToCart && (
-                                            <span className="text-[9px] font-medium text-amber-500">
+                                            <span className="text-[9px] font-medium text-[#a94b2e]">
                                                 Save for later
                                             </span>
                                         )}
@@ -1054,19 +1054,19 @@ const ProductDetailPage = () => {
                 justify-center
                 gap-3
                 overflow-hidden
-                rounded-2xl
-                bg-slate-900
+                rounded-xl
+                bg-[#24211d]
                 px-5
                 text-sm
                 font-bold
-                text-white
-                shadow-lg
+                text-[#f8f4ec]
+                shadow-[0_10px_28px_rgba(36,33,29,0.06)]
                 shadow-slate-200
                 transition-all
                 duration-200
                 hover:-translate-y-0.5
-                hover:bg-slate-800
-                hover:shadow-xl
+                hover:bg-[#302b26]
+                hover:shadow-[0_14px_36px_rgba(36,33,29,0.07)]
                 hover:shadow-slate-300
                 active:translate-y-0
                 disabled:cursor-not-allowed
@@ -1099,7 +1099,7 @@ const ProductDetailPage = () => {
                     items-center
                     justify-center
                     rounded-xl
-                    bg-white/10
+                    bg-[#f8f4ec]/10
                     text-lg
                     backdrop-blur
                     transition-transform
@@ -1132,7 +1132,7 @@ const ProductDetailPage = () => {
                                         </span>
 
                                         {!buyingNow && (
-                                            <span className="text-[9px] font-medium text-slate-400">
+                                            <span className="text-[9px] font-medium text-[#877d72]">
                                                 Fast checkout
                                             </span>
                                         )}
@@ -1152,19 +1152,19 @@ const ProductDetailPage = () => {
             items-center
             justify-center
             gap-2
-            rounded-2xl
+            rounded-xl
             border
-            border-slate-200
-            bg-white
+            border-[#d5cec2]
+            bg-[#f8f4ec]
             text-xs
             font-semibold
-            text-slate-600
+            text-[#5d554c]
             transition-all
             duration-200
             hover:-translate-y-0.5
-            hover:border-slate-300
-            hover:bg-slate-50
-            hover:shadow-sm
+            hover:border-[#c9c0b4]
+            hover:bg-[#eee8de]
+            hover:shadow-[0_3px_12px_rgba(36,33,29,0.04)]
         "
                             >
                                 <span className="text-base">
@@ -1187,7 +1187,7 @@ const ProductDetailPage = () => {
                 gap-2
                 text-[10px]
                 font-medium
-                text-slate-400
+                text-[#877d72]
             "
                                 >
                                     <span className="text-emerald-500">
@@ -1215,32 +1215,32 @@ const ProductDetailPage = () => {
 
                         <div className="mt-7 grid grid-cols-3 gap-3">
 
-                            <div className="rounded-2xl bg-slate-50 p-4 text-center">
+                            <div className="rounded-xl bg-[#eee8de] p-4 text-center">
                                 <span className="text-lg">
                                     🚚
                                 </span>
 
-                                <p className="mt-2 text-[10px] font-bold text-slate-700">
+                                <p className="mt-2 text-[10px] font-bold text-[#3e3730]">
                                     Fast Delivery
                                 </p>
                             </div>
 
-                            <div className="rounded-2xl bg-slate-50 p-4 text-center">
+                            <div className="rounded-xl bg-[#eee8de] p-4 text-center">
                                 <span className="text-lg">
                                     🔒
                                 </span>
 
-                                <p className="mt-2 text-[10px] font-bold text-slate-700">
+                                <p className="mt-2 text-[10px] font-bold text-[#3e3730]">
                                     Secure Payment
                                 </p>
                             </div>
 
-                            <div className="rounded-2xl bg-slate-50 p-4 text-center">
+                            <div className="rounded-xl bg-[#eee8de] p-4 text-center">
                                 <span className="text-lg">
                                     ↩️
                                 </span>
 
-                                <p className="mt-2 text-[10px] font-bold text-slate-700">
+                                <p className="mt-2 text-[10px] font-bold text-[#3e3730]">
                                     Easy Returns
                                 </p>
                             </div>
@@ -1256,7 +1256,7 @@ const ProductDetailPage = () => {
                             DELIVERY ADDRESS
                 ================================================= */}
 
-                <section className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                <section className="mt-8 rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-8">
 
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
@@ -1264,12 +1264,12 @@ const ProductDetailPage = () => {
                             <div className="flex items-center gap-2">
                                 <span className="text-lg">📍</span>
 
-                                <h2 className="text-base font-bold text-slate-900">
+                                <h2 className="text-base font-bold text-[#24211d]">
                                     Delivery Address
                                 </h2>
                             </div>
 
-                            <p className="mt-1 text-xs text-slate-400">
+                            <p className="mt-1 text-xs text-[#877d72]">
                                 Choose where you want your order delivered
                             </p>
                         </div>
@@ -1277,7 +1277,7 @@ const ProductDetailPage = () => {
                         <button
                             type="button"
                             onClick={() => navigate("/addresses")}
-                            className="rounded-xl border border-slate-200 px-4 py-2.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50"
+                            className="rounded-xl border border-[#d5cec2] px-4 py-2.5 text-xs font-bold text-[#3e3730] transition hover:bg-[#eee8de]"
                         >
                             {address ? "Change Address" : "Add Address"}
                         </button>
@@ -1288,19 +1288,19 @@ const ProductDetailPage = () => {
 
                         {addressLoading ? (
 
-                            <div className="animate-pulse rounded-2xl bg-slate-50 p-5">
+                            <div className="animate-pulse rounded-xl bg-[#eee8de] p-5">
 
-                                <div className="h-4 w-32 rounded bg-slate-200" />
+                                <div className="h-4 w-32 rounded bg-[#d9d0c4]" />
 
-                                <div className="mt-3 h-3 w-full rounded bg-slate-200" />
+                                <div className="mt-3 h-3 w-full rounded bg-[#d9d0c4]" />
 
-                                <div className="mt-2 h-3 w-2/3 rounded bg-slate-200" />
+                                <div className="mt-2 h-3 w-2/3 rounded bg-[#d9d0c4]" />
 
                             </div>
 
                         ) : address ? (
 
-                            <div className="rounded-2xl border border-amber-100 bg-amber-50/50 p-5">
+                            <div className="rounded-xl border border-amber-100 bg-[#f2e4dc]/50 p-5">
 
                                 <div className="flex items-start justify-between gap-4">
 
@@ -1308,12 +1308,12 @@ const ProductDetailPage = () => {
 
                                         <div className="flex flex-wrap items-center gap-2">
 
-                                            <p className="text-sm font-bold text-slate-900">
+                                            <p className="text-sm font-bold text-[#24211d]">
                                                 {address.name}
                                             </p>
 
                                             {address.type && (
-                                                <span className="rounded-full bg-white px-2 py-1 text-[9px] font-bold uppercase text-amber-600">
+                                                <span className="rounded-full bg-[#f8f4ec] px-2 py-1 text-[9px] font-bold uppercase text-[#984126]">
                                                     {address.type}
                                                 </span>
                                             )}
@@ -1326,7 +1326,7 @@ const ProductDetailPage = () => {
 
                                         </div>
 
-                                        <p className="mt-2 text-xs leading-6 text-slate-500">
+                                        <p className="mt-2 text-xs leading-6 text-[#746b61]">
 
                                             {address.addressLine1}
 
@@ -1357,13 +1357,13 @@ const ProductDetailPage = () => {
                                         </p>
 
                                         {address.landmark && (
-                                            <p className="mt-1 text-xs text-slate-400">
+                                            <p className="mt-1 text-xs text-[#877d72]">
                                                 Landmark: {address.landmark}
                                             </p>
                                         )}
 
                                         {address.phone && (
-                                            <p className="mt-2 text-xs font-medium text-slate-600">
+                                            <p className="mt-2 text-xs font-medium text-[#5d554c]">
                                                 📞 {address.phone}
                                             </p>
                                         )}
@@ -1380,24 +1380,24 @@ const ProductDetailPage = () => {
 
                         ) : (
 
-                            <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-7 text-center">
+                            <div className="rounded-xl border border-dashed border-[#c9c0b4] bg-[#eee8de] p-7 text-center">
 
-                                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white text-xl shadow-sm">
+                                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#f8f4ec] text-xl shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
                                     📍
                                 </div>
 
-                                <h3 className="mt-3 text-sm font-bold text-slate-800">
+                                <h3 className="mt-3 text-sm font-bold text-[#302b26]">
                                     Add a delivery address
                                 </h3>
 
-                                <p className="mx-auto mt-1 max-w-sm text-xs leading-5 text-slate-400">
+                                <p className="mx-auto mt-1 max-w-sm text-xs leading-5 text-[#877d72]">
                                     Add your address to check delivery options for this product.
                                 </p>
 
                                 <button
                                     type="button"
                                     onClick={() => navigate("/addresses/neeraj")}
-                                    className="mt-4 rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800"
+                                    className="mt-4 rounded-xl bg-[#24211d] px-4 py-2.5 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
                                 >
                                     Add Address
                                 </button>
@@ -1414,7 +1414,7 @@ const ProductDetailPage = () => {
                     REVIEWS
                 ================================================= */}
 
-                <section className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                <section className="mt-8 rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-8">
 
                     <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
 
@@ -1422,13 +1422,13 @@ const ProductDetailPage = () => {
 
                         <div>
 
-                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                 Customer Reviews
                             </p>
 
-                            <div className="mt-5 rounded-3xl bg-slate-50 p-6">
+                            <div className="mt-5 rounded-xl bg-[#eee8de] p-6">
 
-                                <p className="text-4xl font-bold text-slate-900">
+                                <p className="text-4xl font-bold text-[#24211d]">
                                     {Number(
                                         product.rating ||
                                         0
@@ -1462,7 +1462,7 @@ const ProductDetailPage = () => {
 
                                 </div>
 
-                                <p className="mt-2 text-xs text-slate-400">
+                                <p className="mt-2 text-xs text-[#877d72]">
                                     Based on{" "}
                                     {product.reviewCount ||
                                         0}{" "}
@@ -1493,14 +1493,14 @@ const ProductDetailPage = () => {
                                                     review._id ||
                                                     index
                                                 }
-                                                className="rounded-2xl border border-slate-100 p-5"
+                                                className="rounded-xl border border-[#e0d8cd] p-5"
                                             >
 
                                                 <div className="flex items-start justify-between gap-4">
 
                                                     <div>
 
-                                                        <p className="text-sm font-bold text-slate-800">
+                                                        <p className="text-sm font-bold text-[#302b26]">
                                                             {review.name ||
                                                                 "Customer"}
                                                         </p>
@@ -1534,7 +1534,7 @@ const ProductDetailPage = () => {
                                                     </div>
 
                                                     {review.createdAt && (
-                                                        <span className="text-[10px] text-slate-400">
+                                                        <span className="text-[10px] text-[#877d72]">
                                                             {new Date(
                                                                 review.createdAt
                                                             ).toLocaleDateString(
@@ -1551,7 +1551,7 @@ const ProductDetailPage = () => {
                                                 </div>
 
                                                 {review.comment && (
-                                                    <p className="mt-4 text-xs leading-6 text-slate-500">
+                                                    <p className="mt-4 text-xs leading-6 text-[#746b61]">
                                                         {
                                                             review.comment
                                                         }
@@ -1567,17 +1567,17 @@ const ProductDetailPage = () => {
 
                             ) : (
 
-                                <div className="rounded-2xl border border-dashed border-slate-200 p-8 text-center">
+                                <div className="rounded-xl border border-dashed border-[#d5cec2] p-8 text-center">
 
                                     <span className="text-3xl">
                                         ⭐
                                     </span>
 
-                                    <p className="mt-3 text-sm font-bold text-slate-700">
+                                    <p className="mt-3 text-sm font-bold text-[#3e3730]">
                                         No reviews yet
                                     </p>
 
-                                    <p className="mt-1 text-xs text-slate-400">
+                                    <p className="mt-1 text-xs text-[#877d72]">
                                         Be the first person to review this product.
                                     </p>
 
@@ -1591,9 +1591,9 @@ const ProductDetailPage = () => {
 
                     {/* WRITE REVIEW */}
 
-                    <div className="mt-8 border-t border-slate-100 pt-8">
+                    <div className="mt-8 border-t border-[#e0d8cd] pt-8">
 
-                        <h3 className="text-sm font-bold text-slate-900">
+                        <h3 className="text-sm font-bold text-[#24211d]">
                             Write a Review
                         </h3>
 
@@ -1606,7 +1606,7 @@ const ProductDetailPage = () => {
 
                             <div>
 
-                                <p className="text-xs font-semibold text-slate-600">
+                                <p className="text-xs font-semibold text-[#5d554c]">
                                     Your Rating
                                 </p>
 
@@ -1657,7 +1657,7 @@ const ProductDetailPage = () => {
                                 }
                                 rows={4}
                                 placeholder="Share your experience with this product..."
-                                className="mt-5 w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
+                                className="mt-5 w-full resize-none rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3 text-sm text-[#3e3730] outline-none transition placeholder:text-[#877d72] focus:border-amber-400 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-amber-100"
                             />
 
                             <div className="mt-4 flex justify-end">
@@ -1668,7 +1668,7 @@ const ProductDetailPage = () => {
                                         submittingReview ||
                                         !reviewComment.trim()
                                     }
-                                    className="rounded-xl bg-slate-900 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                                    className="rounded-xl bg-[#24211d] px-5 py-3 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26] disabled:cursor-not-allowed disabled:opacity-50"
                                 >
                                     {submittingReview
                                         ? "Submitting..."
@@ -1692,7 +1692,7 @@ const ProductDetailPage = () => {
                     <button
                         type="button"
                         onClick={() => navigate(-1)}
-                        className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-xs font-bold text-slate-600 shadow-sm transition hover:bg-slate-50"
+                        className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] px-5 py-3 text-xs font-bold text-[#5d554c] shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:bg-[#eee8de]"
                     >
                         ← Continue Shopping
                     </button>

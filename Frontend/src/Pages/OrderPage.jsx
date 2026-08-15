@@ -338,19 +338,19 @@ const Order = () => {
 
   if (!product) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
+      <div className="flex min-h-screen items-center justify-center bg-[#eee8de] px-4">
 
-        <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+        <div className="w-full max-w-md rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-8 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-3xl">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#f2e4dc] text-3xl">
             🛒
           </div>
 
-          <h1 className="mt-5 text-xl font-bold text-slate-900">
+          <h1 className="mt-5 text-xl font-bold text-[#24211d]">
             No product selected
           </h1>
 
-          <p className="mt-2 text-sm leading-6 text-slate-400">
+          <p className="mt-2 text-sm leading-6 text-[#877d72]">
             Please select a product before
             continuing to checkout.
           </p>
@@ -360,7 +360,7 @@ const Order = () => {
             onClick={() =>
               navigate("/")
             }
-            className="mt-6 rounded-xl bg-slate-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
+            className="mt-6 rounded-xl bg-[#24211d] px-5 py-3 text-sm font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
           >
             Continue Shopping
           </button>
@@ -376,7 +376,7 @@ const Order = () => {
   // =========================================================
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-6 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#eee8de] px-4 py-6 sm:px-6 lg:px-8">
 
       <div className="mx-auto max-w-6xl">
 
@@ -391,7 +391,7 @@ const Order = () => {
             onClick={() =>
               navigate(-1)
             }
-            className="mb-4 text-xs font-semibold text-slate-400 transition hover:text-slate-700"
+            className="mb-4 text-xs font-semibold text-[#877d72] transition hover:text-[#3e3730]"
           >
             ← Back
           </button>
@@ -399,15 +399,15 @@ const Order = () => {
           <div className="flex items-end justify-between gap-4">
 
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-amber-500">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#a94b2e]">
                 Checkout
               </p>
 
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-[#24211d]">
                 Complete Your Order
               </h1>
 
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="mt-2 text-sm text-[#877d72]">
                 Review your order and delivery
                 details before placing it.
               </p>
@@ -437,31 +437,31 @@ const Order = () => {
                             PRODUCT
                         ================================================= */}
 
-            <section className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <section className="rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
               <div className="flex items-center justify-between">
 
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#877d72]">
                     Your Product
                   </p>
 
-                  <h2 className="mt-1 text-base font-bold text-slate-900">
+                  <h2 className="mt-1 text-base font-bold text-[#24211d]">
                     Order Summary
                   </h2>
                 </div>
 
-                <span className="rounded-full bg-amber-50 px-3 py-1.5 text-[10px] font-bold text-amber-600">
+                <span className="rounded-full bg-[#f2e4dc] px-3 py-1.5 text-[10px] font-bold text-[#984126]">
                   {product.category}
                 </span>
 
               </div>
 
-              <div className="mt-5 flex gap-4 rounded-2xl bg-slate-50 p-4">
+              <div className="mt-5 flex gap-4 rounded-xl bg-[#eee8de] p-4">
 
                 {/* PRODUCT IMAGE */}
 
-                <div className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-white">
+                <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-[#f8f4ec]">
 
                   {product.images?.length >
                     0 ? (
@@ -497,11 +497,11 @@ const Order = () => {
 
                 <div className="min-w-0 flex-1">
 
-                  <h3 className="truncate text-sm font-bold text-slate-900">
+                  <h3 className="truncate text-sm font-bold text-[#24211d]">
                     {product.name}
                   </h3>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-[#877d72]">
                     ₹
                     {Number(
                       product.price ||
@@ -516,7 +516,7 @@ const Order = () => {
 
                   <div className="mt-4 flex items-center justify-between">
 
-                    <div className="flex items-center overflow-hidden rounded-xl border border-slate-200 bg-white">
+                    <div className="flex items-center overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec]">
 
                       <button
                         type="button"
@@ -527,12 +527,12 @@ const Order = () => {
                           quantity <=
                           1
                         }
-                        className="flex h-9 w-9 items-center justify-center text-slate-500 hover:bg-slate-50 disabled:opacity-30"
+                        className="flex h-9 w-9 items-center justify-center text-[#746b61] hover:bg-[#eee8de] disabled:opacity-30"
                       >
                         −
                       </button>
 
-                      <span className="flex h-9 w-10 items-center justify-center border-x border-slate-200 text-xs font-bold text-slate-800">
+                      <span className="flex h-9 w-10 items-center justify-center border-x border-[#d5cec2] text-xs font-bold text-[#302b26]">
                         {quantity}
                       </span>
 
@@ -548,14 +548,14 @@ const Order = () => {
                             1
                           )
                         }
-                        className="flex h-9 w-9 items-center justify-center text-slate-500 hover:bg-slate-50 disabled:opacity-30"
+                        className="flex h-9 w-9 items-center justify-center text-[#746b61] hover:bg-[#eee8de] disabled:opacity-30"
                       >
                         +
                       </button>
 
                     </div>
 
-                    <p className="text-sm font-bold text-slate-900">
+                    <p className="text-sm font-bold text-[#24211d]">
                       ₹
                       {subtotal.toLocaleString(
                         "en-IN"
@@ -574,7 +574,7 @@ const Order = () => {
                             ADDRESS
                         ================================================= */}
 
-            <section className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <section className="rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-6">
 
               <div className="flex items-center justify-between gap-4">
 
@@ -586,13 +586,13 @@ const Order = () => {
                       📍
                     </span>
 
-                    <h2 className="text-base font-bold text-slate-900">
+                    <h2 className="text-base font-bold text-[#24211d]">
                       Delivery Address
                     </h2>
 
                   </div>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-[#877d72]">
                     Select where you want
                     your order delivered.
                   </p>
@@ -606,7 +606,7 @@ const Order = () => {
                       "/addresses"
                     )
                   }
-                  className="rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600 transition hover:bg-slate-50"
+                  className="rounded-xl border border-[#d5cec2] px-3 py-2 text-xs font-bold text-[#5d554c] transition hover:bg-[#eee8de]"
                 >
                   Manage
                 </button>
@@ -616,13 +616,13 @@ const Order = () => {
               {/* ADDRESS LOADING */}
 
               {addressLoading && (
-                <div className="mt-5 animate-pulse rounded-2xl bg-slate-50 p-5">
+                <div className="mt-5 animate-pulse rounded-xl bg-[#eee8de] p-5">
 
-                  <div className="h-4 w-32 rounded bg-slate-200" />
+                  <div className="h-4 w-32 rounded bg-[#d9d0c4]" />
 
-                  <div className="mt-3 h-3 w-full rounded bg-slate-200" />
+                  <div className="mt-3 h-3 w-full rounded bg-[#d9d0c4]" />
 
-                  <div className="mt-2 h-3 w-2/3 rounded bg-slate-200" />
+                  <div className="mt-2 h-3 w-2/3 rounded bg-[#d9d0c4]" />
 
                 </div>
               )}
@@ -631,7 +631,7 @@ const Order = () => {
 
               {!addressLoading &&
                 addressError && (
-                  <div className="mt-5 rounded-2xl border border-red-100 bg-red-50 p-5">
+                  <div className="mt-5 rounded-xl border border-red-100 bg-red-50 p-5">
 
                     <p className="text-sm font-bold text-red-700">
                       Unable to load
@@ -649,7 +649,7 @@ const Order = () => {
                       onClick={
                         fetchAddresses
                       }
-                      className="mt-4 rounded-xl bg-red-600 px-4 py-2 text-xs font-bold text-white hover:bg-red-700"
+                      className="mt-4 rounded-xl bg-red-600 px-4 py-2 text-xs font-bold text-[#f8f4ec] hover:bg-red-700"
                     >
                       Try Again
                     </button>
@@ -684,9 +684,9 @@ const Order = () => {
                                 address
                               )
                             }
-                            className={`w-full rounded-2xl border p-4 text-left transition ${isSelected
-                              ? "border-amber-400 bg-amber-50/60 ring-4 ring-amber-100"
-                              : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                            className={`w-full rounded-xl border p-4 text-left transition ${isSelected
+                              ? "border-amber-400 bg-[#f2e4dc]/60 ring-4 ring-amber-100"
+                              : "border-[#d5cec2] bg-[#f8f4ec] hover:border-[#c9c0b4] hover:bg-[#eee8de]"
                               }`}
                           >
 
@@ -696,13 +696,13 @@ const Order = () => {
 
                                 <div className="flex flex-wrap items-center gap-2">
 
-                                  <span className="text-sm font-bold text-slate-900">
+                                  <span className="text-sm font-bold text-[#24211d]">
                                     {
                                       address.name
                                     }
                                   </span>
 
-                                  <span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-bold uppercase text-slate-500">
+                                  <span className="rounded-full bg-[#e5ded3] px-2 py-1 text-[9px] font-bold uppercase text-[#746b61]">
                                     {
                                       address.type ||
                                       "Home"
@@ -717,7 +717,7 @@ const Order = () => {
 
                                 </div>
 
-                                <p className="mt-2 text-xs leading-6 text-slate-500">
+                                <p className="mt-2 text-xs leading-6 text-[#746b61]">
 
                                   {
                                     address.addressLine1
@@ -740,7 +740,7 @@ const Order = () => {
 
                                 </p>
 
-                                <p className="mt-2 text-xs font-medium text-slate-600">
+                                <p className="mt-2 text-xs font-medium text-[#5d554c]">
                                   📞{" "}
                                   {
                                     address.phone
@@ -751,8 +751,8 @@ const Order = () => {
 
                               <div
                                 className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${isSelected
-                                  ? "border-amber-500 bg-amber-500 text-white"
-                                  : "border-slate-300"
+                                  ? "border-amber-500 bg-[#f2e4dc]0 text-[#f8f4ec]"
+                                  : "border-[#c9c0b4]"
                                   }`}
                               >
                                 {isSelected &&
@@ -775,18 +775,18 @@ const Order = () => {
                 !addressError &&
                 addresses.length ===
                 0 && (
-                  <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-7 text-center">
+                  <div className="mt-5 rounded-xl border border-dashed border-[#c9c0b4] bg-[#eee8de] p-7 text-center">
 
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-2xl shadow-sm">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-[#f8f4ec] text-2xl shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
                       📍
                     </div>
 
-                    <h3 className="mt-4 text-sm font-bold text-slate-800">
+                    <h3 className="mt-4 text-sm font-bold text-[#302b26]">
                       No delivery
                       address
                     </h3>
 
-                    <p className="mx-auto mt-1 max-w-sm text-xs leading-5 text-slate-400">
+                    <p className="mx-auto mt-1 max-w-sm text-xs leading-5 text-[#877d72]">
                       Add a delivery
                       address before
                       placing your
@@ -800,7 +800,7 @@ const Order = () => {
                           "/addressDetail"
                         )
                       }
-                      className="mt-4 rounded-xl bg-slate-900 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800"
+                      className="mt-4 rounded-xl bg-[#24211d] px-5 py-2.5 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
                     >
                       + Add Address
                     </button>
@@ -815,14 +815,14 @@ const Order = () => {
                         PAYMENT METHOD
                 ================================ */}
 
-            <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <section className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
               <div>
-                <h2 className="text-base font-bold text-slate-900">
+                <h2 className="text-base font-bold text-[#24211d]">
                   Payment Method
                 </h2>
 
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="mt-1 text-xs text-[#877d72]">
                   Choose how you want to pay
                 </p>
               </div>
@@ -835,19 +835,19 @@ const Order = () => {
                   type="button"
                   onClick={() => setPaymentMode("upi")}
                   className={`rounded-xl border p-4 text-left transition ${paymentMode === "upi"
-                      ? "border-slate-900 bg-slate-50 ring-2 ring-slate-100"
-                      : "border-slate-200 bg-white hover:border-slate-300"
+                      ? "border-slate-900 bg-[#eee8de] ring-2 ring-slate-100"
+                      : "border-[#d5cec2] bg-[#f8f4ec] hover:border-[#c9c0b4]"
                     }`}
                 >
                   <div className="text-lg">
                     📱
                   </div>
 
-                  <p className="mt-2 text-sm font-bold text-slate-900">
+                  <p className="mt-2 text-sm font-bold text-[#24211d]">
                     UPI
                   </p>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-[#877d72]">
                     Google Pay, PhonePe, Paytm, etc.
                   </p>
 
@@ -863,19 +863,19 @@ const Order = () => {
                   type="button"
                   onClick={() => setPaymentMode("card")}
                   className={`rounded-xl border p-4 text-left transition ${paymentMode === "card"
-                      ? "border-slate-900 bg-slate-50 ring-2 ring-slate-100"
-                      : "border-slate-200 bg-white hover:border-slate-300"
+                      ? "border-slate-900 bg-[#eee8de] ring-2 ring-slate-100"
+                      : "border-[#d5cec2] bg-[#f8f4ec] hover:border-[#c9c0b4]"
                     }`}
                 >
                   <div className="text-lg">
                     💳
                   </div>
 
-                  <p className="mt-2 text-sm font-bold text-slate-900">
+                  <p className="mt-2 text-sm font-bold text-[#24211d]">
                     Card
                   </p>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-[#877d72]">
                     Credit / Debit Card
                   </p>
 
@@ -898,15 +898,15 @@ const Order = () => {
 
           <div>
 
-            <div className="sticky top-6 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="sticky top-6 rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
               <div className="flex items-center justify-between">
 
-                <h2 className="text-base font-bold text-slate-900">
+                <h2 className="text-base font-bold text-[#24211d]">
                   Order Summary
                 </h2>
 
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold text-slate-500">
+                <span className="rounded-full bg-[#e5ded3] px-3 py-1 text-[10px] font-bold text-[#746b61]">
                   {quantity} item
                   {quantity !== 1
                     ? "s"
@@ -921,11 +921,11 @@ const Order = () => {
 
                 <div className="flex justify-between text-sm">
 
-                  <span className="text-slate-400">
+                  <span className="text-[#877d72]">
                     Subtotal
                   </span>
 
-                  <span className="font-semibold text-slate-700">
+                  <span className="font-semibold text-[#3e3730]">
                     ₹
                     {subtotal.toLocaleString(
                       "en-IN"
@@ -936,7 +936,7 @@ const Order = () => {
 
                 <div className="flex justify-between text-sm">
 
-                  <span className="text-slate-400">
+                  <span className="text-[#877d72]">
                     Delivery
                   </span>
 
@@ -946,7 +946,7 @@ const Order = () => {
                       FREE
                     </span>
                   ) : (
-                    <span className="font-semibold text-slate-700">
+                    <span className="font-semibold text-[#3e3730]">
                       ₹
                       {deliveryCharge}
                     </span>
@@ -960,7 +960,7 @@ const Order = () => {
 
               {subtotal <
                 1000 && (
-                  <div className="mt-5 rounded-xl bg-amber-50 px-3 py-2.5 text-[10px] font-medium leading-5 text-amber-700">
+                  <div className="mt-5 rounded-xl bg-[#f2e4dc] px-3 py-2.5 text-[10px] font-medium leading-5 text-[#8f3d25]">
                     Add ₹
                     {(
                       1000 -
@@ -975,17 +975,17 @@ const Order = () => {
 
               {/* TOTAL */}
 
-              <div className="mt-6 border-t border-slate-100 pt-5">
+              <div className="mt-6 border-t border-[#e0d8cd] pt-5">
 
                 <div className="flex items-end justify-between">
 
                   <div>
 
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-[#877d72]">
                       Total Amount
                     </p>
 
-                    <p className="mt-1 text-2xl font-bold text-slate-900">
+                    <p className="mt-1 text-2xl font-bold text-[#24211d]">
                       ₹
                       {totalAmount.toLocaleString(
                         "en-IN"
@@ -994,7 +994,7 @@ const Order = () => {
 
                   </div>
 
-                  <span className="text-[10px] text-slate-400">
+                  <span className="text-[10px] text-[#877d72]">
                     Inclusive
                     of taxes
                   </span>
@@ -1006,19 +1006,19 @@ const Order = () => {
               {/* SELECTED ADDRESS */}
 
               {selectedAddress && (
-                <div className="mt-6 rounded-2xl bg-slate-50 p-4">
+                <div className="mt-6 rounded-xl bg-[#eee8de] p-4">
 
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-[#877d72]">
                     Delivering To
                   </p>
 
-                  <p className="mt-2 text-xs font-bold text-slate-800">
+                  <p className="mt-2 text-xs font-bold text-[#302b26]">
                     {
                       selectedAddress.name
                     }
                   </p>
 
-                  <p className="mt-1 line-clamp-2 text-[10px] leading-5 text-slate-400">
+                  <p className="mt-1 line-clamp-2 text-[10px] leading-5 text-[#877d72]">
                     {
                       selectedAddress.addressLine1
                     }
@@ -1050,7 +1050,7 @@ const Order = () => {
                   placingOrder ||
                   !selectedAddress
                 }
-                className="mt-6 flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-slate-900 text-sm font-bold text-white shadow-lg shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-6 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#24211d] text-sm font-bold text-[#f8f4ec] shadow-[0_10px_28px_rgba(36,33,29,0.06)] shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-[#302b26] hover:shadow-[0_14px_36px_rgba(36,33,29,0.07)] disabled:cursor-not-allowed disabled:opacity-50"
               >
 
                 {placingOrder ? (
@@ -1080,7 +1080,7 @@ const Order = () => {
 
               {/* TRUST */}
 
-              <div className="mt-5 flex justify-center gap-3 text-[9px] font-medium text-slate-400">
+              <div className="mt-5 flex justify-center gap-3 text-[9px] font-medium text-[#877d72]">
 
                 <span>
                   ✓ Secure

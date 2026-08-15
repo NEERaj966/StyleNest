@@ -758,14 +758,14 @@ const AddressPage = () => {
         return (
             <div className="min-h-screen bg-[#f7f7f5] px-4 py-10">
                 <div className="mx-auto max-w-6xl animate-pulse">
-                    <div className="mb-10 h-10 w-64 rounded-xl bg-gray-200" />
+                    <div className="mb-10 h-10 w-64 rounded-xl bg-[#d9d0c4]" />
 
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                         {[1, 2, 3, 4].map(
                             (item) => (
                                 <div
                                     key={item}
-                                    className="h-64 rounded-3xl bg-white shadow-sm"
+                                    className="h-64 rounded-xl bg-[#f8f4ec] shadow-[0_3px_12px_rgba(36,33,29,0.04)]"
                                 />
                             )
                         )}
@@ -786,7 +786,7 @@ const AddressPage = () => {
                 HEADER
             ================================================= */}
 
-            <div className="border-b border-black/5 bg-white">
+            <div className="border-b border-black/5 bg-[#f8f4ec]">
                 <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 
                     <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
@@ -796,11 +796,11 @@ const AddressPage = () => {
                                 Account
                             </p>
 
-                            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            <h1 className="text-3xl font-bold tracking-tight text-[#24211d] sm:text-4xl">
                                 My Addresses
                             </h1>
 
-                            <p className="mt-2 max-w-xl text-sm leading-6 text-gray-500">
+                            <p className="mt-2 max-w-xl text-sm leading-6 text-[#746b61]">
                                 Manage your saved delivery addresses and choose where
                                 your orders should be delivered.
                             </p>
@@ -809,7 +809,7 @@ const AddressPage = () => {
                         <button
                             type="button"
                             onClick={handleAddAddress}
-                            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-900/10 transition hover:-translate-y-0.5 hover:bg-orange-600"
+                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-[#f8f4ec] shadow-[0_10px_28px_rgba(36,33,29,0.06)] shadow-gray-900/10 transition hover:-translate-y-0.5 hover:bg-orange-600"
                         >
                             <PlusIcon />
                             Add New Address
@@ -832,7 +832,7 @@ const AddressPage = () => {
 
                 {message.text && (
                     <div
-                        className={`mb-6 flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm ${
+                        className={`mb-6 flex items-center gap-3 rounded-xl border px-4 py-3 text-sm ${
                             message.type === "success"
                                 ? "border-emerald-200 bg-emerald-50 text-emerald-700"
                                 : "border-red-200 bg-red-50 text-red-700"
@@ -859,9 +859,9 @@ const AddressPage = () => {
                 {addresses.length === 0 ? (
                     <div className="flex min-h-[520px] items-center justify-center">
 
-                        <div className="w-full max-w-md rounded-[2rem] border border-black/5 bg-white p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:p-10">
+                        <div className="w-full max-w-md rounded-[2rem] border border-black/5 bg-[#f8f4ec] p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:p-10">
 
-                            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-orange-50 text-orange-600">
+                            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
 
                                 <svg
                                     width="34"
@@ -881,11 +881,11 @@ const AddressPage = () => {
 
                             </div>
 
-                            <h2 className="text-xl font-bold text-gray-900">
+                            <h2 className="text-xl font-bold text-[#24211d]">
                                 No saved addresses
                             </h2>
 
-                            <p className="mt-2 text-sm leading-6 text-gray-500">
+                            <p className="mt-2 text-sm leading-6 text-[#746b61]">
                                 Add your delivery address so you can place orders
                                 faster.
                             </p>
@@ -893,7 +893,7 @@ const AddressPage = () => {
                             <button
                                 type="button"
                                 onClick={handleAddAddress}
-                                className="mt-7 inline-flex items-center gap-2 rounded-2xl bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-700"
+                                className="mt-7 inline-flex items-center gap-2 rounded-xl bg-orange-600 px-6 py-3 font-semibold text-[#f8f4ec] transition hover:bg-orange-700"
                             >
                                 <PlusIcon />
                                 Add Your First Address
@@ -911,11 +911,11 @@ const AddressPage = () => {
                         <div className="mb-5 flex items-center justify-between">
 
                             <div>
-                                <h2 className="text-lg font-bold text-gray-900">
+                                <h2 className="text-lg font-bold text-[#24211d]">
                                     Saved Addresses
                                 </h2>
 
-                                <p className="mt-1 text-sm text-gray-500">
+                                <p className="mt-1 text-sm text-[#746b61]">
                                     {addresses.length}{" "}
                                     {addresses.length === 1
                                         ? "address"
@@ -938,7 +938,7 @@ const AddressPage = () => {
                                         key={
                                             address._id
                                         }
-                                        className={`group relative overflow-hidden rounded-[1.75rem] border bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] ${
+                                        className={`group relative overflow-hidden rounded-[1.75rem] border bg-[#f8f4ec] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] ${
                                             address.isDefault
                                                 ? "border-orange-200 ring-1 ring-orange-100"
                                                 : "border-black/5"
@@ -962,10 +962,10 @@ const AddressPage = () => {
                                             <div className="flex items-center gap-3">
 
                                                 <div
-                                                    className={`flex h-11 w-11 items-center justify-center rounded-2xl ${
+                                                    className={`flex h-11 w-11 items-center justify-center rounded-xl ${
                                                         address.isDefault
                                                             ? "bg-orange-100 text-orange-600"
-                                                            : "bg-gray-100 text-gray-600"
+                                                            : "bg-[#e5ded3] text-[#5d554c]"
                                                     }`}
                                                 >
                                                     <AddressTypeIcon
@@ -979,7 +979,7 @@ const AddressPage = () => {
 
                                                     <div className="flex items-center gap-2">
 
-                                                        <h3 className="font-bold text-gray-900">
+                                                        <h3 className="font-bold text-[#24211d]">
                                                             {
                                                                 address.name
                                                             }
@@ -993,7 +993,7 @@ const AddressPage = () => {
 
                                                     </div>
 
-                                                    <p className="mt-0.5 text-xs font-medium text-gray-500">
+                                                    <p className="mt-0.5 text-xs font-medium text-[#746b61]">
                                                         {
                                                             address.type ||
                                                             "Home"
@@ -1016,7 +1016,7 @@ const AddressPage = () => {
                                                             address
                                                         )
                                                     }
-                                                    className="rounded-xl p-2.5 text-gray-500 transition hover:bg-gray-100 hover:text-gray-900"
+                                                    className="rounded-xl p-2.5 text-[#746b61] transition hover:bg-[#e5ded3] hover:text-[#24211d]"
                                                     title="Edit address"
                                                 >
                                                     <PencilIcon />
@@ -1029,7 +1029,7 @@ const AddressPage = () => {
                                                             address._id
                                                         )
                                                     }
-                                                    className="rounded-xl p-2.5 text-gray-500 transition hover:bg-red-50 hover:text-red-600"
+                                                    className="rounded-xl p-2.5 text-[#746b61] transition hover:bg-red-50 hover:text-red-600"
                                                     title="Delete address"
                                                 >
                                                     <TrashIcon />
@@ -1041,7 +1041,7 @@ const AddressPage = () => {
 
                                         {/* ADDRESS */}
 
-                                        <div className="mt-6 space-y-2 text-sm leading-6 text-gray-600">
+                                        <div className="mt-6 space-y-2 text-sm leading-6 text-[#5d554c]">
 
                                             <div className="flex items-start gap-2.5">
 
@@ -1072,7 +1072,7 @@ const AddressPage = () => {
                                                     }{" "}
                                                     -{" "}
 
-                                                    <span className="font-semibold text-gray-800">
+                                                    <span className="font-semibold text-[#302b26]">
                                                         {
                                                             address.pincode
                                                         }
@@ -1082,7 +1082,7 @@ const AddressPage = () => {
                                                         <>
                                                             <br />
 
-                                                            <span className="text-gray-500">
+                                                            <span className="text-[#746b61]">
                                                                 Landmark:{" "}
                                                                 {
                                                                     address.landmark
@@ -1099,7 +1099,7 @@ const AddressPage = () => {
 
                                                 <PhoneIcon />
 
-                                                <span className="font-medium text-gray-700">
+                                                <span className="font-medium text-[#3e3730]">
                                                     {
                                                         address.phone
                                                     }
@@ -1113,7 +1113,7 @@ const AddressPage = () => {
 
                                         <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
 
-                                            <span className="text-xs text-gray-400">
+                                            <span className="text-xs text-[#877d72]">
                                                 {address.isDefault
                                                     ? "Used for faster checkout"
                                                     : "Saved delivery address"}
@@ -1150,18 +1150,18 @@ const AddressPage = () => {
             ================================================= */}
 
             {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#24211d]/50 p-4 backdrop-blur-sm">
 
                     <div
                         className="absolute inset-0"
                         onClick={closeModal}
                     />
 
-                    <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] bg-white shadow-2xl">
+                    <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] bg-[#f8f4ec] shadow-[0_18px_50px_rgba(36,33,29,0.08)]">
 
                         {/* MODAL HEADER */}
 
-                        <div className="sticky top-0 z-10 border-b border-gray-100 bg-white px-6 py-5 sm:px-7">
+                        <div className="sticky top-0 z-10 border-b border-gray-100 bg-[#f8f4ec] px-6 py-5 sm:px-7">
 
                             <div className="flex items-center justify-between">
 
@@ -1171,7 +1171,7 @@ const AddressPage = () => {
                                         Delivery
                                     </p>
 
-                                    <h2 className="mt-1 text-2xl font-bold text-gray-900">
+                                    <h2 className="mt-1 text-2xl font-bold text-[#24211d]">
                                         {editingAddress
                                             ? "Edit Address"
                                             : "Add New Address"}
@@ -1183,7 +1183,7 @@ const AddressPage = () => {
                                     type="button"
                                     onClick={closeModal}
                                     disabled={saving}
-                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-xl text-gray-500 transition hover:bg-gray-200 hover:text-gray-900 disabled:opacity-50"
+                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e5ded3] text-xl text-[#746b61] transition hover:bg-[#d9d0c4] hover:text-[#24211d] disabled:opacity-50"
                                 >
                                     ×
                                 </button>
@@ -1207,7 +1207,7 @@ const AddressPage = () => {
 
                                 <div>
 
-                                    <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                    <label className="mb-2 block text-sm font-semibold text-[#302b26]">
                                         Full Name *
                                     </label>
 
@@ -1221,14 +1221,14 @@ const AddressPage = () => {
                                         }
                                         placeholder="Enter full name"
                                         autoComplete="name"
-                                        className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                        className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm text-[#24211d] outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                     />
 
                                 </div>
 
                                 <div>
 
-                                    <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                    <label className="mb-2 block text-sm font-semibold text-[#302b26]">
                                         Phone Number *
                                     </label>
 
@@ -1244,7 +1244,7 @@ const AddressPage = () => {
                                         inputMode="numeric"
                                         maxLength={10}
                                         autoComplete="tel"
-                                        className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                        className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm text-[#24211d] outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                     />
 
                                 </div>
@@ -1255,7 +1255,7 @@ const AddressPage = () => {
 
                             <div>
 
-                                <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                <label className="mb-2 block text-sm font-semibold text-[#302b26]">
                                     Address Line 1 *
                                 </label>
 
@@ -1269,7 +1269,7 @@ const AddressPage = () => {
                                     }
                                     placeholder="House / Flat / Building / Street"
                                     autoComplete="address-line1"
-                                    className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                    className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm text-[#24211d] outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                 />
 
                             </div>
@@ -1278,11 +1278,11 @@ const AddressPage = () => {
 
                             <div>
 
-                                <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                <label className="mb-2 block text-sm font-semibold text-[#302b26]">
 
                                     Address Line 2
 
-                                    <span className="ml-1 font-normal text-gray-400">
+                                    <span className="ml-1 font-normal text-[#877d72]">
                                         (Optional)
                                     </span>
 
@@ -1298,7 +1298,7 @@ const AddressPage = () => {
                                     }
                                     placeholder="Apartment, floor, area, etc."
                                     autoComplete="address-line2"
-                                    className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                    className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm text-[#24211d] outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                 />
 
                             </div>
@@ -1309,7 +1309,7 @@ const AddressPage = () => {
 
                                 <div>
 
-                                    <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                    <label className="mb-2 block text-sm font-semibold text-[#302b26]">
                                         City *
                                     </label>
 
@@ -1323,14 +1323,14 @@ const AddressPage = () => {
                                         }
                                         placeholder="City"
                                         autoComplete="address-level2"
-                                        className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                        className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                     />
 
                                 </div>
 
                                 <div>
 
-                                    <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                    <label className="mb-2 block text-sm font-semibold text-[#302b26]">
                                         State *
                                     </label>
 
@@ -1344,14 +1344,14 @@ const AddressPage = () => {
                                         }
                                         placeholder="State"
                                         autoComplete="address-level1"
-                                        className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                        className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                     />
 
                                 </div>
 
                                 <div>
 
-                                    <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                    <label className="mb-2 block text-sm font-semibold text-[#302b26]">
                                         Pincode *
                                     </label>
 
@@ -1367,7 +1367,7 @@ const AddressPage = () => {
                                         inputMode="numeric"
                                         maxLength={6}
                                         autoComplete="postal-code"
-                                        className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                        className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                     />
 
                                 </div>
@@ -1378,11 +1378,11 @@ const AddressPage = () => {
 
                             <div>
 
-                                <label className="mb-2 block text-sm font-semibold text-gray-800">
+                                <label className="mb-2 block text-sm font-semibold text-[#302b26]">
 
                                     Landmark
 
-                                    <span className="ml-1 font-normal text-gray-400">
+                                    <span className="ml-1 font-normal text-[#877d72]">
                                         (Optional)
                                     </span>
 
@@ -1397,7 +1397,7 @@ const AddressPage = () => {
                                         handleChange
                                     }
                                     placeholder="Nearby landmark"
-                                    className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10"
+                                    className="w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-3.5 text-sm outline-none transition placeholder:text-[#877d72] focus:border-orange-500 focus:bg-[#f8f4ec] focus:ring-4 focus:ring-orange-500/10"
                                 />
 
                             </div>
@@ -1406,7 +1406,7 @@ const AddressPage = () => {
 
                             <div>
 
-                                <label className="mb-3 block text-sm font-semibold text-gray-800">
+                                <label className="mb-3 block text-sm font-semibold text-[#302b26]">
                                     Address Type
                                 </label>
 
@@ -1433,11 +1433,11 @@ const AddressPage = () => {
                                                         })
                                                     )
                                                 }
-                                                className={`flex items-center justify-center gap-2 rounded-2xl border px-3 py-3 text-sm font-semibold transition ${
+                                                className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-3 text-sm font-semibold transition ${
                                                     form.type ===
                                                     type
                                                         ? "border-orange-500 bg-orange-50 text-orange-700"
-                                                        : "border-gray-200 bg-gray-50 text-gray-600 hover:border-gray-300"
+                                                        : "border-[#d5cec2] bg-[#eee8de] text-[#5d554c] hover:border-[#c9c0b4]"
                                                 }`}
                                             >
                                                 <AddressTypeIcon
@@ -1459,7 +1459,7 @@ const AddressPage = () => {
 
                             {/* DEFAULT CHECKBOX */}
 
-                            <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                            <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-[#d5cec2] bg-[#eee8de] p-4">
 
                                 <input
                                     type="checkbox"
@@ -1475,11 +1475,11 @@ const AddressPage = () => {
 
                                 <span>
 
-                                    <span className="block text-sm font-semibold text-gray-900">
+                                    <span className="block text-sm font-semibold text-[#24211d]">
                                         Set as default address
                                     </span>
 
-                                    <span className="mt-1 block text-xs leading-5 text-gray-500">
+                                    <span className="mt-1 block text-xs leading-5 text-[#746b61]">
                                         Use this address automatically during checkout.
                                     </span>
 
@@ -1499,7 +1499,7 @@ const AddressPage = () => {
                                     disabled={
                                         saving
                                     }
-                                    className="rounded-2xl border border-gray-200 px-5 py-3.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 disabled:opacity-50"
+                                    className="rounded-xl border border-[#d5cec2] px-5 py-3.5 text-sm font-semibold text-[#3e3730] transition hover:bg-[#eee8de] disabled:opacity-50"
                                 >
                                     Cancel
                                 </button>
@@ -1509,7 +1509,7 @@ const AddressPage = () => {
                                     disabled={
                                         saving
                                     }
-                                    className="rounded-2xl bg-gray-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-gray-900/10 transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-60"
+                                    className="rounded-xl bg-gray-900 px-6 py-3.5 text-sm font-semibold text-[#f8f4ec] shadow-[0_10px_28px_rgba(36,33,29,0.06)] shadow-gray-900/10 transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-60"
                                 >
                                     {saving
                                         ? "Saving..."
@@ -1532,7 +1532,7 @@ const AddressPage = () => {
             ================================================= */}
 
             {deleteId && (
-                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
+                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#24211d]/50 p-4 backdrop-blur-sm">
 
                     <div
                         className="absolute inset-0"
@@ -1541,17 +1541,17 @@ const AddressPage = () => {
                         }
                     />
 
-                    <div className="relative z-10 w-full max-w-sm rounded-[2rem] bg-white p-7 shadow-2xl">
+                    <div className="relative z-10 w-full max-w-sm rounded-[2rem] bg-[#f8f4ec] p-7 shadow-[0_18px_50px_rgba(36,33,29,0.08)]">
 
-                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-600">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-red-50 text-red-600">
                             <TrashIcon />
                         </div>
 
-                        <h3 className="mt-5 text-center text-xl font-bold text-gray-900">
+                        <h3 className="mt-5 text-center text-xl font-bold text-[#24211d]">
                             Delete address?
                         </h3>
 
-                        <p className="mt-2 text-center text-sm leading-6 text-gray-500">
+                        <p className="mt-2 text-center text-sm leading-6 text-[#746b61]">
                             This address will be permanently removed from your
                             account.
                         </p>
@@ -1565,7 +1565,7 @@ const AddressPage = () => {
                                         null
                                     )
                                 }
-                                className="rounded-2xl border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+                                className="rounded-xl border border-[#d5cec2] px-4 py-3 text-sm font-semibold text-[#3e3730] transition hover:bg-[#eee8de]"
                             >
                                 Cancel
                             </button>
@@ -1575,7 +1575,7 @@ const AddressPage = () => {
                                 onClick={
                                     handleDelete
                                 }
-                                className="rounded-2xl bg-red-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-700"
+                                className="rounded-xl bg-red-600 px-4 py-3 text-sm font-semibold text-[#f8f4ec] transition hover:bg-red-700"
                             >
                                 Delete
                             </button>

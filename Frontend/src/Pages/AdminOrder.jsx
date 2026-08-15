@@ -40,13 +40,13 @@ const getStatusClass = (
 ) => {
     switch (status) {
         case "Placed":
-            return "bg-slate-100 text-slate-700";
+            return "bg-[#e5ded3] text-[#3e3730]";
 
         case "Confirmed":
             return "bg-blue-50 text-blue-700";
 
         case "Preparing":
-            return "bg-amber-50 text-amber-700";
+            return "bg-[#f2e4dc] text-[#8f3d25]";
 
         case "Ready":
             return "bg-indigo-50 text-indigo-700";
@@ -64,7 +64,7 @@ const getStatusClass = (
             return "bg-red-50 text-red-700";
 
         default:
-            return "bg-slate-100 text-slate-600";
+            return "bg-[#e5ded3] text-[#5d554c]";
     }
 };
 
@@ -81,7 +81,7 @@ const getPaymentClass = (
             return "bg-emerald-50 text-emerald-700";
 
         case "Pending":
-            return "bg-amber-50 text-amber-700";
+            return "bg-[#f2e4dc] text-[#8f3d25]";
 
         case "Failed":
             return "bg-red-50 text-red-700";
@@ -90,7 +90,7 @@ const getPaymentClass = (
             return "bg-purple-50 text-purple-700";
 
         default:
-            return "bg-slate-100 text-slate-600";
+            return "bg-[#e5ded3] text-[#5d554c]";
     }
 };
 
@@ -816,11 +816,11 @@ const AdminOrders = () => {
         orders.length === 0
     ) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-50">
+            <div className="flex min-h-screen items-center justify-center bg-[#eee8de]">
                 <div className="text-center">
-                    <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-slate-900" />
+                    <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-[#d5cec2] border-t-slate-900" />
 
-                    <p className="mt-4 text-sm font-medium text-slate-500">
+                    <p className="mt-4 text-sm font-medium text-[#746b61]">
                         Loading orders...
                     </p>
                 </div>
@@ -830,7 +830,7 @@ const AdminOrders = () => {
 
 
     return (
-        <div className="min-h-screen bg-slate-50 px-4 py-6 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-[#eee8de] px-4 py-6 sm:px-6 lg:px-8">
 
             <div className="mx-auto max-w-7xl">
 
@@ -841,15 +841,15 @@ const AdminOrders = () => {
                 <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
 
                     <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-500">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#a94b2e]">
                             Admin Panel
                         </p>
 
-                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-[#24211d] sm:text-4xl">
                             Orders
                         </h1>
 
-                        <p className="mt-2 text-sm text-slate-500">
+                        <p className="mt-2 text-sm text-[#746b61]">
                             Manage customer orders,
                             payments and fulfilment.
                         </p>
@@ -863,7 +863,7 @@ const AdminOrders = () => {
                                 page
                             )
                         }
-                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:bg-slate-100 sm:w-auto"
+                        className="w-full rounded-xl border border-[#d5cec2] bg-[#f8f4ec] px-4 py-3 text-sm font-bold text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] transition hover:bg-[#e5ded3] sm:w-auto"
                     >
                         ↻ Refresh
                     </button>
@@ -877,12 +877,12 @@ const AdminOrders = () => {
 
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
 
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                        <p className="text-xs font-medium text-slate-400">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
+                        <p className="text-xs font-medium text-[#877d72]">
                             Total Orders
                         </p>
 
-                        <p className="mt-2 text-2xl font-bold text-slate-900">
+                        <p className="mt-2 text-2xl font-bold text-[#24211d]">
                             {
                                 summary.total
                             }
@@ -890,12 +890,12 @@ const AdminOrders = () => {
                     </div>
 
 
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                        <p className="text-xs font-medium text-slate-400">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
+                        <p className="text-xs font-medium text-[#877d72]">
                             Pending
                         </p>
 
-                        <p className="mt-2 text-2xl font-bold text-amber-600">
+                        <p className="mt-2 text-2xl font-bold text-[#984126]">
                             {
                                 summary.pending
                             }
@@ -903,8 +903,8 @@ const AdminOrders = () => {
                     </div>
 
 
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                        <p className="text-xs font-medium text-slate-400">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
+                        <p className="text-xs font-medium text-[#877d72]">
                             Processing
                         </p>
 
@@ -916,8 +916,8 @@ const AdminOrders = () => {
                     </div>
 
 
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                        <p className="text-xs font-medium text-slate-400">
+                    <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
+                        <p className="text-xs font-medium text-[#877d72]">
                             Delivered
                         </p>
 
@@ -935,7 +935,7 @@ const AdminOrders = () => {
                 {/* FILTERS */}
                 {/* ================================================= */}
 
-                <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <div className="mt-6 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                     <div className="grid gap-3 md:grid-cols-[1fr_180px_180px_160px]">
 
@@ -943,7 +943,7 @@ const AdminOrders = () => {
 
                         <div className="relative">
 
-                            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#877d72]">
                                 🔍
                             </span>
 
@@ -959,7 +959,7 @@ const AdminOrders = () => {
                                     )
                                 }
                                 placeholder="Search order, customer, phone..."
-                                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm outline-none transition focus:border-slate-400 focus:bg-white"
+                                className="h-11 w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] pl-11 pr-4 text-sm outline-none transition focus:border-[#9f9488] focus:bg-[#f8f4ec]"
                             />
 
                         </div>
@@ -978,7 +978,7 @@ const AdminOrders = () => {
                                     e.target.value
                                 )
                             }
-                            className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-700 outline-none"
+                            className="h-11 rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 text-sm font-medium text-[#3e3730] outline-none"
                         >
 
                             <option value="All">
@@ -1020,7 +1020,7 @@ const AdminOrders = () => {
                                     e.target.value
                                 )
                             }
-                            className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-700 outline-none"
+                            className="h-11 rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 text-sm font-medium text-[#3e3730] outline-none"
                         >
 
                             <option value="All">
@@ -1062,7 +1062,7 @@ const AdminOrders = () => {
                                     e.target.value
                                 )
                             }
-                            className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-700 outline-none"
+                            className="h-11 rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 text-sm font-medium text-[#3e3730] outline-none"
                         >
 
                             <option value="newest">
@@ -1092,40 +1092,40 @@ const AdminOrders = () => {
                 {/* ORDERS */}
                 {/* ================================================= */}
 
-                <div className="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                <div className="mt-6 overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec] shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                     <div className="hidden overflow-x-auto lg:block">
 
                         <table className="w-full">
 
                             <thead>
-                                <tr className="border-b border-slate-100 bg-slate-50/70 text-left">
+                                <tr className="border-b border-[#e0d8cd] bg-[#eee8de]/70 text-left">
 
-                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Order
                                     </th>
 
-                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Customer
                                     </th>
 
-                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Items
                                     </th>
 
-                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Total
                                     </th>
 
-                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Payment
                                     </th>
 
-                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Status
                                     </th>
 
-                                    <th className="px-6 py-4 text-right text-xs font-bold uppercase tracking-wider text-slate-400">
+                                    <th className="px-6 py-4 text-right text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                         Action
                                     </th>
 
@@ -1144,12 +1144,12 @@ const AdminOrders = () => {
                                             key={
                                                 order._id
                                             }
-                                            className="transition hover:bg-slate-50/70"
+                                            className="transition hover:bg-[#eee8de]/70"
                                         >
 
                                             <td className="px-6 py-5">
 
-                                                <p className="text-sm font-bold text-slate-900">
+                                                <p className="text-sm font-bold text-[#24211d]">
                                                     #
                                                     {order._id
                                                         .slice(
@@ -1158,7 +1158,7 @@ const AdminOrders = () => {
                                                         .toUpperCase()}
                                                 </p>
 
-                                                <p className="mt-1 text-xs text-slate-400">
+                                                <p className="mt-1 text-xs text-[#877d72]">
                                                     {
                                                         formatDate(
                                                             order.createdAt
@@ -1171,14 +1171,14 @@ const AdminOrders = () => {
 
                                             <td className="px-6 py-5">
 
-                                                <p className="text-sm font-semibold text-slate-800">
+                                                <p className="text-sm font-semibold text-[#302b26]">
                                                     {
                                                         order.customerName ||
                                                         "Customer"
                                                     }
                                                 </p>
 
-                                                <p className="mt-1 text-xs text-slate-400">
+                                                <p className="mt-1 text-xs text-[#877d72]">
                                                     {
                                                         order.customerPhone ||
                                                         order.customerEmail ||
@@ -1191,7 +1191,7 @@ const AdminOrders = () => {
 
                                             <td className="px-6 py-5">
 
-                                                <p className="text-sm font-semibold text-slate-700">
+                                                <p className="text-sm font-semibold text-[#3e3730]">
                                                     {
                                                         order.items
                                                             ?.length ||
@@ -1200,7 +1200,7 @@ const AdminOrders = () => {
                                                     products
                                                 </p>
 
-                                                <p className="mt-1 text-xs text-slate-400">
+                                                <p className="mt-1 text-xs text-[#877d72]">
                                                     {(
                                                         order.items ||
                                                         []
@@ -1224,7 +1224,7 @@ const AdminOrders = () => {
 
                                             <td className="px-6 py-5">
 
-                                                <p className="text-sm font-bold text-slate-900">
+                                                <p className="text-sm font-bold text-[#24211d]">
                                                     ₹
                                                     {Number(
                                                         order.total ||
@@ -1277,7 +1277,7 @@ const AdminOrders = () => {
                                                             order._id
                                                         )
                                                     }
-                                                    className="rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800"
+                                                    className="rounded-xl bg-[#24211d] px-4 py-2.5 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
                                                 >
                                                     View
                                                 </button>
@@ -1317,7 +1317,7 @@ const AdminOrders = () => {
 
                                         <div>
 
-                                            <p className="text-sm font-bold text-slate-900">
+                                            <p className="text-sm font-bold text-[#24211d]">
                                                 #
                                                 {order._id
                                                     .slice(
@@ -1326,7 +1326,7 @@ const AdminOrders = () => {
                                                     .toUpperCase()}
                                             </p>
 
-                                            <p className="mt-1 text-xs text-slate-400">
+                                            <p className="mt-1 text-xs text-[#877d72]">
                                                 {
                                                     formatDate(
                                                         order.createdAt
@@ -1354,11 +1354,11 @@ const AdminOrders = () => {
 
                                         <div>
 
-                                            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                            <p className="text-[10px] font-bold uppercase tracking-wider text-[#877d72]">
                                                 Customer
                                             </p>
 
-                                            <p className="mt-1 text-sm font-semibold text-slate-800">
+                                            <p className="mt-1 text-sm font-semibold text-[#302b26]">
                                                 {
                                                     order.customerName ||
                                                     "Customer"
@@ -1370,11 +1370,11 @@ const AdminOrders = () => {
 
                                         <div>
 
-                                            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                            <p className="text-[10px] font-bold uppercase tracking-wider text-[#877d72]">
                                                 Total
                                             </p>
 
-                                            <p className="mt-1 text-sm font-bold text-slate-900">
+                                            <p className="mt-1 text-sm font-bold text-[#24211d]">
                                                 ₹
                                                 {Number(
                                                     order.total ||
@@ -1411,7 +1411,7 @@ const AdminOrders = () => {
                                                     order._id
                                                 )
                                             }
-                                            className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-bold text-white"
+                                            className="rounded-xl bg-[#24211d] px-4 py-2 text-xs font-bold text-[#f8f4ec]"
                                         >
                                             View Details
                                         </button>
@@ -1437,11 +1437,11 @@ const AdminOrders = () => {
                                 📦
                             </div>
 
-                            <h3 className="mt-4 text-lg font-bold text-slate-900">
+                            <h3 className="mt-4 text-lg font-bold text-[#24211d]">
                                 No orders found
                             </h3>
 
-                            <p className="mt-1 text-sm text-slate-400">
+                            <p className="mt-1 text-sm text-[#877d72]">
                                 Try changing your
                                 search or filters.
                             </p>
@@ -1459,17 +1459,17 @@ const AdminOrders = () => {
                 {pagination.totalPages >
                     1 && (
 
-                    <div className="mt-5 flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4">
+                    <div className="mt-5 flex items-center justify-between rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4">
 
-                        <p className="text-xs text-slate-500">
+                        <p className="text-xs text-[#746b61]">
                             Page{" "}
-                            <span className="font-bold text-slate-800">
+                            <span className="font-bold text-[#302b26]">
                                 {
                                     pagination.page
                                 }
                             </span>{" "}
                             of{" "}
-                            <span className="font-bold text-slate-800">
+                            <span className="font-bold text-[#302b26]">
                                 {
                                     pagination.totalPages
                                 }
@@ -1498,7 +1498,7 @@ const AdminOrders = () => {
                                         nextPage
                                     );
                                 }}
-                                className="rounded-xl border border-slate-200 px-4 py-2 text-xs font-bold text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+                                className="rounded-xl border border-[#d5cec2] px-4 py-2 text-xs font-bold text-[#3e3730] disabled:cursor-not-allowed disabled:opacity-40"
                             >
                                 Previous
                             </button>
@@ -1523,7 +1523,7 @@ const AdminOrders = () => {
                                         nextPage
                                     );
                                 }}
-                                className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-bold text-white disabled:cursor-not-allowed disabled:opacity-40"
+                                className="rounded-xl bg-[#24211d] px-4 py-2 text-xs font-bold text-[#f8f4ec] disabled:cursor-not-allowed disabled:opacity-40"
                             >
                                 Next
                             </button>
@@ -1543,11 +1543,11 @@ const AdminOrders = () => {
             {(selectedOrder ||
                 detailLoading) && (
 
-                <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-950/50 p-3 backdrop-blur-sm sm:p-6">
+                <div className="fixed inset-0 z-[100] overflow-y-auto bg-[#24211d]/50 p-3 backdrop-blur-sm sm:p-6">
 
                     <div className="flex min-h-full items-center justify-center">
 
-                        <div className="w-full max-w-4xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+                        <div className="w-full max-w-4xl overflow-hidden rounded-xl bg-[#f8f4ec] shadow-[0_18px_50px_rgba(36,33,29,0.08)]">
 
                             {detailLoading ? (
 
@@ -1555,9 +1555,9 @@ const AdminOrders = () => {
 
                                     <div className="text-center">
 
-                                        <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-slate-900" />
+                                        <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-[#d5cec2] border-t-slate-900" />
 
-                                        <p className="mt-4 text-sm text-slate-500">
+                                        <p className="mt-4 text-sm text-[#746b61]">
                                             Loading order...
                                         </p>
 
@@ -1572,15 +1572,15 @@ const AdminOrders = () => {
                                     {/* MODAL HEADER */}
                                     {/* ================================= */}
 
-                                    <div className="flex items-start justify-between border-b border-slate-100 p-5 sm:p-6">
+                                    <div className="flex items-start justify-between border-b border-[#e0d8cd] p-5 sm:p-6">
 
                                         <div>
 
-                                            <p className="text-xs font-bold uppercase tracking-wider text-amber-500">
+                                            <p className="text-xs font-bold uppercase tracking-wider text-[#a94b2e]">
                                                 Order Details
                                             </p>
 
-                                            <h2 className="mt-1 text-xl font-bold text-slate-900">
+                                            <h2 className="mt-1 text-xl font-bold text-[#24211d]">
                                                 #
                                                 {selectedOrder._id
                                                     .slice(
@@ -1589,7 +1589,7 @@ const AdminOrders = () => {
                                                     .toUpperCase()}
                                             </h2>
 
-                                            <p className="mt-1 text-xs text-slate-400">
+                                            <p className="mt-1 text-xs text-[#877d72]">
                                                 {
                                                     formatDate(
                                                         selectedOrder.createdAt
@@ -1607,7 +1607,7 @@ const AdminOrders = () => {
                                                     null
                                                 )
                                             }
-                                            className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200"
+                                            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e5ded3] text-[#746b61] transition hover:bg-[#d9d0c4]"
                                         >
                                             ✕
                                         </button>
@@ -1623,27 +1623,27 @@ const AdminOrders = () => {
 
                                         <div className="grid gap-5 lg:grid-cols-2">
 
-                                            <div className="rounded-2xl border border-slate-200 p-5">
+                                            <div className="rounded-xl border border-[#d5cec2] p-5">
 
-                                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                                <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                                     Customer
                                                 </p>
 
-                                                <p className="mt-3 text-base font-bold text-slate-900">
+                                                <p className="mt-3 text-base font-bold text-[#24211d]">
                                                     {
                                                         selectedOrder.customerName ||
                                                         "Customer"
                                                     }
                                                 </p>
 
-                                                <p className="mt-1 text-sm text-slate-500">
+                                                <p className="mt-1 text-sm text-[#746b61]">
                                                     {
                                                         selectedOrder.customerEmail ||
                                                         "-"
                                                     }
                                                 </p>
 
-                                                <p className="mt-1 text-sm text-slate-500">
+                                                <p className="mt-1 text-sm text-[#746b61]">
                                                     {
                                                         selectedOrder.customerPhone ||
                                                         "-"
@@ -1653,9 +1653,9 @@ const AdminOrders = () => {
                                             </div>
 
 
-                                            <div className="rounded-2xl border border-slate-200 p-5">
+                                            <div className="rounded-xl border border-[#d5cec2] p-5">
 
-                                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                                <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                                                     Order Status
                                                 </p>
 
@@ -1693,7 +1693,7 @@ const AdminOrders = () => {
                                                                     e.target.value
                                                                 )
                                                             }
-                                                            className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm font-medium outline-none"
+                                                            className="h-11 w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-3 text-sm font-medium outline-none"
                                                         >
 
                                                             {STATUS_OPTIONS.map(
@@ -1733,7 +1733,7 @@ const AdminOrders = () => {
                                                             rows={
                                                                 2
                                                             }
-                                                            className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm outline-none"
+                                                            className="mt-2 w-full resize-none rounded-xl border border-[#d5cec2] bg-[#eee8de] p-3 text-sm outline-none"
                                                         />
 
 
@@ -1747,7 +1747,7 @@ const AdminOrders = () => {
                                                             onClick={
                                                                 handleUpdateStatus
                                                             }
-                                                            className="mt-2 w-full rounded-xl bg-slate-900 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-40"
+                                                            className="mt-2 w-full rounded-xl bg-[#24211d] px-4 py-3 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26] disabled:cursor-not-allowed disabled:opacity-40"
                                                         >
                                                             {updating
                                                                 ? "Updating..."
@@ -1766,15 +1766,15 @@ const AdminOrders = () => {
                                         {/* PRODUCTS */}
                                         {/* ============================= */}
 
-                                        <div className="mt-5 rounded-2xl border border-slate-200 p-5">
+                                        <div className="mt-5 rounded-xl border border-[#d5cec2] p-5">
 
                                             <div className="flex items-center justify-between">
 
-                                                <h3 className="text-sm font-bold text-slate-900">
+                                                <h3 className="text-sm font-bold text-[#24211d]">
                                                     Products
                                                 </h3>
 
-                                                <span className="text-xs text-slate-400">
+                                                <span className="text-xs text-[#877d72]">
                                                     {
                                                         selectedOrder.items
                                                             ?.length ||
@@ -1809,7 +1809,7 @@ const AdminOrders = () => {
                                                                 className="flex gap-4 py-4"
                                                             >
 
-                                                                <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100">
+                                                                <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-xl bg-[#e5ded3]">
 
                                                                     {image ? (
 
@@ -1841,13 +1841,13 @@ const AdminOrders = () => {
 
                                                                 <div className="min-w-0 flex-1">
 
-                                                                    <p className="text-sm font-bold text-slate-800">
+                                                                    <p className="text-sm font-bold text-[#302b26]">
                                                                         {
                                                                             item.name
                                                                         }
                                                                     </p>
 
-                                                                    <p className="mt-1 text-xs text-slate-400">
+                                                                    <p className="mt-1 text-xs text-[#877d72]">
                                                                         ₹
                                                                         {Number(
                                                                             item.unitPrice ||
@@ -1864,7 +1864,7 @@ const AdminOrders = () => {
                                                                 </div>
 
 
-                                                                <p className="text-sm font-bold text-slate-900">
+                                                                <p className="text-sm font-bold text-[#24211d]">
                                                                     ₹
                                                                     {Number(
                                                                         item.lineTotal ||
@@ -1882,11 +1882,11 @@ const AdminOrders = () => {
                                             </div>
 
 
-                                            <div className="mt-4 border-t border-slate-100 pt-4">
+                                            <div className="mt-4 border-t border-[#e0d8cd] pt-4">
 
                                                 <div className="flex justify-between text-sm">
 
-                                                    <span className="text-slate-400">
+                                                    <span className="text-[#877d72]">
                                                         Subtotal
                                                     </span>
 
@@ -1905,7 +1905,7 @@ const AdminOrders = () => {
 
                                                 <div className="mt-2 flex justify-between text-sm">
 
-                                                    <span className="text-slate-400">
+                                                    <span className="text-[#877d72]">
                                                         Tax
                                                     </span>
 
@@ -1922,13 +1922,13 @@ const AdminOrders = () => {
                                                 </div>
 
 
-                                                <div className="mt-4 flex justify-between border-t border-slate-100 pt-4">
+                                                <div className="mt-4 flex justify-between border-t border-[#e0d8cd] pt-4">
 
-                                                    <span className="font-bold text-slate-900">
+                                                    <span className="font-bold text-[#24211d]">
                                                         Total
                                                     </span>
 
-                                                    <span className="text-xl font-bold text-slate-900">
+                                                    <span className="text-xl font-bold text-[#24211d]">
                                                         ₹
                                                         {Number(
                                                             selectedOrder.total ||
@@ -1951,16 +1951,16 @@ const AdminOrders = () => {
 
                                         <div className="mt-5 grid gap-5 lg:grid-cols-2">
 
-                                            <div className="rounded-2xl border border-slate-200 p-5">
+                                            <div className="rounded-xl border border-[#d5cec2] p-5">
 
-                                                <h3 className="text-sm font-bold text-slate-900">
+                                                <h3 className="text-sm font-bold text-[#24211d]">
                                                     Delivery Address
                                                 </h3>
 
 
-                                                <div className="mt-3 rounded-xl bg-slate-50 p-4">
+                                                <div className="mt-3 rounded-xl bg-[#eee8de] p-4">
 
-                                                    <p className="text-sm font-bold text-slate-900">
+                                                    <p className="text-sm font-bold text-[#24211d]">
                                                         {
                                                             selectedOrder
                                                                 .deliveryAddress
@@ -1968,7 +1968,7 @@ const AdminOrders = () => {
                                                         }
                                                     </p>
 
-                                                    <p className="mt-2 text-xs leading-6 text-slate-500">
+                                                    <p className="mt-2 text-xs leading-6 text-[#746b61]">
 
                                                         {
                                                             selectedOrder
@@ -1998,7 +1998,7 @@ const AdminOrders = () => {
 
                                                     </p>
 
-                                                    <p className="mt-2 text-xs font-medium text-slate-600">
+                                                    <p className="mt-2 text-xs font-medium text-[#5d554c]">
                                                         📞{" "}
                                                         {
                                                             selectedOrder
@@ -2014,9 +2014,9 @@ const AdminOrders = () => {
 
                                             {/* PAYMENT */}
 
-                                            <div className="rounded-2xl border border-slate-200 p-5">
+                                            <div className="rounded-xl border border-[#d5cec2] p-5">
 
-                                                <h3 className="text-sm font-bold text-slate-900">
+                                                <h3 className="text-sm font-bold text-[#24211d]">
                                                     Payment
                                                 </h3>
 
@@ -2025,7 +2025,7 @@ const AdminOrders = () => {
 
                                                     <div className="flex justify-between gap-4">
 
-                                                        <span className="text-xs text-slate-400">
+                                                        <span className="text-xs text-[#877d72]">
                                                             Status
                                                         </span>
 
@@ -2045,11 +2045,11 @@ const AdminOrders = () => {
 
                                                     <div className="flex justify-between gap-4">
 
-                                                        <span className="text-xs text-slate-400">
+                                                        <span className="text-xs text-[#877d72]">
                                                             Method
                                                         </span>
 
-                                                        <span className="text-xs font-semibold text-slate-700">
+                                                        <span className="text-xs font-semibold text-[#3e3730]">
                                                             {
                                                                 selectedOrder.paymentMode ||
                                                                 "Razorpay"
@@ -2061,11 +2061,11 @@ const AdminOrders = () => {
 
                                                     <div className="flex justify-between gap-4">
 
-                                                        <span className="text-xs text-slate-400">
+                                                        <span className="text-xs text-[#877d72]">
                                                             Payment ID
                                                         </span>
 
-                                                        <span className="max-w-[180px] truncate text-xs font-semibold text-slate-700">
+                                                        <span className="max-w-[180px] truncate text-xs font-semibold text-[#3e3730]">
                                                             {
                                                                 selectedOrder.razorpayPaymentId ||
                                                                 selectedOrder.paymentId ||
@@ -2086,9 +2086,9 @@ const AdminOrders = () => {
                                         {/* TIMELINE */}
                                         {/* ============================= */}
 
-                                        <div className="mt-5 rounded-2xl border border-slate-200 p-5">
+                                        <div className="mt-5 rounded-xl border border-[#d5cec2] p-5">
 
-                                            <h3 className="text-sm font-bold text-slate-900">
+                                            <h3 className="text-sm font-bold text-[#24211d]">
                                                 Order Timeline
                                             </h3>
 
@@ -2113,14 +2113,14 @@ const AdminOrders = () => {
 
                                                                 <div className="flex flex-col items-center">
 
-                                                                    <div className="h-3 w-3 rounded-full bg-amber-500 ring-4 ring-amber-50" />
+                                                                    <div className="h-3 w-3 rounded-full bg-[#f2e4dc]0 ring-4 ring-amber-50" />
 
                                                                     {index <
                                                                         selectedOrder
                                                                             .statusTimeline
                                                                             .length -
                                                                             1 && (
-                                                                        <div className="mt-1 min-h-10 w-px bg-slate-200" />
+                                                                        <div className="mt-1 min-h-10 w-px bg-[#d9d0c4]" />
                                                                     )}
 
                                                                 </div>
@@ -2128,21 +2128,21 @@ const AdminOrders = () => {
 
                                                                 <div className="pb-5">
 
-                                                                    <p className="text-sm font-bold text-slate-800">
+                                                                    <p className="text-sm font-bold text-[#302b26]">
                                                                         {
                                                                             item.status
                                                                         }
                                                                     </p>
 
                                                                     {item.note && (
-                                                                        <p className="mt-1 text-xs text-slate-500">
+                                                                        <p className="mt-1 text-xs text-[#746b61]">
                                                                             {
                                                                                 item.note
                                                                             }
                                                                         </p>
                                                                     )}
 
-                                                                    <p className="mt-1 text-[10px] text-slate-400">
+                                                                    <p className="mt-1 text-[10px] text-[#877d72]">
                                                                         {
                                                                             formatDate(
                                                                                 item.at
@@ -2158,7 +2158,7 @@ const AdminOrders = () => {
 
                                                 ) : (
 
-                                                    <p className="text-sm text-slate-400">
+                                                    <p className="text-sm text-[#877d72]">
                                                         No timeline available.
                                                     </p>
 
@@ -2178,7 +2178,7 @@ const AdminOrders = () => {
                                             selectedOrder.status !==
                                                 "Cancelled" && (
 
-                                            <div className="mt-5 rounded-2xl border border-red-100 bg-red-50 p-5">
+                                            <div className="mt-5 rounded-xl border border-red-100 bg-red-50 p-5">
 
                                                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
@@ -2205,7 +2205,7 @@ const AdminOrders = () => {
                                                         onClick={
                                                             handleCancelOrder
                                                         }
-                                                        className="rounded-xl border border-red-200 bg-white px-5 py-3 text-xs font-bold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
+                                                        className="rounded-xl border border-red-200 bg-[#f8f4ec] px-5 py-3 text-xs font-bold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
                                                     >
                                                         Cancel Order
                                                     </button>

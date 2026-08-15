@@ -99,20 +99,20 @@ const Favorites = () => {
 
         <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-2xl shadow-sm ring-1 ring-amber-100 sm:h-16 sm:w-16 sm:text-3xl">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f8f4ec] text-2xl shadow-[0_3px_12px_rgba(36,33,29,0.04)] ring-1 ring-amber-100 sm:h-16 sm:w-16 sm:text-3xl">
               ❤️
             </div>
 
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700 sm:text-xs">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8f3d25] sm:text-xs">
                 Your Collection
               </p>
 
-              <h1 className="mt-1 text-2xl font-black tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              <h1 className="mt-1 text-2xl font-black tracking-tight text-[#24211d] sm:text-4xl lg:text-5xl">
                 Favorites
               </h1>
 
-              <p className="mt-1.5 max-w-xl text-xs leading-5 text-slate-600 sm:mt-2 sm:text-sm">
+              <p className="mt-1.5 max-w-xl text-xs leading-5 text-[#5d554c] sm:mt-2 sm:text-sm">
                 Keep your favorite Products close and
                 reorder them whenever you want.
               </p>
@@ -120,8 +120,8 @@ const Favorites = () => {
           </div>
 
           {token && !isLoading && favorites.length > 0 && (
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-white/80 px-3 py-1.5 text-[10px] font-bold text-slate-700 shadow-sm backdrop-blur sm:text-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#d9b6a8] bg-[#f8f4ec]/80 px-3 py-1.5 text-[10px] font-bold text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur sm:text-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f2e4dc]0" />
               {favorites.length}{" "}
               {favorites.length === 1
                 ? "favorite"
@@ -137,16 +137,16 @@ const Favorites = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* NOT LOGGED IN */}
           {!token ? (
-            <div className="mx-auto max-w-xl rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-10">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-3xl">
+            <div className="mx-auto max-w-xl rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-10">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#f2e4dc] text-3xl">
                 🔐
               </div>
 
-              <h2 className="mt-5 text-base font-extrabold text-slate-900 sm:text-lg">
+              <h2 className="mt-5 text-base font-extrabold text-[#24211d] sm:text-lg">
                 Login to see your favorites
               </h2>
 
-              <p className="mx-auto mt-2 max-w-sm text-xs leading-5 text-slate-500 sm:text-sm">
+              <p className="mx-auto mt-2 max-w-sm text-xs leading-5 text-[#746b61] sm:text-sm">
                 Sign in to access your saved dishes
                 and reorder them quickly.
               </p>
@@ -154,7 +154,7 @@ const Favorites = () => {
               <button
                 type="button"
                 onClick={() => navigate("/login")}
-                className="mt-6 w-full rounded-xl bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800 active:scale-[0.98] sm:w-auto sm:min-w-[160px] sm:text-sm"
+                className="mt-6 w-full rounded-xl bg-[#24211d] px-5 py-3 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26] active:scale-[0.98] sm:w-auto sm:min-w-[160px] sm:text-sm"
               >
                 Login
               </button>
@@ -166,20 +166,20 @@ const Favorites = () => {
                 (_, index) => (
                   <div
                     key={index}
-                    className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-3xl"
+                    className="overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec] shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:rounded-xl"
                   >
-                    <div className="aspect-[1/0.85] animate-pulse bg-slate-100" />
+                    <div className="aspect-[1/0.85] animate-pulse bg-[#e5ded3]" />
 
                     <div className="space-y-3 p-3 sm:p-4">
-                      <div className="h-3.5 w-2/3 animate-pulse rounded bg-slate-100" />
+                      <div className="h-3.5 w-2/3 animate-pulse rounded bg-[#e5ded3]" />
 
-                      <div className="h-2.5 w-1/3 animate-pulse rounded bg-slate-100" />
+                      <div className="h-2.5 w-1/3 animate-pulse rounded bg-[#e5ded3]" />
 
-                      <div className="h-3 w-1/2 animate-pulse rounded bg-slate-100" />
+                      <div className="h-3 w-1/2 animate-pulse rounded bg-[#e5ded3]" />
 
-                      <div className="h-9 w-full animate-pulse rounded-xl bg-slate-100" />
+                      <div className="h-9 w-full animate-pulse rounded-xl bg-[#e5ded3]" />
 
-                      <div className="h-9 w-full animate-pulse rounded-xl bg-slate-100" />
+                      <div className="h-9 w-full animate-pulse rounded-xl bg-[#e5ded3]" />
                     </div>
                   </div>
                 )
@@ -187,12 +187,12 @@ const Favorites = () => {
             </div>
           ) : error ? (
             /* ERROR */
-            <div className="mx-auto max-w-xl rounded-3xl border border-rose-200 bg-white p-6 text-center shadow-sm sm:p-10">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-50 text-2xl">
+            <div className="mx-auto max-w-xl rounded-xl border border-rose-200 bg-[#f8f4ec] p-6 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-10">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-rose-50 text-2xl">
                 ⚠️
               </div>
 
-              <h2 className="mt-5 text-base font-extrabold text-slate-900">
+              <h2 className="mt-5 text-base font-extrabold text-[#24211d]">
                 Something went wrong
               </h2>
 
@@ -203,23 +203,23 @@ const Favorites = () => {
               <button
                 type="button"
                 onClick={fetchFavorites}
-                className="mt-6 rounded-xl bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800 active:scale-[0.98] sm:text-sm"
+                className="mt-6 rounded-xl bg-[#24211d] px-5 py-3 text-xs font-bold text-[#f8f4ec] transition hover:bg-[#302b26] active:scale-[0.98] sm:text-sm"
               >
                 Try Again
               </button>
             </div>
           ) : favorites.length === 0 ? (
             /* EMPTY */
-            <div className="mx-auto max-w-xl rounded-3xl border border-dashed border-slate-300 bg-white p-6 text-center shadow-sm sm:p-12">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-amber-50 text-4xl">
+            <div className="mx-auto max-w-xl rounded-xl border border-dashed border-[#c9c0b4] bg-[#f8f4ec] p-6 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-12">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-xl bg-[#f2e4dc] text-4xl">
                 ♡
               </div>
 
-              <h2 className="mt-5 text-lg font-extrabold text-slate-900 sm:text-xl">
+              <h2 className="mt-5 text-lg font-extrabold text-[#24211d] sm:text-xl">
                 No favorites yet
               </h2>
 
-              <p className="mx-auto mt-2 max-w-sm text-xs leading-5 text-slate-500 sm:text-sm">
+              <p className="mx-auto mt-2 max-w-sm text-xs leading-5 text-[#746b61] sm:text-sm">
                 Tap the heart icon on a dish to save it
                 here for quick access later.
               </p>
@@ -227,7 +227,7 @@ const Favorites = () => {
               <button
                 type="button"
                 onClick={() => navigate("/")}
-                className="mt-6 rounded-xl bg-amber-500 px-5 py-3 text-xs font-bold text-slate-950 transition hover:bg-amber-400 active:scale-[0.98] sm:text-sm"
+                className="mt-6 rounded-xl bg-[#f2e4dc]0 px-5 py-3 text-xs font-bold text-[#24211d] transition hover:bg-amber-400 active:scale-[0.98] sm:text-sm"
               >
                 Explore Products
               </button>
@@ -237,16 +237,16 @@ const Favorites = () => {
               {/* SECTION HEADER */}
               <div className="mb-5 flex items-end justify-between gap-3 sm:mb-7">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-amber-600 sm:text-xs">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#984126] sm:text-xs">
                     Saved for later
                   </p>
 
-                  <h2 className="mt-1 text-lg font-black text-slate-950 sm:text-2xl">
+                  <h2 className="mt-1 text-lg font-black text-[#24211d] sm:text-2xl">
                     Your saved dishes
                   </h2>
                 </div>
 
-                <span className="rounded-full bg-slate-900 px-3 py-1.5 text-[9px] font-bold text-white sm:px-4 sm:py-2 sm:text-xs">
+                <span className="rounded-full bg-[#24211d] px-3 py-1.5 text-[9px] font-bold text-[#f8f4ec] sm:px-4 sm:py-2 sm:text-xs">
                   {favorites.length} items
                 </span>
               </div>
@@ -272,10 +272,10 @@ const Favorites = () => {
                           `/product/${itemId}`
                         )
                       }
-                      className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_18px_rgba(15,23,42,0.05)] transition-all duration-300 active:scale-[0.985] sm:rounded-3xl sm:hover:-translate-y-1 sm:hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)]"
+                      className="group overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec] shadow-[0_4px_18px_rgba(15,23,42,0.05)] transition-all duration-300 active:scale-[0.985] sm:rounded-xl sm:hover:-translate-y-1 sm:hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)]"
                     >
                       {/* IMAGE */}
-                      <div className="relative aspect-[1/0.85] overflow-hidden bg-slate-100">
+                      <div className="relative aspect-[1/0.85] overflow-hidden bg-[#e5ded3]">
                         <img
                           src={
                             item.imageUrl ||
@@ -287,13 +287,13 @@ const Favorites = () => {
                         />
 
                         {/* FAVORITE BADGE */}
-                        <div className="absolute left-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-sm shadow-md backdrop-blur sm:left-3 sm:top-3 sm:h-9 sm:w-9 sm:text-base">
+                        <div className="absolute left-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#f8f4ec]/95 text-sm shadow-[0_6px_18px_rgba(36,33,29,0.05)] backdrop-blur sm:left-3 sm:top-3 sm:h-9 sm:w-9 sm:text-base">
                           ❤️
                         </div>
 
                         {/* STOCK */}
                         <div
-                          className={`absolute right-2 top-2 rounded-full px-2 py-1 text-[8px] font-bold shadow-sm backdrop-blur sm:right-3 sm:top-3 sm:px-2.5 sm:py-1.5 sm:text-[10px] ${
+                          className={`absolute right-2 top-2 rounded-full px-2 py-1 text-[8px] font-bold shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur sm:right-3 sm:top-3 sm:px-2.5 sm:py-1.5 sm:text-[10px] ${
                             inStock
                               ? "border border-emerald-200 bg-emerald-50/95 text-emerald-700"
                               : "border border-rose-200 bg-rose-50/95 text-rose-700"
@@ -309,16 +309,16 @@ const Favorites = () => {
                       <div className="p-3 sm:p-4">
                         <div className="flex items-start justify-between gap-2">
                           <div className="min-w-0">
-                            <h3 className="truncate text-[11px] font-extrabold text-slate-900 sm:text-sm">
+                            <h3 className="truncate text-[11px] font-extrabold text-[#24211d] sm:text-sm">
                               {item.name}
                             </h3>
 
-                            <p className="mt-0.5 truncate text-[9px] text-slate-400 sm:text-xs">
+                            <p className="mt-0.5 truncate text-[9px] text-[#877d72] sm:text-xs">
                               {item.category || "Other"}
                             </p>
                           </div>
 
-                          <span className="shrink-0 rounded-full bg-slate-950 px-2 py-1 text-[9px] font-extrabold text-white sm:px-2.5 sm:py-1.5 sm:text-xs">
+                          <span className="shrink-0 rounded-full bg-[#24211d] px-2 py-1 text-[9px] font-extrabold text-[#f8f4ec] sm:px-2.5 sm:py-1.5 sm:text-xs">
                             ₹
                             {Number(
                               item.price || 0
@@ -335,7 +335,7 @@ const Favorites = () => {
                               ★
                             </span>
 
-                            <span className="text-[9px] font-bold text-slate-700 sm:text-xs">
+                            <span className="text-[9px] font-bold text-[#3e3730] sm:text-xs">
                               {Number(
                                 item.rating ?? 0
                               ).toFixed(1)}
@@ -344,7 +344,7 @@ const Favorites = () => {
 
                           <span className="h-1 w-1 rounded-full bg-slate-300" />
 
-                          <span className="truncate text-[8px] text-slate-400 sm:text-[10px]">
+                          <span className="truncate text-[8px] text-[#877d72] sm:text-[10px]">
                             {item.reviewCount ||
                               0}{" "}
                             reviews
@@ -360,7 +360,7 @@ const Favorites = () => {
                               handleOrderNow(item);
                             }}
                             disabled={!inStock}
-                            className="w-full rounded-xl bg-amber-500 px-3 py-2.5 text-[10px] font-extrabold text-slate-950 transition-all hover:bg-amber-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400 sm:py-3 sm:text-xs"
+                            className="w-full rounded-xl bg-[#f2e4dc]0 px-3 py-2.5 text-[10px] font-extrabold text-[#24211d] transition-all hover:bg-amber-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-[#e5ded3] disabled:text-[#877d72] sm:py-3 sm:text-xs"
                           >
                             {inStock
                               ? "Order now"
@@ -373,7 +373,7 @@ const Favorites = () => {
                               event.stopPropagation();
                               handleRemove(itemId);
                             }}
-                            className="w-full rounded-xl border border-rose-200 bg-white px-3 py-2.5 text-[10px] font-bold text-rose-600 transition-all hover:bg-rose-50 active:scale-[0.98] sm:py-3 sm:text-xs"
+                            className="w-full rounded-xl border border-rose-200 bg-[#f8f4ec] px-3 py-2.5 text-[10px] font-bold text-rose-600 transition-all hover:bg-rose-50 active:scale-[0.98] sm:py-3 sm:text-xs"
                           >
                             Remove from favorites
                           </button>

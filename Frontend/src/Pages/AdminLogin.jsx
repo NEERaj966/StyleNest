@@ -38,57 +38,57 @@ const AdminLogin = () => {
       <div className="mx-auto flex min-h-screen max-w-6xl items-center px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid w-full gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-white px-3 py-1 text-xs font-semibold text-amber-700">
-              <span className="h-2 w-2 rounded-full bg-amber-500" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#d9b6a8] bg-[#f8f4ec] px-3 py-1 text-xs font-semibold text-[#8f3d25]">
+              <span className="h-2 w-2 rounded-full bg-[#f2e4dc]0" />
               Admin Portal
             </div>
-            <h1 className="mt-4 text-3xl font-bold text-slate-900 lg:text-7xl">
+            <h1 className="mt-4 text-3xl font-bold text-[#24211d] lg:text-7xl">
               Behind every great style is a great vision
             </h1>
-            <p className="mt-4 max-w-xl text-slate-600">
+            <p className="mt-4 max-w-xl text-[#5d554c]">
               Manage your store with ease. Access real-time updates, track sales, and ensure a seamless experience for your customers.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-amber-100/60 sm:p-8">
+          <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_10px_28px_rgba(36,33,29,0.06)] shadow-amber-100/60 sm:p-8">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-lg font-semibold text-slate-900">Admin Login</h2>
-                <p className="mt-1 text-sm text-slate-600">Use your admin credentials.</p>
+                <h2 className="text-lg font-semibold text-[#24211d]">Admin Login</h2>
+                <p className="mt-1 text-sm text-[#5d554c]">Use your admin credentials.</p>
               </div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#24211d] text-[#f8f4ec]">
                 <span className="text-xs font-semibold">CT</span>
               </div>
             </div>
 
             <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="text-xs font-semibold text-slate-600">Email</label>
+                <label className="text-xs font-semibold text-[#5d554c]">Email</label>
                 <input
                   name="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="e.g., admin@canteen.com"
-                  className="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-amber-400 focus:outline-none"
+                  className="mt-1 w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-2.5 text-sm focus:border-amber-400 focus:outline-none"
                 />
               </div>
               <div>
-                <label className="text-xs font-semibold text-slate-600">Password</label>
+                <label className="text-xs font-semibold text-[#5d554c]">Password</label>
                 <input
                   name="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:border-amber-400 focus:outline-none"
+                  className="mt-1 w-full rounded-xl border border-[#d5cec2] bg-[#eee8de] px-4 py-2.5 text-sm focus:border-amber-400 focus:outline-none"
                 />
               </div>
               <button
                 type="submit"
                 disabled={!isValid}
-                className={`w-full rounded-2xl px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 
-                ${isValid ? 'bg-black text-white hover:bg-gray-900' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}
+                className={`w-full rounded-xl px-4 py-2.5 text-sm font-semibold text-[#f8f4ec] hover:bg-[#302b26] 
+                ${isValid ? 'bg-[#24211d] text-[#f8f4ec] hover:bg-gray-900' : 'bg-gray-300 text-[#746b61] cursor-not-allowed'}
             `}
               >
                 Sign in

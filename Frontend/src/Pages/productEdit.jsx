@@ -162,19 +162,19 @@ const ProductEdit = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 px-6 py-10">
+      <div className="min-h-screen bg-[#eee8de] px-6 py-10">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <div className="h-8 w-48 animate-pulse rounded bg-slate-100" />
+          <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-8 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
+            <div className="h-8 w-48 animate-pulse rounded bg-[#e5ded3]" />
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <div className="h-12 animate-pulse rounded-xl bg-slate-100" />
-              <div className="h-12 animate-pulse rounded-xl bg-slate-100" />
-              <div className="h-12 animate-pulse rounded-xl bg-slate-100" />
-              <div className="h-12 animate-pulse rounded-xl bg-slate-100" />
+              <div className="h-12 animate-pulse rounded-xl bg-[#e5ded3]" />
+              <div className="h-12 animate-pulse rounded-xl bg-[#e5ded3]" />
+              <div className="h-12 animate-pulse rounded-xl bg-[#e5ded3]" />
+              <div className="h-12 animate-pulse rounded-xl bg-[#e5ded3]" />
             </div>
 
-            <div className="mt-6 h-32 animate-pulse rounded-xl bg-slate-100" />
+            <div className="mt-6 h-32 animate-pulse rounded-xl bg-[#e5ded3]" />
           </div>
         </div>
       </div>
@@ -186,23 +186,23 @@ const ProductEdit = () => {
   // =========================================================
 
   return (
-    <div className="min-h-screen bg-slate-50 px-5 py-8 md:px-8">
+    <div className="min-h-screen bg-[#eee8de] px-5 py-8 md:px-8">
       <div className="mx-auto max-w-4xl">
 
         {/* HEADER */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-xl shadow-lg shadow-amber-200">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-xl shadow-[0_10px_28px_rgba(36,33,29,0.06)] shadow-amber-200">
                 ✏️
               </div>
 
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+                <h1 className="text-2xl font-bold tracking-tight text-[#24211d]">
                   Edit Product
                 </h1>
 
-                <p className="mt-1 text-sm text-slate-500">
+                <p className="mt-1 text-sm text-[#746b61]">
                   Update your product information
                 </p>
               </div>
@@ -215,16 +215,16 @@ const ProductEdit = () => {
             className="
               rounded-xl
               border
-              border-slate-200
-              bg-white
+              border-[#d5cec2]
+              bg-[#f8f4ec]
               px-4
               py-2.5
               text-sm
               font-semibold
-              text-slate-600
-              shadow-sm
+              text-[#5d554c]
+              shadow-[0_3px_12px_rgba(36,33,29,0.04)]
               transition
-              hover:bg-slate-50
+              hover:bg-[#eee8de]
             "
           >
             ← Back to Products
@@ -233,7 +233,7 @@ const ProductEdit = () => {
 
         {/* ERROR */}
         {error && (
-          <div className="mb-5 rounded-2xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600">
+          <div className="mb-5 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600">
             {error}
           </div>
         )}
@@ -241,15 +241,15 @@ const ProductEdit = () => {
         {/* FORM */}
         <form
           onSubmit={handleSubmit}
-          className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+          className="overflow-hidden rounded-xl border border-[#d5cec2] bg-[#f8f4ec] shadow-[0_3px_12px_rgba(36,33,29,0.04)]"
         >
           {/* FORM HEADER */}
-          <div className="border-b border-slate-100 px-6 py-5 md:px-8">
-            <h2 className="text-base font-bold text-slate-900">
+          <div className="border-b border-[#e0d8cd] px-6 py-5 md:px-8">
+            <h2 className="text-base font-bold text-[#24211d]">
               Product Information
             </h2>
 
-            <p className="mt-1 text-xs text-slate-400">
+            <p className="mt-1 text-xs text-[#877d72]">
               Update the details of this product.
             </p>
           </div>
@@ -260,7 +260,7 @@ const ProductEdit = () => {
             <div className="grid gap-6 md:grid-cols-2">
 
               <div>
-                <label className="mb-2 block text-xs font-bold text-slate-700">
+                <label className="mb-2 block text-xs font-bold text-[#3e3730]">
                   Product Name
                 </label>
 
@@ -275,14 +275,14 @@ const ProductEdit = () => {
                     w-full
                     rounded-xl
                     border
-                    border-slate-200
-                    bg-white
+                    border-[#d5cec2]
+                    bg-[#f8f4ec]
                     px-4
                     text-sm
-                    text-slate-800
+                    text-[#302b26]
                     outline-none
                     transition
-                    placeholder:text-slate-400
+                    placeholder:text-[#877d72]
                     focus:border-amber-400
                     focus:ring-4
                     focus:ring-amber-100
@@ -291,7 +291,7 @@ const ProductEdit = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-bold text-slate-700">
+                <label className="mb-2 block text-xs font-bold text-[#3e3730]">
                   Category
                 </label>
 
@@ -304,11 +304,11 @@ const ProductEdit = () => {
                     w-full
                     rounded-xl
                     border
-                    border-slate-200
-                    bg-white
+                    border-[#d5cec2]
+                    bg-[#f8f4ec]
                     px-4
                     text-sm
-                    text-slate-700
+                    text-[#3e3730]
                     outline-none
                     focus:border-amber-400
                     focus:ring-4
@@ -327,12 +327,12 @@ const ProductEdit = () => {
             <div className="grid gap-6 md:grid-cols-2">
 
               <div>
-                <label className="mb-2 block text-xs font-bold text-slate-700">
+                <label className="mb-2 block text-xs font-bold text-[#3e3730]">
                   Price
                 </label>
 
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-[#877d72]">
                     ₹
                   </span>
 
@@ -348,12 +348,12 @@ const ProductEdit = () => {
                       w-full
                       rounded-xl
                       border
-                      border-slate-200
-                      bg-white
+                      border-[#d5cec2]
+                      bg-[#f8f4ec]
                       pl-9
                       pr-4
                       text-sm
-                      text-slate-800
+                      text-[#302b26]
                       outline-none
                       focus:border-amber-400
                       focus:ring-4
@@ -364,7 +364,7 @@ const ProductEdit = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-bold text-slate-700">
+                <label className="mb-2 block text-xs font-bold text-[#3e3730]">
                   Quantity
                 </label>
 
@@ -380,11 +380,11 @@ const ProductEdit = () => {
                     w-full
                     rounded-xl
                     border
-                    border-slate-200
-                    bg-white
+                    border-[#d5cec2]
+                    bg-[#f8f4ec]
                     px-4
                     text-sm
-                    text-slate-800
+                    text-[#302b26]
                     outline-none
                     focus:border-amber-400
                     focus:ring-4
@@ -396,7 +396,7 @@ const ProductEdit = () => {
 
             {/* DESCRIPTION */}
             <div>
-              <label className="mb-2 block text-xs font-bold text-slate-700">
+              <label className="mb-2 block text-xs font-bold text-[#3e3730]">
                 Description
               </label>
 
@@ -411,16 +411,16 @@ const ProductEdit = () => {
                   resize-none
                   rounded-xl
                   border
-                  border-slate-200
-                  bg-white
+                  border-[#d5cec2]
+                  bg-[#f8f4ec]
                   px-4
                   py-3
                   text-sm
                   leading-6
-                  text-slate-800
+                  text-[#302b26]
                   outline-none
                   transition
-                  placeholder:text-slate-400
+                  placeholder:text-[#877d72]
                   focus:border-amber-400
                   focus:ring-4
                   focus:ring-amber-100
@@ -430,7 +430,7 @@ const ProductEdit = () => {
 
             {/* IMAGE URL */}
             <div>
-              <label className="mb-2 block text-xs font-bold text-slate-700">
+              <label className="mb-2 block text-xs font-bold text-[#3e3730]">
                 Product Image URL
               </label>
 
@@ -445,14 +445,14 @@ const ProductEdit = () => {
                   w-full
                   rounded-xl
                   border
-                  border-slate-200
-                  bg-white
+                  border-[#d5cec2]
+                  bg-[#f8f4ec]
                   px-4
                   text-sm
-                  text-slate-800
+                  text-[#302b26]
                   outline-none
                   transition
-                  placeholder:text-slate-400
+                  placeholder:text-[#877d72]
                   focus:border-amber-400
                   focus:ring-4
                   focus:ring-amber-100
@@ -461,7 +461,7 @@ const ProductEdit = () => {
 
               {/* IMAGE PREVIEW */}
               {form.imageUrl && (
-                <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                <div className="mt-4 overflow-hidden rounded-xl border border-[#d5cec2] bg-[#eee8de]">
                   <img
                     src={form.imageUrl}
                     alt={form.name || "Product preview"}
@@ -475,14 +475,14 @@ const ProductEdit = () => {
             </div>
 
             {/* AVAILABILITY */}
-            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+            <div className="rounded-xl border border-[#e0d8cd] bg-[#eee8de] p-4">
               <label className="flex cursor-pointer items-center justify-between gap-4">
                 <div>
-                  <p className="text-sm font-bold text-slate-800">
+                  <p className="text-sm font-bold text-[#302b26]">
                     Product Availability
                   </p>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-[#877d72]">
                     Allow customers to purchase this product.
                   </p>
                 </div>
@@ -499,7 +499,7 @@ const ProductEdit = () => {
           </div>
 
           {/* FOOTER */}
-          <div className="flex flex-col-reverse gap-3 border-t border-slate-100 bg-slate-50 px-6 py-5 sm:flex-row sm:justify-end md:px-8">
+          <div className="flex flex-col-reverse gap-3 border-t border-[#e0d8cd] bg-[#eee8de] px-6 py-5 sm:flex-row sm:justify-end md:px-8">
 
             <button
               type="button"
@@ -508,15 +508,15 @@ const ProductEdit = () => {
               className="
                 rounded-xl
                 border
-                border-slate-200
-                bg-white
+                border-[#d5cec2]
+                bg-[#f8f4ec]
                 px-6
                 py-3
                 text-sm
                 font-semibold
-                text-slate-600
+                text-[#5d554c]
                 transition
-                hover:bg-slate-50
+                hover:bg-[#eee8de]
                 disabled:cursor-not-allowed
                 disabled:opacity-50
               "
@@ -533,15 +533,15 @@ const ProductEdit = () => {
                 justify-center
                 gap-2
                 rounded-xl
-                bg-amber-500
+                bg-[#f2e4dc]0
                 px-7
                 py-3
                 text-sm
                 font-bold
-                text-white
-                shadow-sm
+                text-[#f8f4ec]
+                shadow-[0_3px_12px_rgba(36,33,29,0.04)]
                 transition
-                hover:bg-amber-600
+                hover:bg-[#984126]
                 disabled:cursor-not-allowed
                 disabled:opacity-60
               "

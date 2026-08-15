@@ -430,350 +430,165 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
   }, [isAdmin, items, limitTopRated])
 
   return (
-    <section className="bg-gradient-to-b from-white via-amber-50/40 to-white py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <section className="min-h-screen bg-[#f3eee5] py-10 text-[#24211d] sm:py-14">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+
+        {/* Editorial section header */}
+        <div className="flex flex-col gap-5 border-b border-[#c9c0b4] pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
-            <p className="mt-1 text-sm text-slate-500">Suggested For You&apos;s</p>
+            <p className="text-[8px] font-semibold uppercase tracking-[0.26em] text-[#a94b2e]">
+              The Atelier / Selection
+            </p>
+
+            <h2
+              className="mt-2 text-4xl font-normal leading-[0.95] tracking-[-0.045em] text-[#24211d] sm:text-5xl lg:text-6xl"
+              style={{
+                fontFamily:
+                  'Didot, "Bodoni MT", "Times New Roman", Georgia, serif',
+              }}
+            >
+              {title}
+            </h2>
+
+            <p className="mt-3 max-w-xl text-[9px] leading-5 text-[#746b61]">
+              A considered edit of pieces selected for the season.
+            </p>
           </div>
-          <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-amber-700">
-            Spotlight Today
-          </span>
+
+          <div className="flex items-center gap-4">
+            <span className="text-[8px] uppercase tracking-[0.18em] text-[#746b61]">
+              {visibleItems.length} pieces
+            </span>
+
+            <span className="h-1.5 w-1.5 rounded-full bg-[#a94b2e]" />
+
+            <span className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
+              {isAdmin ? "Admin Collection" : "Spotlight"}
+            </span>
+          </div>
         </div>
 
+        {/* Admin create panel */}
         {isAdmin && (
-          <div className="mt-8 overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-[0_10px_40px_rgba(15,23,42,0.07)]">
-
-            {/* Header */}
-            <div className="border-b border-slate-100 bg-gradient-to-r from-amber-50/70 via-white to-orange-50/50 px-6 py-5">
-              <div className="flex items-center justify-between gap-4">
+          <div className="mt-7 overflow-hidden rounded-[16px] border border-[#c9c0b4] bg-[#f8f4ec] shadow-[0_10px_32px_rgba(36,33,29,0.055)]">
+            <div className="border-b border-[#d5cec2] px-6 py-5 sm:px-8">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <div className="flex items-center gap-3">
-                    <div className="
-            flex h-11 w-11 items-center justify-center
-            rounded-2xl
-            bg-gradient-to-br from-amber-400 to-orange-500
-            text-xl
-            shadow-lg shadow-amber-200
-          ">
-                      🗃️
-                    </div>
-
-                    <div>
-                      <h2 className="text-lg font-bold tracking-tight text-slate-900">
-                        Add New Item
-                      </h2>
-
-                      <p className="mt-0.5 text-xs text-slate-500">
-                        Create a new   item for your store
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-[8px] font-semibold uppercase tracking-[0.24em] text-[#a94b2e]">
+                    Catalogue / New Entry
+                  </p>
+                  <h3
+                    className="mt-1 text-2xl font-normal tracking-[-0.03em]"
+                    style={{
+                      fontFamily:
+                        'Didot, "Bodoni MT", "Times New Roman", Georgia, serif',
+                    }}
+                  >
+                    Add New Item
+                  </h3>
                 </div>
 
-                <span className="
-        hidden rounded-full
-        border border-amber-200
-        bg-white
-        px-3 py-1.5
-        text-[11px]
-        font-semibold
-        text-amber-600
-        shadow-sm
-        sm:block
-      ">
+                <span className="w-fit border border-[#c9c0b4] px-3 py-1.5 text-[7px] font-semibold uppercase tracking-[0.18em] text-[#746b61]">
                   Admin Panel
                 </span>
               </div>
             </div>
 
+            <form className="p-6 sm:p-8" onSubmit={addItem}>
+              <div className="grid gap-x-5 gap-y-6 md:grid-cols-2 xl:grid-cols-3">
 
-            {/* Form */}
-            <form
-              className="p-6"
-              onSubmit={addItem}
-            >
-
-              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-
-                {/* Food Name */}
                 <div className="space-y-2">
-                  <label className="ml-1 text-xs font-semibold text-slate-600">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Product Name
                   </label>
-
-                  <div className="relative">
-                    <span className="
-            pointer-events-none
-            absolute left-4 top-1/2
-            -translate-y-1/2
-            text-base
-          ">
-                      📦
-                    </span>
-
-                    <input
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="e.g. Classic Cotton T-Shirt"
-                      className="
-              h-12 w-full
-              rounded-2xl
-              border border-slate-200
-              bg-slate-50/70
-              pl-11 pr-4
-              text-sm
-              text-slate-800
-              outline-none
-              transition-all duration-200
-              placeholder:text-slate-400
-              hover:border-slate-300
-              focus:border-amber-400
-              focus:bg-white
-              focus:ring-4
-              focus:ring-amber-100/70
-            "
-                    />
-                  </div>
+                  <input
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="e.g. Classic Cotton T-Shirt"
+                    className="h-11 w-full rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] px-4 text-[10px] text-[#24211d] outline-none placeholder:text-[#9b9186] transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
+                  />
                 </div>
 
-
-                {/* Price */}
                 <div className="space-y-2">
-                  <label className="ml-1 text-xs font-semibold text-slate-600">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Price
                   </label>
-
                   <div className="relative">
-                    <span className="
-            pointer-events-none
-            absolute left-4 top-1/2
-            -translate-y-1/2
-            text-sm font-bold
-            text-amber-500
-          ">
+                    <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[11px] font-semibold text-[#a94b2e]">
                       ₹
                     </span>
-
                     <input
                       name="price"
                       type="number"
                       value={form.price}
                       onChange={handleChange}
                       placeholder="Enter price"
-                      className="
-              h-12 w-full
-              rounded-2xl
-              border border-slate-200
-              bg-slate-50/70
-              pl-10 pr-4
-              text-sm
-              text-slate-800
-              outline-none
-              transition-all duration-200
-              placeholder:text-slate-400
-              hover:border-slate-300
-              focus:border-amber-400
-              focus:bg-white
-              focus:ring-4
-              focus:ring-amber-100/70
-            "
+                      className="h-11 w-full rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] pl-9 pr-4 text-[10px] text-[#24211d] outline-none placeholder:text-[#9b9186] transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
                     />
                   </div>
                 </div>
 
-
-                {/* Quantity */}
                 <div className="space-y-2">
-                  <label className="ml-1 text-xs font-semibold text-slate-600">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Available Quantity
                   </label>
-
-                  <div className="relative">
-                    <span className="
-            pointer-events-none
-            absolute left-4 top-1/2
-            -translate-y-1/2
-            text-base
-          ">
-                      🔢
-                    </span>
-
-                    <input
-                      name="quantity"
-                      type="number"
-                      min="0"
-                      value={form.quantity}
-                      onChange={handleChange}
-                      placeholder="e.g. 25"
-                      className="
-              h-12 w-full
-              rounded-2xl
-              border border-slate-200
-              bg-slate-50/70
-              pl-11 pr-4
-              text-sm
-              text-slate-800
-              outline-none
-              transition-all duration-200
-              placeholder:text-slate-400
-              hover:border-slate-300
-              focus:border-amber-400
-              focus:bg-white
-              focus:ring-4
-              focus:ring-amber-100/70
-            "
-                    />
-                  </div>
+                  <input
+                    name="quantity"
+                    type="number"
+                    min="0"
+                    value={form.quantity}
+                    onChange={handleChange}
+                    placeholder="e.g. 25"
+                    className="h-11 w-full rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] px-4 text-[10px] text-[#24211d] outline-none placeholder:text-[#9b9186] transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
+                  />
                 </div>
 
-
-                {/* Rating */}
                 <div className="space-y-2">
-                  <label className="ml-1 text-xs font-semibold text-slate-600">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Rating
                   </label>
-
-                  <div className="relative">
-                    <span className="
-            pointer-events-none
-            absolute left-4 top-1/2
-            -translate-y-1/2
-            text-amber-400
-          ">
-                      ★
-                    </span>
-
-                    <input
-                      name="rating"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="5"
-                      value={form.rating}
-                      onChange={handleChange}
-                      placeholder="0.0 - 5.0"
-                      className="
-              h-12 w-full
-              rounded-2xl
-              border border-slate-200
-              bg-slate-50/70
-              pl-11 pr-4
-              text-sm
-              text-slate-800
-              outline-none
-              transition-all duration-200
-              placeholder:text-slate-400
-              hover:border-slate-300
-              focus:border-amber-400
-              focus:bg-white
-              focus:ring-4
-              focus:ring-amber-100/70
-            "
-                    />
-                  </div>
+                  <input
+                    name="rating"
+                    type="number"
+                    step="0.1"
+                    min="0"
+                    max="5"
+                    value={form.rating}
+                    onChange={handleChange}
+                    placeholder="0.0 - 5.0"
+                    className="h-11 w-full rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] px-4 text-[10px] text-[#24211d] outline-none placeholder:text-[#9b9186] transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
+                  />
                 </div>
 
-
-                {/* Category */}
                 <div className="space-y-2">
-                  <label className="ml-1 text-xs font-semibold text-slate-600">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Category
                   </label>
-
-                  <div className="relative">
-                    <span className="
-            pointer-events-none
-            absolute left-4 top-1/2
-            z-10
-            -translate-y-1/2
-            text-base
-          ">
-                      🏷️
-                    </span>
-
-                    <select
-                      name="category"
-                      value={form.category}
-                      onChange={handleChange}
-                      className="
-              h-12 w-full
-              appearance-none
-              rounded-2xl
-              border border-slate-200
-              bg-slate-50/70
-              pl-11 pr-10
-              text-sm
-              text-slate-700
-              outline-none
-              transition-all duration-200
-              hover:border-slate-300
-              focus:border-amber-400
-              focus:bg-white
-              focus:ring-4
-              focus:ring-amber-100/70
-            "
-                    >
-                      <option>Women</option>
-                      <option>Men</option>
-                      <option>Kids</option>
-                      <option>Other</option>
-                    </select>
-
-                    <span className="
-            pointer-events-none
-            absolute right-4 top-1/2
-            -translate-y-1/2
-            text-xs text-slate-400
-          ">
-                      ▼
-                    </span>
-                  </div>
+                  <select
+                    name="category"
+                    value={form.category}
+                    onChange={handleChange}
+                    className="h-11 w-full rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] px-4 text-[10px] text-[#24211d] outline-none transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
+                  >
+                    <option>Women</option>
+                    <option>Men</option>
+                    <option>Kids</option>
+                    <option>Other</option>
+                  </select>
                 </div>
 
-
-                {/* Image Upload */}
                 <div className="space-y-2">
-                  <label className="ml-1 text-xs font-semibold text-slate-600">
+                  <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
                     Product Images
                   </label>
-
-                  <label
-                    className="
-    flex h-12
-    cursor-pointer
-    items-center
-    gap-3
-    rounded-2xl
-    border border-dashed
-    border-slate-300
-    bg-slate-50/70
-    px-4
-    transition-all duration-200
-    hover:border-amber-400
-    hover:bg-amber-50/50
-  "
-                  >
-                    <span
-                      className="
-      flex h-8 w-8
-      shrink-0
-      items-center justify-center
-      rounded-xl
-      bg-white
-      text-sm
-      shadow-sm
-    "
-                    >
-                      📷
+                  <label className="flex h-11 cursor-pointer items-center justify-between rounded-[9px] border border-dashed border-[#b9afa2] bg-[#f3eee5] px-4 transition hover:border-[#a94b2e]">
+                    <span className="text-[9px] text-[#746b61]">
+                      Upload up to 2 images
                     </span>
-
-                    <span className="truncate text-xs text-slate-500">
-                      Upload product images
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#a94b2e]">
+                      Browse
                     </span>
-
                     <input
                       type="file"
                       accept="image/*"
@@ -783,64 +598,32 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                     />
                   </label>
 
-                  {/* Image Preview */}
                   {imageFiles?.length > 0 && (
-                    <div className="grid grid-cols-2 gap-3 pt-2">
+                    <div className="grid grid-cols-2 gap-2 pt-1">
                       {imageFiles.map((file, index) => (
                         <div
                           key={`${file.name}-${index}`}
-                          className="
-          relative
-          aspect-square
-          overflow-hidden
-          rounded-2xl
-          border
-          border-slate-200
-          bg-slate-100
-        "
+                          className="relative aspect-square overflow-hidden rounded-[9px] border border-[#c9c0b4] bg-[#e5ded3]"
                         >
                           <img
                             src={URL.createObjectURL(file)}
                             alt={`Product ${index + 1}`}
                             className="h-full w-full object-cover"
                           />
-
                           <button
                             type="button"
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-
                               setImageFiles((current) =>
                                 current.filter((_, i) => i !== index)
                               );
                             }}
-                            className="
-            absolute right-2 top-2
-            flex h-7 w-7
-            items-center justify-center
-            rounded-full
-            bg-black/70
-            text-sm
-            text-white
-            transition
-            hover:bg-red-500
-          "
+                            className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#24211d]/85 text-sm text-[#f8f4ec] transition hover:bg-[#a94b2e]"
                           >
                             ×
                           </button>
-
-                          <span
-                            className="
-            absolute bottom-2 left-2
-            rounded-lg
-            bg-black/60
-            px-2 py-1
-            text-[10px]
-            font-medium
-            text-white
-          "
-                          >
+                          <span className="absolute bottom-2 left-2 rounded-[5px] bg-[#24211d]/80 px-2 py-1 text-[7px] uppercase tracking-[0.12em] text-[#f8f4ec]">
                             Image {index + 1}
                           </span>
                         </div>
@@ -849,16 +632,13 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                   )}
                 </div>
 
-
-                {/* Description */}
                 <div className="space-y-2 md:col-span-2 xl:col-span-3">
-                  <div className="flex items-center justify-between">
-                    <label className="ml-1 text-xs font-semibold text-slate-600">
-                      📝 Description
+                  <div className="flex items-center justify-between gap-4">
+                    <label className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#3e3730]">
+                      Description
                     </label>
-
-                    <span className="text-[10px] text-slate-400">
-                      Tell customers about this item
+                    <span className="hidden text-[7px] uppercase tracking-[0.14em] text-[#9b9186] sm:block">
+                      Tell customers about this piece
                     </span>
                   </div>
 
@@ -868,108 +648,74 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                     onChange={handleChange}
                     placeholder="Describe the product, features, material, size, etc."
                     rows={4}
-                    className="
-            w-full
-            resize-none
-            rounded-2xl
-            border border-slate-200
-            bg-slate-50/70
-            px-4 py-3
-            text-sm
-            leading-6
-            text-slate-800
-            outline-none
-            transition-all duration-200
-            placeholder:text-slate-400
-            hover:border-slate-300
-            focus:border-amber-400
-            focus:bg-white
-            focus:ring-4
-            focus:ring-amber-100/70
-          "
+                    className="w-full resize-none rounded-[9px] border border-[#c9c0b4] bg-[#f3eee5] px-4 py-3 text-[10px] leading-6 text-[#24211d] outline-none placeholder:text-[#9b9186] transition focus:border-[#a94b2e] focus:bg-[#f8f4ec]"
                   />
                 </div>
-
               </div>
 
-
-              {/* Bottom Action */}
-              <div className="
-      mt-6
-      flex flex-col-reverse
-      gap-3
-      border-t border-slate-100
-      pt-5
-      sm:flex-row
-      sm:items-center
-      sm:justify-between
-    ">
-
-                <p className="text-[11px] text-slate-400">
-                  Make sure all product details are correct before adding.
+              <div className="mt-7 flex flex-col gap-4 border-t border-[#d5cec2] pt-5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-[8px] leading-5 text-[#877d72]">
+                  Review the product details before adding it to the catalogue.
                 </p>
 
                 <button
                   type="submit"
-                  className="
-          group
-          flex h-12
-          items-center
-          justify-center
-          gap-2
-          rounded-2xl
-          bg-gradient-to-r
-          from-amber-500
-          to-orange-500
-          px-7
-          text-sm
-          font-bold
-          text-white
-          shadow-lg
-          shadow-amber-200/60
-          transition-all duration-300
-          hover:-translate-y-0.5
-          hover:from-amber-600
-          hover:to-orange-500
-          hover:shadow-xl
-          hover:shadow-amber-200
-          active:translate-y-0
-          active:scale-[0.98]
-        "
+                  className="h-11 rounded-[9px] bg-[#a94b2e] px-7 text-[8px] font-semibold uppercase tracking-[0.2em] text-[#f8f4ec] transition hover:bg-[#8f3d25] active:scale-[0.99]"
                 >
-                  <span className="
-          text-lg
-          transition-transform duration-300
-          group-hover:rotate-90
-        ">
-                    +
-                  </span>
-
                   Add Item Card
                 </button>
-
               </div>
-
             </form>
           </div>
         )}
 
-        <div className="mt-8 grid justify-items-center gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {isLoading && <p className="text-sm text-slate-500 col-span-full">Loading...</p>}
-          {error && <p className="text-sm text-rose-600 col-span-full">{error}</p>}
-          {!isLoading && !error && items.length === 0 && (
-            <p className="text-sm text-slate-500 col-span-full">No Items yet.</p>
-          )}
+        {/* Loading / error */}
+        {isLoading && (
+          <div className="py-16 text-center">
+            <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#746b61]">
+              Loading collection
+            </p>
+          </div>
+        )}
+
+        {error && (
+          <div className="mt-8 border border-[#d9b6a8] bg-[#f2e4dc] px-5 py-4 text-[9px] text-[#8f3d25]">
+            {error}
+          </div>
+        )}
+
+        {!isLoading && !error && items.length === 0 && (
+          <div className="mt-8 border border-dashed border-[#c9c0b4] bg-[#f8f4ec] px-6 py-16 text-center">
+            <p
+              className="text-3xl"
+              style={{
+                fontFamily:
+                  'Didot, "Bodoni MT", "Times New Roman", Georgia, serif',
+              }}
+            >
+              No pieces yet.
+            </p>
+            <p className="mt-2 text-[8px] uppercase tracking-[0.16em] text-[#877d72]">
+              The collection is waiting for its next addition.
+            </p>
+          </div>
+        )}
+
+        {/* Product grid */}
+        <div className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 sm:grid-cols-3 sm:gap-x-5 lg:grid-cols-4 xl:grid-cols-5">
           {visibleItems.map((item) => {
             const itemId = item._id ?? item.id
             const isEditing = isAdmin && editingId === itemId
-            const roundedRating = Math.max(0, Math.min(5, Math.round(item.rating || 0)))
+            const roundedRating = Math.max(
+              0,
+              Math.min(5, Math.round(item.rating || 0))
+            )
             const itemQuantity = Number(item.quantity ?? 0)
             const inStock = item.isAvailable !== false && itemQuantity > 0
             const isFavorite = favoriteIds.includes(itemId)
 
             return (
-              <div
+              <article
                 key={itemId}
                 onClick={() =>
                   navigate(
@@ -978,82 +724,40 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                       : `/product/${itemId}`
                   )
                 }
-                className="
-        group relative w-full min-w-0 overflow-hidden
-        rounded-2xl border border-slate-200/80
-        bg-white
-        shadow-[0_2px_10px_rgba(15,23,42,0.06)]
-        transition-all duration-300
-        hover:-translate-y-1
-        hover:shadow-[0_10px_30px_rgba(15,23,42,0.12)]
-      "
+                className="group min-w-0 cursor-pointer"
               >
-                {/* IMAGE */}
-                <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                {/* Product image */}
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[12px] border border-[#d5cec2] bg-[#e5ded3]">
                   <img
                     src={
-                      typeof item?.imageUrl === 'string' && item.imageUrl.trim()
+                      typeof item?.imageUrl === 'string' &&
+                      item.imageUrl.trim()
                         ? item.imageUrl.trim()
                         : 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80'
                     }
                     alt={item?.name || 'Product'}
-                    className="
-            h-full w-full object-cover
-            transition-transform duration-500
-            group-hover:scale-[1.04]
-          "
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                   />
 
-                  {/* Soft image overlay */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#24211d]/20 to-transparent" />
 
-                  {/* Rating badge */}
-                  <div
-                    className="
-            absolute left-2.5 top-2.5
-            flex items-center gap-1
-            rounded-full
-            bg-white/95
-            px-2.5 py-1
-            shadow-sm
-            backdrop-blur-sm
-          "
-                  >
-                    <span className="text-xs font-bold text-slate-700">
-                      {(item.rating ?? 0).toFixed(1)}
+                  <div className="absolute left-3 top-3 border border-[#d5cec2]/80 bg-[#f8f4ec]/90 px-2 py-1 backdrop-blur-sm">
+                    <span className="text-[8px] font-semibold text-[#3e3730]">
+                      {Number(item.rating ?? 0).toFixed(1)}
                     </span>
-
-                    <span className="text-[11px] text-emerald-600">
-                      ★
-                    </span>
+                    <span className="ml-1 text-[8px] text-[#a94b2e]">★</span>
                   </div>
 
-                  {/* Favorite */}
                   {!isAdmin && (
                     <button
                       type="button"
                       onClick={(e) => {
-                        e.stopPropagation();
-                        toggleFavorite(itemId);
+                        e.stopPropagation()
+                        toggleFavorite(itemId)
                         throttledFavoriteCard
                       }}
                       disabled={Boolean(favoriteUpdating[itemId])}
-                      className="
-              absolute right-2.5 top-2.5
-              flex h-8 w-8 items-center justify-center
-              rounded-full
-              bg-white/95
-              text-base
-              text-slate-600
-              shadow-sm
-              backdrop-blur-sm
-              transition-all
-              hover:scale-105
-              hover:bg-white
-              hover:text-red-500
-              disabled:cursor-not-allowed
-              disabled:opacity-60
-            "
+                      className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#d5cec2]/80 bg-[#f8f4ec]/90 text-base text-[#4a433b] backdrop-blur-sm transition hover:text-[#a94b2e] disabled:cursor-not-allowed disabled:opacity-60"
                       aria-label={
                         isFavorite
                           ? 'Remove from favorites'
@@ -1064,62 +768,31 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                     </button>
                   )}
 
-                  {/* Category */}
-                  <span
-                    className="
-            absolute bottom-2.5 left-2.5
-            rounded-md
-            bg-white/90
-            px-2 py-1
-            text-[10px]
-            font-semibold
-            uppercase
-            tracking-wide
-            text-slate-700
-            backdrop-blur-sm
-          "
-                  >
+                  <span className="absolute bottom-3 left-3 bg-[#f8f4ec]/90 px-2 py-1 text-[7px] font-semibold uppercase tracking-[0.16em] text-[#3e3730] backdrop-blur-sm">
                     {item.category || 'Special'}
                   </span>
                 </div>
 
-                {/* CONTENT */}
-                <div className="p-2.5">
+                {/* Product information */}
+                <div className="px-1 pt-3">
                   {isEditing ? (
-                    <div className="space-y-3">
+                    <div
+                      className="space-y-2 rounded-[12px] border border-[#c9c0b4] bg-[#f8f4ec] p-3"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <input
                         name="name"
                         value={editForm.name}
                         onChange={handleEditChange}
-                        className="
-                w-full rounded-lg
-                border border-slate-200
-                bg-white px-3 py-2
-                text-sm text-slate-800
-                outline-none
-                transition
-                focus:border-amber-400
-                focus:ring-2 focus:ring-amber-100
-              "
+                        className="w-full rounded-[8px] border border-[#c9c0b4] bg-[#f3eee5] px-3 py-2 text-[9px] text-[#24211d] outline-none focus:border-[#a94b2e]"
                       />
-
                       <input
                         name="price"
                         type="number"
                         value={editForm.price}
                         onChange={handleEditChange}
-                        className="
-                w-full rounded-lg
-                border border-slate-200
-                bg-white px-3 py-2
-                text-sm text-slate-800
-                outline-none
-                transition
-                focus:border-amber-400
-                focus:ring-2 focus:ring-amber-100
-              "
+                        className="w-full rounded-[8px] border border-[#c9c0b4] bg-[#f3eee5] px-3 py-2 text-[9px] text-[#24211d] outline-none focus:border-[#a94b2e]"
                       />
-
                       <input
                         name="rating"
                         type="number"
@@ -1128,95 +801,46 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                         max="5"
                         value={editForm.rating}
                         onChange={handleEditChange}
-                        className="
-                w-full rounded-lg
-                border border-slate-200
-                bg-white px-3 py-2
-                text-sm text-slate-800
-                outline-none
-                transition
-                focus:border-amber-400
-                focus:ring-2 focus:ring-amber-100
-              "
+                        className="w-full rounded-[8px] border border-[#c9c0b4] bg-[#f3eee5] px-3 py-2 text-[9px] text-[#24211d] outline-none focus:border-[#a94b2e]"
                       />
-
                       <input
                         name="quantity"
                         type="number"
                         min="0"
                         value={editForm.quantity}
                         onChange={handleEditChange}
-                        className="
-                w-full rounded-lg
-                border border-slate-200
-                bg-white px-3 py-2
-                text-sm text-slate-800
-                outline-none
-                transition
-                focus:border-amber-400
-                focus:ring-2 focus:ring-amber-100
-              "
+                        className="w-full rounded-[8px] border border-[#c9c0b4] bg-[#f3eee5] px-3 py-2 text-[9px] text-[#24211d] outline-none focus:border-[#a94b2e]"
                       />
-
                       <select
                         name="category"
                         value={editForm.category}
                         onChange={handleEditChange}
-                        className="
-                w-full rounded-lg
-                border border-slate-200
-                bg-white px-3 py-2
-                text-sm text-slate-800
-                outline-none
-                focus:border-amber-400
-                focus:ring-2 focus:ring-amber-100
-              "
+                        className="w-full rounded-[8px] border border-[#c9c0b4] bg-[#f3eee5] px-3 py-2 text-[9px] text-[#24211d] outline-none focus:border-[#a94b2e]"
                       >
                         <option>Women</option>
                         <option>Men</option>
                         <option>Kids</option>
                         <option>Other</option>
                       </select>
-
                       <input
                         type="file"
                         accept="image/*"
                         onChange={handleEditImageChange}
-                        className="
-                w-full rounded-lg
-                border border-slate-200
-                bg-white px-3 py-2
-                text-sm
-              "
+                        className="w-full rounded-[8px] border border-[#c9c0b4] bg-[#f3eee5] px-3 py-2 text-[9px]"
                       />
 
                       <div className="flex gap-2 pt-1">
                         <button
                           type="button"
                           onClick={() => saveEdit(itemId)}
-                          className="
-                  flex-1 rounded-lg
-                  bg-slate-900
-                  px-3 py-2
-                  text-xs font-semibold text-white
-                  transition
-                  hover:bg-slate-800
-                "
+                          className="flex-1 rounded-[8px] bg-[#24211d] px-3 py-2 text-[8px] font-semibold uppercase tracking-[0.12em] text-[#f8f4ec] transition hover:bg-[#3e3730]"
                         >
                           Save
                         </button>
-
                         <button
                           type="button"
                           onClick={cancelEdit}
-                          className="
-                  flex-1 rounded-lg
-                  border border-slate-200
-                  px-3 py-2
-                  text-xs font-semibold text-slate-700
-                  transition
-                  hover:bg-slate-50
-                "
+                          className="flex-1 rounded-[8px] border border-[#c9c0b4] px-3 py-2 text-[8px] font-semibold uppercase tracking-[0.12em] text-[#3e3730] transition hover:bg-[#eee8de]"
                         >
                           Cancel
                         </button>
@@ -1224,83 +848,57 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                     </div>
                   ) : (
                     <>
-                      {/* Product name */}
-                      <div className="min-w-0">
+                      <div className="flex items-start justify-between gap-3">
                         <p
-                          className="
-                  truncate
-                  text-[14px]
-                  font-semibold
-                  leading-5
-                  text-slate-800
-                "
+                          className="min-w-0 truncate text-[12px] font-medium leading-5 text-[#302b26]"
                           title={item.name}
                         >
                           {item.name}
                         </p>
+
+                        <span className="shrink-0 text-[7px] uppercase tracking-[0.12em] text-[#877d72]">
+                          {inStock ? "Available" : "Sold out"}
+                        </span>
                       </div>
 
-                      {/* Price */}
-                      <div className="mt-1.5 flex items-center gap-1.5">
-                        <span className="text-[13px] text-slate-400 line-through">
+                      <div className="mt-1 flex items-center gap-2">
+                        <span className="text-[9px] text-[#9b9186] line-through">
                           ₹{Math.round(Number(item.price || 0) * 1.8)}
                         </span>
-
-                        <span className="text-[17px] font-bold text-slate-800">
+                        <span className="text-[13px] font-semibold text-[#24211d]">
                           ₹{item.price}
                         </span>
                       </div>
 
-                      {/* Rating + stock */}
-                      <div className="mt-1.5 flex items-center justify-between gap-1.5">
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-[11px] font-semibold text-slate-700">
+                      <div className="mt-2 flex items-center justify-between border-t border-[#d5cec2] pt-2">
+                        <div className="flex items-center gap-1">
+                          <span className="text-[8px] text-[#a94b2e]">★</span>
+                          <span className="text-[8px] font-semibold text-[#4a433b]">
                             {Number(item.rating || 0).toFixed(1)}
                           </span>
-
-                          <span className="text-[11px] text-amber-500">
-                            ★
-                          </span>
-
-                          <span className="text-[10px] text-slate-400">
+                          <span className="text-[7px] text-[#9b9186]">
                             ({Number(item.reviewCount || 0)})
                           </span>
                         </div>
 
                         <span
-                          className={`
-                  rounded-full
-                  px-2 py-0.5
-                  text-[9px]
-                  font-semibold
-                  ${inStock
-                              ? 'bg-emerald-50 text-emerald-600'
-                              : 'bg-rose-50 text-rose-600'
-                            }
-                `}
+                          className={`text-[7px] font-semibold uppercase tracking-[0.12em] ${
+                            inStock ? "text-[#6c786d]" : "text-[#a94b2e]"
+                          }`}
                         >
-                          {inStock ? `${itemQuantity} left` : 'Out of stock'}
+                          {inStock ? `${itemQuantity} left` : "Out of stock"}
                         </span>
                       </div>
 
-                      {/* Admin */}
                       {isAdmin ? (
-                        <div className="mt-3 flex gap-2 border-t border-slate-100 pt-3">
+                        <div className="mt-3 flex gap-2">
                           <button
                             type="button"
                             onClick={(e) => {
-                              e.stopPropagation();
-                              startEdit(item);
+                              e.stopPropagation()
+                              startEdit(item)
                             }}
-                            className="
-                    flex-1 rounded-lg
-                    border border-slate-200
-                    px-3 py-1.5
-                    text-[11px] font-semibold
-                    text-slate-700
-                    transition
-                    hover:bg-slate-50
-                  "
+                            className="flex-1 rounded-[8px] border border-[#c9c0b4] px-3 py-2 text-[7px] font-semibold uppercase tracking-[0.14em] text-[#3e3730] transition hover:bg-[#eee8de]"
                           >
                             Edit
                           </button>
@@ -1308,69 +906,67 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
                           <button
                             type="button"
                             onClick={(e) => {
-                              e.stopPropagation();
-                              removeItem(item);
+                              e.stopPropagation()
+                              removeItem(item)
                             }}
-                            className="
-                    flex-1 rounded-lg
-                    border border-rose-200
-                    px-3 py-1.5
-                    text-[11px] font-semibold
-                    text-rose-600
-                    transition
-                    hover:bg-rose-50
-                  "
+                            className="flex-1 rounded-[8px] border border-[#d9b6a8] px-3 py-2 text-[7px] font-semibold uppercase tracking-[0.14em] text-[#8f3d25] transition hover:bg-[#f2e4dc]"
                           >
                             Remove
                           </button>
                         </div>
                       ) : (
-                        <>
-                          {/* Star rating */}
-                          <div className="mt-2 flex items-center justify-between">
-                            <div className="flex items-center gap-0.5">
-                              {[1, 2, 3, 4, 5].map((star) => (
-                                <button
-                                  key={star}
-                                  type="button"
-                                  onClick={() => submitRating(itemId, star)}
-                                  disabled={Boolean(ratingSubmitting[itemId])}
-                                  aria-label={`Rate ${item.name} ${star} star${star > 1 ? 's' : ''
-                                    }`}
-                                  className={`
-                          text-base leading-none
-                          transition
-                          ${star <= roundedRating
-                                      ? 'text-amber-500 hover:text-amber-600'
-                                      : 'text-slate-200 hover:text-amber-400'
-                                    }
-                          disabled:cursor-not-allowed
-                          disabled:opacity-60
-                        `}
-                                >
-                                  ★
-                                </button>
-                              ))}
-                            </div>
-
-                            <span className="text-[9px] text-slate-400">
-                              {ratingSubmitting[itemId]
-                                ? 'Saving...'
-                                : 'Rate'}
-                            </span>
+                        <div className="mt-2 flex items-center justify-between">
+                          <div className="flex items-center gap-0.5">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <button
+                                key={star}
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  submitRating(itemId, star)
+                                }}
+                                disabled={Boolean(ratingSubmitting[itemId])}
+                                aria-label={`Rate ${item.name} ${star} star${
+                                  star > 1 ? 's' : ''
+                                }`}
+                                className={`text-[12px] leading-none transition ${
+                                  star <= roundedRating
+                                    ? 'text-[#a94b2e]'
+                                    : 'text-[#d5cec2] hover:text-[#a94b2e]'
+                                } disabled:cursor-not-allowed disabled:opacity-60`}
+                              >
+                                ★
+                              </button>
+                            ))}
                           </div>
-                        </>
+
+                          <span className="text-[7px] uppercase tracking-[0.12em] text-[#877d72]">
+                            {ratingSubmitting[itemId] ? 'Saving...' : 'Rate'}
+                          </span>
+                        </div>
                       )}
                     </>
                   )}
                 </div>
-              </div>
+              </article>
             )
           })}
+        </div>
+
+        {/* Editorial footer note */}
+        <div className="mt-12 flex flex-col gap-3 border-t border-[#c9c0b4] pt-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[7px] uppercase tracking-[0.2em] text-[#877d72]">
+            Aurora / Atelier · Considered pieces for everyday elegance
+          </p>
+          <span className="text-[7px] uppercase tracking-[0.2em] text-[#a94b2e]">
+            {isAdmin ? "Catalogue Management" : "Curated Collection"}
+          </span>
         </div>
       </div>
     </section>
   )
 }
+
+
 
 export default CardSection

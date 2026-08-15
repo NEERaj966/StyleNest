@@ -283,17 +283,17 @@ const PaymentPage = () => {
 
     if (!order) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
-                <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 text-2xl">
+            <div className="flex min-h-screen items-center justify-center bg-[#eee8de] px-4">
+                <div className="w-full max-w-md rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-8 text-center shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#e5ded3] text-2xl">
                         💳
                     </div>
 
-                    <h1 className="mt-5 text-xl font-bold text-slate-900">
+                    <h1 className="mt-5 text-xl font-bold text-[#24211d]">
                         Payment Order Not Found
                     </h1>
 
-                    <p className="mt-2 text-sm text-slate-500">
+                    <p className="mt-2 text-sm text-[#746b61]">
                         We could not find the order that
                         needs payment.
                     </p>
@@ -303,7 +303,7 @@ const PaymentPage = () => {
                         onClick={() =>
                             navigate("/products")
                         }
-                        className="mt-6 w-full rounded-xl bg-slate-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
+                        className="mt-6 w-full rounded-xl bg-[#24211d] px-5 py-3 text-sm font-bold text-[#f8f4ec] transition hover:bg-[#302b26]"
                     >
                         Continue Shopping
                     </button>
@@ -313,62 +313,62 @@ const PaymentPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 px-4 py-8">
+        <div className="min-h-screen bg-[#eee8de] px-4 py-8">
             <div className="mx-auto max-w-xl">
-                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
                     <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                        <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
                             StyleNest Payment
                         </p>
 
-                        <h1 className="mt-2 text-2xl font-bold text-slate-900">
+                        <h1 className="mt-2 text-2xl font-bold text-[#24211d]">
                             Complete Payment
                         </h1>
 
-                        <p className="mt-2 text-sm text-slate-500">
+                        <p className="mt-2 text-sm text-[#746b61]">
                             Complete your payment securely
                             using Razorpay.
                         </p>
                     </div>
 
-                    <div className="mt-6 rounded-2xl bg-slate-50 p-5">
+                    <div className="mt-6 rounded-xl bg-[#eee8de] p-5">
                         <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-500">
+                            <span className="text-sm text-[#746b61]">
                                 Order
                             </span>
 
-                            <span className="text-sm font-bold text-slate-800">
+                            <span className="text-sm font-bold text-[#302b26]">
                                 #{order._id.slice(-8)}
                             </span>
                         </div>
 
                         <div className="mt-3 flex items-center justify-between gap-4">
-                            <span className="text-sm text-slate-500">
+                            <span className="text-sm text-[#746b61]">
                                 Customer
                             </span>
 
-                            <span className="truncate text-right text-sm font-semibold text-slate-800">
+                            <span className="truncate text-right text-sm font-semibold text-[#302b26]">
                                 {order.customerName}
                             </span>
                         </div>
 
                         <div className="mt-3 flex items-center justify-between">
-                            <span className="text-sm text-slate-500">
+                            <span className="text-sm text-[#746b61]">
                                 Payment
                             </span>
 
-                            <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-bold uppercase text-slate-700">
+                            <span className="rounded-full bg-[#d9d0c4] px-3 py-1 text-xs font-bold uppercase text-[#3e3730]">
                                 {paymentMode}
                             </span>
                         </div>
 
-                        <div className="mt-5 border-t border-slate-200 pt-5">
+                        <div className="mt-5 border-t border-[#d5cec2] pt-5">
                             <div className="flex items-center justify-between">
-                                <span className="font-bold text-slate-700">
+                                <span className="font-bold text-[#3e3730]">
                                     Total
                                 </span>
 
-                                <span className="text-2xl font-bold text-slate-900">
+                                <span className="text-2xl font-bold text-[#24211d]">
                                     ₹
                                     {Number(
                                         order.total
@@ -384,7 +384,7 @@ const PaymentPage = () => {
                         type="button"
                         onClick={throttledStartPayment}
                         disabled={processing}
-                        className="mt-6 flex h-14 w-full items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="mt-6 flex h-14 w-full items-center justify-center rounded-xl bg-[#24211d] text-sm font-bold text-[#f8f4ec] transition hover:bg-[#302b26] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                         {processing
                             ? "Opening Payment..."
@@ -395,17 +395,17 @@ const PaymentPage = () => {
                             )}`}
                     </button>
 
-                    <div className="mt-5 flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+                    <div className="mt-5 flex items-start gap-3 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-4">
                         <div className="text-lg">
                             🔒
                         </div>
 
                         <div>
-                            <p className="text-sm font-semibold text-slate-800">
+                            <p className="text-sm font-semibold text-[#302b26]">
                                 Secure Payment
                             </p>
 
-                            <p className="mt-1 text-xs leading-5 text-slate-500">
+                            <p className="mt-1 text-xs leading-5 text-[#746b61]">
                                 You will be redirected to
                                 Razorpay Checkout where
                                 you can complete your
@@ -414,7 +414,7 @@ const PaymentPage = () => {
                         </div>
                     </div>
 
-                    <p className="mt-4 text-center text-xs text-slate-400">
+                    <p className="mt-4 text-center text-xs text-[#877d72]">
                         Secure payment powered by Razorpay
                     </p>
                 </div>

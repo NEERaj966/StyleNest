@@ -161,8 +161,8 @@ const OrderDetails = () => {
 
     if (loading) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-50">
-                <p className="text-sm text-slate-500">
+            <div className="flex min-h-screen items-center justify-center bg-[#eee8de]">
+                <p className="text-sm text-[#746b61]">
                     Loading order...
                 </p>
             </div>
@@ -172,7 +172,7 @@ const OrderDetails = () => {
 
     if (!order) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-50">
+            <div className="flex min-h-screen items-center justify-center bg-[#eee8de]">
                 <div className="text-center">
                     <h2 className="text-lg font-bold">
                         Order not found
@@ -184,7 +184,7 @@ const OrderDetails = () => {
                                 "/orders"
                             )
                         }
-                        className="mt-5 rounded-xl bg-slate-900 px-5 py-3 text-xs font-bold text-white"
+                        className="mt-5 rounded-xl bg-[#24211d] px-5 py-3 text-xs font-bold text-[#f8f4ec]"
                     >
                         My Orders
                     </button>
@@ -200,7 +200,7 @@ const OrderDetails = () => {
 
 
     return (
-        <div className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6">
+        <div className="min-h-screen bg-[#eee8de] px-4 py-8 sm:px-6">
 
             <div className="mx-auto max-w-5xl">
 
@@ -210,18 +210,18 @@ const OrderDetails = () => {
                             "/orders"
                         )
                     }
-                    className="mb-6 text-xs font-bold text-slate-500 hover:text-slate-900"
+                    className="mb-6 text-xs font-bold text-[#746b61] hover:text-[#24211d]"
                 >
                     ← My Orders
                 </button>
 
 
                 <div className="mb-6">
-                    <p className="text-xs font-bold uppercase tracking-wider text-amber-500">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#a94b2e]">
                         Order Details
                     </p>
 
-                    <h1 className="mt-2 text-3xl font-bold text-slate-900">
+                    <h1 className="mt-2 text-3xl font-bold text-[#24211d]">
                         #
                         {order._id
                             .slice(
@@ -234,16 +234,16 @@ const OrderDetails = () => {
 
                 {/* STATUS */}
 
-                <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <section className="rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 
                         <div>
-                            <p className="text-xs text-slate-400">
+                            <p className="text-xs text-[#877d72]">
                                 Current Status
                             </p>
 
-                            <p className="mt-1 text-xl font-bold text-slate-900">
+                            <p className="mt-1 text-xl font-bold text-[#24211d]">
                                 {
                                     order.status
                                 }
@@ -252,11 +252,11 @@ const OrderDetails = () => {
 
 
                         <div>
-                            <p className="text-xs text-slate-400">
+                            <p className="text-xs text-[#877d72]">
                                 Payment
                             </p>
 
-                            <p className="mt-1 text-sm font-bold text-slate-800">
+                            <p className="mt-1 text-sm font-bold text-[#302b26]">
                                 {
                                     order.paymentStatus
                                 }
@@ -282,12 +282,12 @@ const OrderDetails = () => {
 
                                     <div className="flex flex-col items-center">
 
-                                        <div className="h-3 w-3 rounded-full bg-amber-500" />
+                                        <div className="h-3 w-3 rounded-full bg-[#f2e4dc]0" />
 
                                         {index <
                                             order.statusTimeline.length -
                                             1 && (
-                                                <div className="mt-1 h-full w-px bg-slate-200" />
+                                                <div className="mt-1 h-full w-px bg-[#d9d0c4]" />
                                             )}
 
                                     </div>
@@ -295,21 +295,21 @@ const OrderDetails = () => {
 
                                     <div className="pb-5">
 
-                                        <p className="text-sm font-bold text-slate-800">
+                                        <p className="text-sm font-bold text-[#302b26]">
                                             {
                                                 item.status
                                             }
                                         </p>
 
                                         {item.note && (
-                                            <p className="mt-1 text-xs text-slate-500">
+                                            <p className="mt-1 text-xs text-[#746b61]">
                                                 {
                                                     item.note
                                                 }
                                             </p>
                                         )}
 
-                                        <p className="mt-1 text-[10px] text-slate-400">
+                                        <p className="mt-1 text-[10px] text-[#877d72]">
                                             {new Date(
                                                 item.at
                                             ).toLocaleString(
@@ -332,9 +332,9 @@ const OrderDetails = () => {
 
                 {/* PRODUCTS */}
 
-                <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <section className="mt-6 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
-                    <h2 className="text-base font-bold text-slate-900">
+                    <h2 className="text-base font-bold text-[#24211d]">
                         Items
                     </h2>
 
@@ -377,7 +377,7 @@ const OrderDetails = () => {
 
                                             {/* IMAGE */}
 
-                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl border border-[#d5cec2] bg-[#eee8de]">
 
                                                 {image ? (
                                                     <img
@@ -409,11 +409,11 @@ const OrderDetails = () => {
 
                                             <div className="min-w-0">
 
-                                                <p className="truncate text-sm font-bold text-slate-800">
+                                                <p className="truncate text-sm font-bold text-[#302b26]">
                                                     {item.name}
                                                 </p>
 
-                                                <p className="mt-1 text-xs text-slate-400">
+                                                <p className="mt-1 text-xs text-[#877d72]">
                                                     ₹
                                                     {Number(
                                                         item.unitPrice || 0
@@ -430,7 +430,7 @@ const OrderDetails = () => {
 
                                         {/* LINE TOTAL */}
 
-                                        <p className="flex-shrink-0 text-sm font-bold text-slate-900">
+                                        <p className="flex-shrink-0 text-sm font-bold text-[#24211d]">
                                             ₹
                                             {Number(
                                                 item.lineTotal || 0
@@ -449,10 +449,10 @@ const OrderDetails = () => {
 
                     {/* TOTALS */}
 
-                    <div className="mt-5 border-t border-slate-100 pt-5">
+                    <div className="mt-5 border-t border-[#e0d8cd] pt-5">
 
                         <div className="flex justify-between text-sm">
-                            <span className="text-slate-400">
+                            <span className="text-[#877d72]">
                                 Subtotal
                             </span>
 
@@ -468,7 +468,7 @@ const OrderDetails = () => {
 
 
                         <div className="mt-2 flex justify-between text-sm">
-                            <span className="text-slate-400">
+                            <span className="text-[#877d72]">
                                 Tax
                             </span>
 
@@ -483,13 +483,13 @@ const OrderDetails = () => {
                         </div>
 
 
-                        <div className="mt-4 flex justify-between border-t border-slate-100 pt-4">
+                        <div className="mt-4 flex justify-between border-t border-[#e0d8cd] pt-4">
 
-                            <span className="font-bold text-slate-900">
+                            <span className="font-bold text-[#24211d]">
                                 Total
                             </span>
 
-                            <span className="text-xl font-bold text-slate-900">
+                            <span className="text-xl font-bold text-[#24211d]">
                                 ₹
                                 {Number(
                                     order.total || 0
@@ -507,23 +507,23 @@ const OrderDetails = () => {
 
                 {/* ADDRESS */}
 
-                <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <section className="mt-6 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
 
-                    <h2 className="text-base font-bold text-slate-900">
+                    <h2 className="text-base font-bold text-[#24211d]">
                         Delivery Address
                     </h2>
 
 
-                    <div className="mt-4 rounded-2xl bg-slate-50 p-5">
+                    <div className="mt-4 rounded-xl bg-[#eee8de] p-5">
 
-                        <p className="text-sm font-bold text-slate-900">
+                        <p className="text-sm font-bold text-[#24211d]">
                             {
                                 order.deliveryAddress
                                     ?.name
                             }
                         </p>
 
-                        <p className="mt-2 text-xs leading-6 text-slate-500">
+                        <p className="mt-2 text-xs leading-6 text-[#746b61]">
 
                             {
                                 order.deliveryAddress
@@ -542,7 +542,7 @@ const OrderDetails = () => {
 
                         </p>
 
-                        <p className="mt-2 text-xs font-medium text-slate-600">
+                        <p className="mt-2 text-xs font-medium text-[#5d554c]">
                             📞{" "}
                             {
                                 order.deliveryAddress
@@ -558,7 +558,7 @@ const OrderDetails = () => {
                 {/* CANCEL */}
 
                 {canCancel && (
-                    <section className="mt-6 rounded-3xl border border-red-100 bg-red-50 p-6">
+                    <section className="mt-6 rounded-xl border border-red-100 bg-red-50 p-6">
 
                         <h2 className="text-sm font-bold text-red-700">
                             Cancel Order
@@ -581,7 +581,7 @@ const OrderDetails = () => {
                             disabled={
                                 cancelling
                             }
-                            className="mt-4 rounded-xl border border-red-200 bg-white px-5 py-3 text-xs font-bold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
+                            className="mt-4 rounded-xl border border-red-200 bg-[#f8f4ec] px-5 py-3 text-xs font-bold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
                         >
                             {cancelling
                                 ? "Cancelling..."

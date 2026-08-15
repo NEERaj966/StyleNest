@@ -21,6 +21,7 @@ const createFoodCard = asyncHandler(async (req, res) => {
         imageUrl,
         isAvailable,
         rating,
+        sizes,
     } = req.body;
 
     if (!name?.trim()) {
