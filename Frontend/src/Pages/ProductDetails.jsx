@@ -439,7 +439,7 @@ const ProductDetailPage = () => {
             }
 
 
-            const res = await axios.post(
+            await axios.post(
                 `${import.meta.env.VITE_BASE_URL}/api/v1/foodcards/${product._id}/reviews`,
                 {
                     rating: reviewRating,
@@ -578,209 +578,108 @@ const ProductDetailPage = () => {
                     PRODUCT
                 ================================================= */}
 
-                <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] lg:items-start">
 
                     {/* =================================================
                         IMAGE GALLERY
                     ================================================= */}
 
-                    <div className="rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-3 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-4">
-
-                        <div className="relative overflow-hidden rounded-[1.5rem] bg-[#e5ded3]">
-
-                            <div className="relative flex min-h-[430px] items-center justify-center sm:min-h-[560px]">
-
-                                {productImages.length > 0 ? (
-                                    <img
-                                        src={
-                                            productImages[
-                                            selectedImage
-                                            ]
-                                        }
-                                        alt={product.name}
-                                        className="
-                                            h-full
-                                            max-h-[560px]
-                                            w-full
-                                            object-cover
-                                            transition-all
-                                            duration-500
-                                        "
-                                    />
-                                ) : (
-                                    <div className="flex flex-col items-center justify-center text-[#9b9186]">
-                                        <span className="text-7xl">
-                                            📦
-                                        </span>
-
-                                        <span className="mt-3 text-xs font-medium">
-                                            No product image
-                                        </span>
-                                    </div>
-                                )}
-
-                                {/* CATEGORY */}
-
-                                <span className="absolute left-5 top-5 rounded-full bg-[#f8f4ec]/95 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur">
-                                    {product.category}
-                                </span>
-
-                                {/* IMAGE COUNT */}
-
-                                {productImages.length > 1 && (
-                                    <span className="absolute bottom-5 left-5 rounded-full bg-[#24211d]/60 px-3 py-1.5 text-[10px] font-semibold text-[#f8f4ec] backdrop-blur">
-                                        {selectedImage + 1} /{" "}
-                                        {productImages.length}
-                                    </span>
-                                )}
-
-                                {/* FAVORITE */}
-
-                                <button
-                                    type="button"
-                                    onClick={handleFavorite}
-                                    className="
-                                        absolute
-                                        right-5
-                                        top-5
-                                        flex
-                                        h-11
-                                        w-11
-                                        items-center
-                                        justify-center
-                                        rounded-full
-                                        bg-[#f8f4ec]/95
-                                        text-lg
-                                        shadow-[0_10px_28px_rgba(36,33,29,0.06)]
-                                        backdrop-blur
-                                        transition
-                                        hover:scale-105
-                                    "
-                                    aria-label="Add to wishlist"
-                                >
-                                    {isFavorite
-                                        ? "❤️"
-                                        : "🤍"}
-                                </button>
-
-                                {/* PREVIOUS */}
-
-                                {productImages.length > 1 && (
-                                    <button
-                                        type="button"
-                                        onClick={
-                                            goToPreviousImage
-                                        }
-                                        className="
-                                            absolute
-                                            left-4
-                                            top-1/2
-                                            flex
-                                            h-11
-                                            w-11
-                                            -translate-y-1/2
-                                            items-center
-                                            justify-center
-                                            rounded-full
-                                            bg-[#f8f4ec]/90
-                                            text-xl
-                                            text-[#3e3730]
-                                            shadow-[0_10px_28px_rgba(36,33,29,0.06)]
-                                            backdrop-blur
-                                            transition
-                                            hover:scale-105
-                                        "
-                                        aria-label="Previous image"
-                                    >
-                                        ‹
-                                    </button>
-                                )}
-
-                                {/* NEXT */}
-
-                                {productImages.length > 1 && (
-                                    <button
-                                        type="button"
-                                        onClick={
-                                            goToNextImage
-                                        }
-                                        className="
-                                            absolute
-                                            right-4
-                                            top-1/2
-                                            flex
-                                            h-11
-                                            w-11
-                                            translate-y-[-50%]
-                                            items-center
-                                            justify-center
-                                            rounded-full
-                                            bg-[#f8f4ec]/90
-                                            text-xl
-                                            text-[#3e3730]
-                                            shadow-[0_10px_28px_rgba(36,33,29,0.06)]
-                                            backdrop-blur
-                                            transition
-                                            hover:scale-105
-                                        "
-                                        aria-label="Next image"
-                                    >
-                                        ›
-                                    </button>
-                                )}
-
-                            </div>
-                        </div>
-
-                        {/* THUMBNAILS */}
-
-                        {productImages.length > 1 && (
-                            <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-5">
-
-                                {productImages.map(
-                                    (image, index) => (
+                    <div className="rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-3 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-4 lg:sticky lg:top-6">
+                        <div className="grid gap-3 lg:grid-cols-[84px_minmax(0,1fr)]">
+                            {productImages.length > 1 && (
+                                <div className="order-2 flex gap-3 overflow-x-auto pb-1 lg:order-1 lg:max-h-[620px] lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0 lg:pr-1">
+                                    {productImages.map((image, index) => (
                                         <button
                                             key={`${image}-${index}`}
                                             type="button"
                                             onClick={() =>
-                                                setSelectedImage(
-                                                    index
-                                                )
+                                                setSelectedImage(index)
                                             }
-                                            className={`
-                                                relative
-                                                aspect-square
-                                                overflow-hidden
-                                                rounded-xl
-                                                border-2
-                                                bg-[#e5ded3]
-                                                transition
-                                                ${selectedImage ===
-                                                    index
-                                                    ? "border-amber-500 ring-4 ring-amber-100"
-                                                    : "border-transparent hover:border-[#c9c0b4]"
-                                                }
-                                            `}
+                                            aria-label={`View product image ${index + 1}`}
+                                            className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border-2 bg-[#e5ded3] transition sm:h-24 sm:w-24 lg:h-20 lg:w-20 ${
+                                                selectedImage === index
+                                                    ? "border-[#24211d] shadow-[0_6px_18px_rgba(36,33,29,0.08)]"
+                                                    : "border-transparent opacity-70 hover:border-[#c9c0b4] hover:opacity-100"
+                                            }`}
                                         >
                                             <img
                                                 src={image}
-                                                alt={`${product.name} ${index +
-                                                    1
-                                                    }`}
+                                                alt={`${product.name} ${index + 1}`}
                                                 className="h-full w-full object-cover"
                                             />
-
-                                            {selectedImage ===
-                                                index && (
-                                                    <div className="absolute inset-0 bg-[#24211d]/10" />
-                                                )}
                                         </button>
-                                    )
-                                )}
+                                    ))}
+                                </div>
+                            )}
 
+                            <div className="order-1 min-w-0 lg:order-2">
+                                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#e5ded3] sm:aspect-[5/6] lg:min-h-[620px]">
+                                    {productImages.length > 0 ? (
+                                        <img
+                                            src={productImages[selectedImage]}
+                                            alt={product.name}
+                                            className="h-full w-full object-cover transition-all duration-500"
+                                        />
+                                    ) : (
+                                        <div className="flex h-full min-h-[420px] flex-col items-center justify-center text-[#9b9186]">
+                                            <span className="text-7xl">
+                                                📦
+                                            </span>
+
+                                            <span className="mt-3 text-xs font-medium">
+                                                No product image
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#24211d]/25 to-transparent" />
+
+                                    <span className="absolute left-4 top-4 rounded-full bg-[#f8f4ec]/95 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-[#3e3730] shadow-[0_3px_12px_rgba(36,33,29,0.04)] backdrop-blur">
+                                        {product.category}
+                                    </span>
+
+                                    {productImages.length > 1 && (
+                                        <span className="absolute bottom-4 left-4 rounded-full bg-[#24211d]/70 px-3 py-1.5 text-[10px] font-semibold text-[#f8f4ec] backdrop-blur">
+                                            {selectedImage + 1} /{" "}
+                                            {productImages.length}
+                                        </span>
+                                    )}
+
+                                    <button
+                                        type="button"
+                                        onClick={handleFavorite}
+                                        className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#f8f4ec]/95 text-lg shadow-[0_10px_28px_rgba(36,33,29,0.06)] backdrop-blur transition hover:scale-105"
+                                        aria-label="Add to wishlist"
+                                    >
+                                        {isFavorite
+                                            ? "❤️"
+                                            : "🤍"}
+                                    </button>
+
+                                    {productImages.length > 1 && (
+                                        <>
+                                            <button
+                                                type="button"
+                                                onClick={goToPreviousImage}
+                                                className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#f8f4ec]/90 text-xl text-[#3e3730] shadow-[0_10px_28px_rgba(36,33,29,0.06)] backdrop-blur transition hover:scale-105"
+                                                aria-label="Previous image"
+                                            >
+                                                ‹
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                onClick={goToNextImage}
+                                                className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#f8f4ec]/90 text-xl text-[#3e3730] shadow-[0_10px_28px_rgba(36,33,29,0.06)] backdrop-blur transition hover:scale-105"
+                                                aria-label="Next image"
+                                            >
+                                                ›
+                                            </button>
+                                        </>
+                                    )}
+                                </div>
                             </div>
-                        )}
-
+                        </div>
                     </div>
 
                     {/* =================================================
@@ -841,21 +740,6 @@ const ProductDetailPage = () => {
                                 {product.reviewCount || 0}{" "}
                                 customer reviews
                             </span>
-
-                        </div>
-
-                        {/* DESCRIPTION */}
-
-                        <div className="mt-7">
-
-                            <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
-                                Description
-                            </p>
-
-                            <p className="mt-3 text-sm leading-7 text-[#746b61]">
-                                {product.description ||
-                                    "This product does not have a description yet."}
-                            </p>
 
                         </div>
 
@@ -1313,6 +1197,25 @@ const ProductDetailPage = () => {
                     </div>
                 </div>
 
+
+                <section className="mt-8 rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-6 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-8">
+                    <div className="grid gap-5 lg:grid-cols-[220px_minmax(0,1fr)]">
+                        <div>
+                            <p className="text-xs font-bold uppercase tracking-wider text-[#877d72]">
+                                Product Details
+                            </p>
+
+                            <h2 className="mt-2 text-2xl font-bold text-[#24211d]">
+                                Description
+                            </h2>
+                        </div>
+
+                        <p className="text-sm leading-7 text-[#746b61] sm:text-base sm:leading-8">
+                            {product.description ||
+                                "This product does not have a description yet."}
+                        </p>
+                    </div>
+                </section>
 
 
                 {/* =================================================

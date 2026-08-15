@@ -244,20 +244,53 @@ const AdminProductDetail = () => {
                     </span>
                 </div>
 
-                <section className="grid gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+                <section className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] lg:items-start">
                     <div className="min-w-0">
-                        <div className="relative overflow-hidden rounded-[2rem] bg-[#111] p-2 shadow-[0_25px_70px_rgba(15,23,42,0.16)]">
-                            <div className="relative overflow-hidden rounded-[1.55rem] bg-[#e9e7e1]">
-                                <div className="relative flex h-[420px] items-center justify-center overflow-hidden sm:h-[560px] lg:h-[650px]">
+                        <div className="rounded-[2rem] border border-[#d5cec2] bg-[#f8f4ec] p-3 shadow-[0_18px_55px_rgba(36,33,29,0.08)] sm:p-4 lg:sticky lg:top-24">
+                            <div className="grid gap-3 lg:grid-cols-[84px_minmax(0,1fr)]">
+                                {productImages.length > 1 && (
+                                    <div className="order-2 flex gap-3 overflow-x-auto pb-1 lg:order-1 lg:max-h-[620px] lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0 lg:pr-1">
+                                        {productImages.map((image, index) => (
+                                            <button
+                                                key={`${image}-${index}`}
+                                                type="button"
+                                                onClick={() =>
+                                                    setSelectedImage(index)
+                                                }
+                                                aria-label={`View image ${
+                                                    index + 1
+                                                }`}
+                                                className={`group relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border-2 bg-[#e5ded3] transition sm:h-24 sm:w-24 lg:h-20 lg:w-20 ${
+                                                    selectedImage === index
+                                                        ? "border-slate-950 shadow-[0_6px_18px_rgba(36,33,29,0.08)]"
+                                                        : "border-transparent opacity-65 hover:border-[#c9c0b4] hover:opacity-100"
+                                                }`}
+                                            >
+                                                <img
+                                                    src={image}
+                                                    alt=""
+                                                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                                                />
+
+                                                {selectedImage === index && (
+                                                    <div className="absolute inset-x-0 bottom-0 h-1 bg-[#24211d]" />
+                                                )}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <div className="order-1 min-w-0 lg:order-2">
+                                    <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#e9e7e1] sm:aspect-[5/6] lg:min-h-[620px]">
                                     {productImages.length > 0 ? (
                                         <img
                                             key={productImages[selectedImage]}
                                             src={productImages[selectedImage]}
                                             alt={product.name || "Product"}
-                                            className="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.035]"
+                                            className="h-full w-full object-cover transition duration-700 ease-out hover:scale-[1.025]"
                                         />
                                     ) : (
-                                        <div className="flex flex-col items-center justify-center">
+                                        <div className="flex h-full min-h-[420px] flex-col items-center justify-center">
                                             <div className="flex h-24 w-24 items-center justify-center rounded-xl bg-[#f8f4ec] text-4xl shadow-[0_14px_36px_rgba(36,33,29,0.07)]">
                                                 📦
                                             </div>
@@ -333,40 +366,10 @@ const AdminProductDetail = () => {
                                             </div>
                                         </>
                                     )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        {productImages.length > 1 && (
-                            <div className="mt-4 rounded-xl border border-[#d5cec2] bg-[#f8f4ec] p-3 shadow-[0_3px_12px_rgba(36,33,29,0.04)]">
-                                <div className="flex gap-3 overflow-x-auto pb-1">
-                                    {productImages.map((image, index) => (
-                                        <button
-                                            key={`${image}-${index}`}
-                                            type="button"
-                                            onClick={() =>
-                                                setSelectedImage(index)
-                                            }
-                                            className={`group relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border-2 bg-[#e5ded3] transition sm:h-24 sm:w-24 ${
-                                                selectedImage === index
-                                                    ? "border-slate-950 shadow-[0_6px_18px_rgba(36,33,29,0.05)]"
-                                                    : "border-transparent opacity-65 hover:border-[#c9c0b4] hover:opacity-100"
-                                            }`}
-                                        >
-                                            <img
-                                                src={image}
-                                                alt=""
-                                                className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                                            />
-
-                                            {selectedImage === index && (
-                                                <div className="absolute inset-x-0 bottom-0 h-1 bg-[#24211d]" />
-                                            )}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
                     </div>
 
                     <div className="min-w-0 rounded-[2rem] border border-black/[0.06] bg-[#f8f4ec] p-5 shadow-[0_20px_60px_rgba(15,23,42,0.07)] sm:p-7 lg:p-8">
@@ -401,17 +404,6 @@ const AdminProductDetail = () => {
                         </div>
 
                         <div className="my-7 h-px bg-[#e5ded3]" />
-
-                        <div>
-                            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#877d72]">
-                                Product Description
-                            </p>
-
-                            <p className="mt-3 text-sm leading-7 text-[#746b61]">
-                                {product.description ||
-                                    "No product description has been added."}
-                            </p>
-                        </div>
 
                         {Array.isArray(product.sizes) &&
                             product.sizes.length > 0 && (
@@ -551,6 +543,25 @@ const AdminProductDetail = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <section className="mt-7 rounded-[2rem] border border-black/[0.06] bg-[#f8f4ec] p-5 shadow-[0_3px_12px_rgba(36,33,29,0.04)] sm:p-8">
+                    <div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)]">
+                        <div>
+                            <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#984126]">
+                                Product Copy
+                            </p>
+
+                            <h2 className="mt-2 text-2xl font-bold tracking-tight">
+                                Description
+                            </h2>
+                        </div>
+
+                        <p className="text-sm leading-7 text-[#746b61] sm:text-base sm:leading-8">
+                            {product.description ||
+                                "No product description has been added."}
+                        </p>
                     </div>
                 </section>
 
