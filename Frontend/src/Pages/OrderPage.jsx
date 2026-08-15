@@ -44,9 +44,6 @@ const Order = () => {
   const [placingOrder, setPlacingOrder] =
     useState(false);
 
-  const [paymentMethod, setPaymentMethod] =
-    useState("COD");
-
   const [paymentMode, setPaymentMode] = useState("upi");
 
   // =========================================================

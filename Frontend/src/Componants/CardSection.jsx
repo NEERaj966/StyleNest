@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { AdminDataContext } from '../Context/AdminDataContext.js'
-import { OrderDataContext } from '../Context/OrderDataContext.js'
 import { useNavigate } from 'react-router-dom'
 import useThrottle from "../hooks/useThrottle";
 
 
 const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated = 20 }) => {
   const { Admin } = useContext(AdminDataContext)
-  const { addToCart } = useContext(OrderDataContext)
   const isAdmin = adminMode && Admin
   const navigate = useNavigate()
   const [items, setItems] = useState([])
@@ -187,7 +185,7 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
           sizes: '',
           description: '',
         })
-        setImageFile(null)
+        setImageFiles([])
       }
     } catch (err) {
       console.log(err)
@@ -223,6 +221,12 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
       payload.append('quantity', Number(editForm.quantity))
       payload.append('rating', Number(editForm.rating))
       payload.append('category', editForm.category)
+      const editImageFiles = Array.isArray(editImageFile)
+        ? editImageFile
+        : editImageFile
+          ? [editImageFile]
+          : []
+
       editImageFiles.forEach((file) => {
         payload.append("images", file);
       });
@@ -244,50 +248,6 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
       console.log(err)
     }
   }
-
-  const handleDelete = async (product) => {
-    const productId = product?._id || product?.id;
-
-    if (!productId) {
-      console.error("Product ID not found:", product);
-      return;
-    }
-
-    const confirmed = window.confirm(
-      `Are you sure you want to delete "${product?.name}"?`
-    );
-
-    if (!confirmed) return;
-
-    try {
-      const token = localStorage.getItem("adminToken");
-
-      await axios.delete(
-        `${import.meta.env.VITE_BASE_URL}/api/v1/foodcards/${productId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      // Remove product immediately from UI
-      setProducts((previousProducts) =>
-        previousProducts.filter(
-          (item) => (item?._id || item?.id) !== productId
-        )
-      );
-
-      console.log("Product deleted successfully");
-    } catch (error) {
-      console.error("Delete product error:", error);
-
-      alert(
-        error.response?.data?.message ||
-        "Failed to delete product"
-      );
-    }
-  };
 
   const submitRating = async (id, ratingValue) => {
     const numericRating = Number(ratingValue)
@@ -331,11 +291,6 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
     }
   }
 
-  const handleOrderNow = (item) => {
-    addToCart(item)
-    navigate('/orders')
-  }
-
   const toggleFavorite = async (itemId) => {
     if (!itemId) return
     if (adminMode) return
@@ -376,12 +331,12 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
     const productId = item?._id || item?.id;
 
     if (!productId) {
-      console.error("Product ID not found:", product);
+      console.error("Product ID not found:", item);
       return;
     }
 
     const confirmed = window.confirm(
-      `Are you sure you want to delete "${productId?.name}"?`
+      `Are you sure you want to delete "${item?.name}"?`
     );
 
     if (!confirmed) return;
@@ -399,7 +354,7 @@ const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated
       );
 
       // Remove product immediately from UI
-      setProducts((previousProducts) =>
+      setItems((previousProducts) =>
         previousProducts.filter(
           (item) => (item?._id || item?.id) !== productId
         )

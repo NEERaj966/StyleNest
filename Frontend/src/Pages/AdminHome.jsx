@@ -13,7 +13,7 @@ const statusClassMap = {
 }
 
 const AdminHome = () => {
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [isAdmin] = useState(false)
   const [menuItems, setMenuItems] = useState([])
   const [orders, setOrders] = useState([])
   const [isLoadingDashboard, setIsLoadingDashboard] = useState(false)

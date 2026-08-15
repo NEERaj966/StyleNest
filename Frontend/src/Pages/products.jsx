@@ -10,7 +10,6 @@ const Products = ({
   onAddProduct,
   onView,
   onEdit,
-  onDelete,
 }) => {
   const navigate = useNavigate();
 

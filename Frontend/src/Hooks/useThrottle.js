@@ -1,10 +1,12 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 const useThrottle = (callback, delay = 1000) => {
     const lastCallRef = useRef(0);
     const callbackRef = useRef(callback);
 
-    callbackRef.current = callback;
+    useEffect(() => {
+        callbackRef.current = callback;
+    }, [callback]);
 
     return useCallback(
         (...args) => {
