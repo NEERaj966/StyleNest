@@ -16,7 +16,7 @@ import {
     AdminDataContext,
 } from "../Context/AdminDataContext.js";
 
-import useThrottle from "../hooks/useThrottle";
+import useThrottle from "../Hooks/useThrottle";
 
 const AdminNavbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);

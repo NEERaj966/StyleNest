@@ -19,7 +19,7 @@ import {
     OrderDataContext,
 } from "../Context/OrderDataContext.js";
 
-import useThrottle from "../hooks/useThrottle";
+import useThrottle from "../Hooks/useThrottle";
 
 
 const UserNavbar = () => {

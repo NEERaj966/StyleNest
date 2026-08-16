@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import useThrottle from "../hooks/useThrottle";
+import useThrottle from "../Hooks/useThrottle";
 
 
 const Order = () => {

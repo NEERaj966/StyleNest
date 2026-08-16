@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import useThrottle from "../hooks/useThrottle";
+import useThrottle from "../Hooks/useThrottle";
 
 const PaymentPage = () => {
     const location = useLocation();

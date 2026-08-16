@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { AdminDataContext } from '../Context/AdminDataContext.js'
 import { useNavigate } from 'react-router-dom'
-import useThrottle from "../hooks/useThrottle";
+import useThrottle from "../Hooks/useThrottle";
 
 
 const CardSection = ({ title = 'Popular Picks', adminMode = false, limitTopRated = 20 }) => {

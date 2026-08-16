@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import useDebounce from "../hooks/useDebounce";
+import useDebounce from "../Hooks/useDebounce";
 
 const PRODUCTS_PER_PAGE = 12;
 
