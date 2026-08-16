@@ -12,7 +12,7 @@ import {
     getAdminOrderById,
     updateOrderStatus,
     updatePaymentStatus,
-} from "../controllers/Order.controller.js";
+} from "../Controllers/Order.controller.js";
 
 import {
     verifyJWTForUser,

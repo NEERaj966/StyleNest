@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Order } from "../models/Order.model.js";
+import { Order } from "../Models/order.model.js";
 
 // =========================================================
 // GET ALL ORDERS - ADMIN

@@ -5,11 +5,11 @@ import {
     getAdminOrderById,
     updateOrderStatus,
     cancelOrderByAdmin,
-} from "../controllers/adminOrder.controller.js";
+} from "../Controllers/adminOrder.controller.js";
 
 import {
     verifyJWTForAdmin,
-} from "../middleware/auth.middleware.js";
+} from "../Middleware/auth.middleware.js";
 
 
 const router =

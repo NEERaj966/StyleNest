@@ -10,7 +10,7 @@ import {
     updateAddress,
     setDefaultAddress,
     deleteAddress,
-} from "../controllers/Address.controller.js";
+} from "../Controllers/Address.controller.js";
 
 const router = Router();
 

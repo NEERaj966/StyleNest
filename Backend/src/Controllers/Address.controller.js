@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 import { asyncHandler } from "../utills/AsyncHanddler.js";
-import { Address } from "../models/Address.model.js";
+import { Address } from "../Models/Address.model.js";
 import { ApiResponse } from "../utills/ApiResponse.js";
 
 // ======================================================

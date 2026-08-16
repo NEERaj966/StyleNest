@@ -4,8 +4,8 @@ import crypto from "crypto";
 import razorpay from "../config/razorpay.js";
 
 
-import { Order } from "../models/Order.model.js";
-import { Address } from "../models/Address.model.js";
+import { Order } from "../Models/order.model.js";
+import { Address } from "../Models/Address.model.js";
 import { FoodCard } from "../Models/foodcard.model.js";
 
 
